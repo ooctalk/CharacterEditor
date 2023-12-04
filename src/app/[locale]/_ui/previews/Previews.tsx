@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@nextui-org/react";
 import React, { useState } from "react";
-import { useChara, usePostChara } from "../../_lib/utils";
+import { useChara, usePostChara,useCharacterBook } from "../../_lib/utils";
 import { useCover } from "../../_lib/utils";
 import { useTranslations } from "next-intl";
 import CharacterPreviews from "./CharacterPreviews";
@@ -15,8 +15,9 @@ function Previews() {
   const [isReadCharLoding, setIsReadCharLoding] = useState(false);
   const [isMakeCharLoding, setIsMakeCharLoding] = useState(false);
   const t = useTranslations();
-  const {chara} = useChara();
-  const {cover} = useCover();
+  const {chara,setChara} = useChara();
+  const {character_book,setCharacter_Book} =  useCharacterBook()
+  const {cover,setCover} = useCover();
   const {updateChara} = usePostChara();
   const handleMakeChar = async (e: any) => {
     setIsMakeCharLoding(true)
@@ -26,6 +27,7 @@ function Previews() {
     };
     if (!chara?.data?.name) {
       alert(t("Previews.charactercardnamesmust"));
+      setIsMakeCharLoding(false)
       return;
     }
     try {
@@ -69,9 +71,17 @@ function Previews() {
           body:file,          
         });
         if(res.ok){
-          const data = await res.json()
-          console.log(data)
+          const data = await res.json();
+          if(data.data.character_book){
+            setCharacter_Book(data.data.character_book)
+          }
+          setCover(data.CyberWaifu_ORG_cover)
+          delete data.data.character_book;
+          delete data.CyberWaifu_ORG_cover;
+          data.data.extensions.world = '';
+          setChara(data)
           setIsReadCharLoding(false)
+          alert(t('Previews.importok'));
         }else{
           setIsReadCharLoding(false)
         }

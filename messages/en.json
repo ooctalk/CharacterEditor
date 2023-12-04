@@ -2,6 +2,7 @@
   "Character": {
     "charactername": "Character Name",
     "characterversion": "Character Version",
+    "cover": "Cover",
     "createdby": "Created by",
     "creatorsnotes": "Creator's Notes",
     "description": "Description",
@@ -21,8 +22,7 @@
     "scenario": "Scenario",
     "tagstoembed": "Tag to Embed",
     "talkativeness": "Talkativeness",
-    "zipcover": "JPG|PNG|WEBP images will be compressed automatically",
-    "cover": "Cover"
+    "zipcover": "JPG|PNG|WEBP images will be compressed automatically"
   },
   "Greetings": {
     "deletegreetings": "Delete Greetings",
@@ -33,7 +33,7 @@
     "2": "Strong performance; user-friendly interface; no need to save manually",
     "3": "Start Creating",
     "updatetime": "Updated 2023/12/04",
-    "version": "Official version"
+    "version": "Main branches"
   },
   "Metadata": {
     "description": "He who has a why to live can bear almost any how.",
@@ -43,14 +43,14 @@
     "character": "Character",
     "communityediton": "Community Edition",
     "cyberwaifu": "CyberWaifu",
+    "github": "GitHub",
     "greetings": "Alternate Greetings",
     "help": "Help",
     "home": "Home",
     "previews": "Previews",
     "serverstatus": "Server Status",
     "settings": "Settings",
-    "worldbook": "World Book",
-    "github": "GitHub"
+    "worldbook": "World Book"
   },
   "Previews": {
     "addgreetings": "Add Greetings",
@@ -59,6 +59,7 @@
     "exportingcharactercards": "Exporting Character Cards",
     "import": "Import",
     "importingcharactercards": "Importing Character Cards",
+    "importok": "Successfully imported, please refresh your browser if there is no content",
     "isitalldone": "Is it all done?",
     "mymindismadeup": "My mind is made up!",
     "thisoperationoverwritesthedata": "This operation overwrites the data!"
@@ -82,7 +83,7 @@
   },
   "WorldBook": {
     "D": "@D",
-    "addnewbook": "Add NewBook",
+    "addnewbook": "Add NewWorldBook",
     "afteran": "After AN",
     "afterchar": "After Char",
     "beforechar": "Before Char",
@@ -90,12 +91,15 @@
     "constan": "Constan",
     "content": "Content",
     "delete": "Delete",
-    "deletebook": "Delete Book",
+    "deletebook": "Delete World Book",
     "depth": "Depth",
     "normal": "Normal",
     "optionalfilter": "Optional Filter",
     "orfer": "Order",
+    "position": "Position",
     "primarykeywords": "Primary Keywords",
-    "titlememo": "Title/Memo"
+    "status": "Status",
+    "titlememo": "Title/Memo",
+    "untitledbook": "Untitled World Book"
   }
 }

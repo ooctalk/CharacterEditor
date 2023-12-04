@@ -2,6 +2,7 @@
   "Character": {
     "charactername": "Nome do Personagem",
     "characterversion": "Versão do Personagem",
+    "cover": "Capa",
     "createdby": "Criado por",
     "creatorsnotes": "Notas do Criador",
     "description": "Descrição",
@@ -9,63 +10,63 @@
     "firstmessage": "Primeira Mensagem",
     "firstmessagetoken": "Token da Primeira Mensagem",
     "information": "Informação",
-    "jailbreak": "Desbloquear",
-    "jailbreaktoken": "Token de Desbloqueio",
+    "jailbreak": "Jailbreak",
+    "jailbreaktoken": "Token de Jailbreak",
     "mainprompt": "Prompt Principal",
     "mainprompttoken": "Token do Prompt Principal",
     "mesexample": "Exemplo de Mensagem",
     "modifythebasicinsormationofthecharactercard": "Modificar as informações básicas do cartão do personagem",
     "personalitysummary": "Resumo da Personalidade",
-    "promptoverrdies": "Substituições de Prompt",
-    "replacementofthecover": "Mudar",
+    "promptoverrdies": "Substituição de Prompt",
+    "replacementofthecover": "Trocar",
     "scenario": "Cenário",
     "tagstoembed": "Tags para Incorporar",
-    "talkativeness": "Conversador",
-    "zipcover": "As imagens JPG|PNG|WEBP serão comprimidas automaticamente",
-    "cover": "capa"
+    "talkativeness": "Loquacidade",
+    "zipcover": "Imagens JPG|PNG|WEBP serão comprimidas automaticamente"
   },
   "Greetings": {
     "deletegreetings": "Excluir Saudações",
-    "thisoperationcannotbewithdrawn": "Esta operação não pode ser retirada!"
+    "thisoperationcannotbewithdrawn": "Esta operação não pode ser desfeita!"
   },
   "HomePage": {
     "1": "Editor Online de Cartões de Personagem",
-    "2": "Alto desempenho; interface amigável; não é necessário salvar manualmente",
+    "2": "Desempenho robusto; interface amigável; não é necessário salvar manualmente",
     "3": "Começar a Criar",
-    "updatetime": "Atualizado em 04/12/2023",
-    "version": "Versão Oficial"
+    "updatetime": "Atualizado em 2023/12/04",
+    "version": "Ramos Principais"
   },
   "Metadata": {
-    "description": "Aquele que tem um porquê para viver pode suportar quase qualquer como.",
+    "description": "Aquele que tem um motivo para viver pode suportar quase qualquer como.",
     "title": "Editor de Personagens | CyberWaifu"
   },
   "Navigation": {
     "character": "Personagem",
-    "communityediton": "Edição da Comunidade",
+    "communityediton": "Edição Comunitária",
     "cyberwaifu": "CyberWaifu",
+    "github": "GitHub",
     "greetings": "Saudações Alternativas",
     "help": "Ajuda",
     "home": "Página Inicial",
-    "previews": "Prévias",
+    "previews": "Previews",
     "serverstatus": "Status do Servidor",
     "settings": "Configurações",
-    "worldbook": "Livro do Mundo",
-    "github": "GitHub"
+    "worldbook": "Livro Mundial"
   },
   "Previews": {
     "addgreetings": "Adicionar Saudações",
-    "charactercardnamesmust": "Os nomes dos cartões de personagem devem",
+    "charactercardnamesmust": "Nomes de cartões de personagens devem",
     "export": "Exportar",
     "exportingcharactercards": "Exportando Cartões de Personagem",
     "import": "Importar",
     "importingcharactercards": "Importando Cartões de Personagem",
+    "importok": "Importação bem-sucedida, por favor, atualize seu navegador se não houver conteúdo",
     "isitalldone": "Está tudo feito?",
     "mymindismadeup": "Minha decisão está tomada!",
     "thisoperationoverwritesthedata": "Esta operação sobrescreve os dados!"
   },
   "Settings": {
     "DELETE": "Excluir!",
-    "DelDone": "Os dados foram apagados. Por favor, atualize seu navegador.",
+    "DelDone": "Os dados foram todos apagados. Por favor, atualize seu navegador.",
     "changelanguage": "Mudar Idioma",
     "clearalldata": "Limpar Todos os Dados",
     "close": "Fechar",
@@ -74,7 +75,7 @@
     "haveyoureallythoughtthisthrough": "Você realmente pensou nisso?",
     "hazardousoperations": "Operações Perigosas",
     "idecidedtotry": "Decidi tentar",
-    "ifyouhaveproblemsusingityoucantry": "Se você tiver problemas usando, pode tentar",
+    "ifyouhaveproblemsusingityoucantry": "Se você tiver problemas usando, você pode tentar",
     "imsure": "Tenho certeza.",
     "settingthedisplayofthewebsite": "Configurando a Exibição do Site",
     "thisoperationsisirrevocable": "Esta operação é irreversível",
@@ -82,7 +83,7 @@
   },
   "WorldBook": {
     "D": "@D",
-    "addnewbook": "Adicionar Novo Livro",
+    "addnewbook": "Adicionar Novo Livro Mundial",
     "afteran": "Após AN",
     "afterchar": "Após Personagem",
     "beforechar": "Antes do Personagem",
@@ -90,12 +91,15 @@
     "constan": "Constante",
     "content": "Conteúdo",
     "delete": "Excluir",
-    "deletebook": "Excluir Livro",
+    "deletebook": "Excluir Livro Mundial",
     "depth": "Profundidade",
     "normal": "Normal",
     "optionalfilter": "Filtro Opcional",
     "orfer": "Ordem",
-    "primarykeywords": "Palavras-Chave Principais",
-    "titlememo": "Título/Memo"
+    "position": "Posição",
+    "primarykeywords": "Palavras-chave Primárias",
+    "status": "Status",
+    "titlememo": "Título/Memo",
+    "untitledbook": "Livro Mundial Sem Título"
   }
 }

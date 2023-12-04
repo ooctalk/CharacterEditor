@@ -1,56 +1,56 @@
 {
   "Character": {
-    "charactername": "角色名",
+    "charactername": "角色名稱",
     "characterversion": "角色版本",
+    "cover": "封面",
     "createdby": "創建者",
     "creatorsnotes": "創作者註釋",
     "description": "描述",
     "descriptiontoken": "描述標記",
     "firstmessage": "首條消息",
     "firstmessagetoken": "首條消息標記",
-    "information": "信息",
+    "information": "資訊",
     "jailbreak": "越獄",
     "jailbreaktoken": "越獄標記",
-    "mainprompt": "主提示",
-    "mainprompttoken": "主提示標記",
+    "mainprompt": "主要提示",
+    "mainprompttoken": "主要提示標記",
     "mesexample": "消息示例",
     "modifythebasicinsormationofthecharactercard": "修改角色卡的基本信息",
-    "personalitysummary": "個性總結",
+    "personalitysummary": "個性摘要",
     "promptoverrdies": "提示覆蓋",
     "replacementofthecover": "更換",
-    "scenario": "場景",
+    "scenario": "情境",
     "tagstoembed": "嵌入標籤",
     "talkativeness": "健談程度",
-    "zipcover": "JPG|PNG|WEBP 圖像將自動壓縮",
-    "cover": "封面"
+    "zipcover": "JPG|PNG|WEBP 圖片將自動壓縮"
   },
   "Greetings": {
     "deletegreetings": "刪除問候",
-    "thisoperationcannotbewithdrawn": "此操作無法撤回！"
+    "thisoperationcannotbewithdrawn": "此操作不可撤銷！"
   },
   "HomePage": {
     "1": "角色卡在線編輯器",
     "2": "性能強大；用戶界面友好；無需手動保存",
     "3": "開始創建",
-    "updatetime": "更新於2023/12/04",
-    "version": "官方版本"
+    "updatetime": "更新於 2023/12/04",
+    "version": "主要分支"
   },
   "Metadata": {
-    "description": "有了為何而生的理由，幾乎可以忍受任何方式。",
+    "description": "有了為什麼活著的理由，幾乎就能承受任何怎麼活。",
     "title": "角色編輯器 | CyberWaifu"
   },
   "Navigation": {
     "character": "角色",
-    "communityediton": "社區版本",
+    "communityediton": "社區版",
     "cyberwaifu": "CyberWaifu",
+    "github": "GitHub",
     "greetings": "替代問候",
     "help": "幫助",
-    "home": "首頁",
+    "home": "主頁",
     "previews": "預覽",
-    "serverstatus": "服務器狀態",
+    "serverstatus": "伺服器狀態",
     "settings": "設置",
-    "worldbook": "世界手冊",
-    "github": "GitHub"
+    "worldbook": "世界百科"
   },
   "Previews": {
     "addgreetings": "添加問候",
@@ -59,7 +59,8 @@
     "exportingcharactercards": "導出角色卡",
     "import": "導入",
     "importingcharactercards": "導入角色卡",
-    "isitalldone": "一切都完成了嗎？",
+    "importok": "導入成功，請刷新瀏覽器如果沒有內容",
+    "isitalldone": "一切完成了嗎？",
     "mymindismadeup": "我已下定決心！",
     "thisoperationoverwritesthedata": "此操作將覆蓋數據！"
   },
@@ -69,33 +70,36 @@
     "changelanguage": "更改語言",
     "clearalldata": "清除所有數據",
     "close": "關閉",
-    "darkmode": "深色模式",
+    "darkmode": "暗模式",
     "displaylanguage": "顯示語言",
-    "haveyoureallythoughtthisthrough": "您真的考慮過嗎？",
+    "haveyoureallythoughtthisthrough": "您真的考慮過這一點嗎？",
     "hazardousoperations": "危險操作",
-    "idecidedtotry": "我決定嘗試",
+    "idecidedtotry": "我決定試試",
     "ifyouhaveproblemsusingityoucantry": "如果您在使用時遇到問題，可以嘗試",
     "imsure": "我確定。",
     "settingthedisplayofthewebsite": "設置網站顯示",
-    "thisoperationsisirrevocable": "此操作是不可撤銷的",
+    "thisoperationsisirrevocable": "此操作不可撤銷",
     "websitedisplaysettings": "網站顯示設置"
   },
   "WorldBook": {
     "D": "@D",
-    "addnewbook": "添加新世界書",
-    "afteran": "在AN之後",
-    "afterchar": "在角色之後",
-    "beforechar": "在角色之前",
-    "berforean": "在AN之前",
+    "addnewbook": "添加新的世界百科",
+    "afteran": "AN之後",
+    "afterchar": "角色之後",
+    "beforechar": "角色之前",
+    "berforean": "AN之前",
     "constan": "常量",
     "content": "內容",
     "delete": "刪除",
-    "deletebook": "刪除世界書",
+    "deletebook": "刪除世界百科",
     "depth": "深度",
     "normal": "正常",
     "optionalfilter": "可選過濾器",
     "orfer": "順序",
+    "position": "位置",
     "primarykeywords": "主要關鍵詞",
-    "titlememo": "標題/備忘"
+    "status": "狀態",
+    "titlememo": "標題/備忘",
+    "untitledbook": "無標題世界百科"
   }
 }

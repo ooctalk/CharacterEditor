@@ -2,8 +2,9 @@
   "Character": {
     "charactername": "キャラクター名",
     "characterversion": "キャラクターバージョン",
+    "cover": "カバー",
     "createdby": "作成者",
-    "creatorsnotes": "制作者のメモ",
+    "creatorsnotes": "クリエイターズノート",
     "description": "説明",
     "descriptiontoken": "説明トークン",
     "firstmessage": "最初のメッセージ",
@@ -15,25 +16,24 @@
     "mainprompttoken": "メインプロンプトトークン",
     "mesexample": "メッセージの例",
     "modifythebasicinsormationofthecharactercard": "キャラクターカードの基本情報を変更",
-    "personalitysummary": "個性の要約",
-    "promptoverrdies": "プロンプトの上書き",
+    "personalitysummary": "性格の要約",
+    "promptoverrdies": "プロンプトのオーバーライド",
     "replacementofthecover": "変更",
     "scenario": "シナリオ",
     "tagstoembed": "埋め込むためのタグ",
-    "talkativeness": "話し好き度",
-    "zipcover": "JPG|PNG|WEBP画像は自動的に圧縮されます",
-    "cover": "表紙"
+    "talkativeness": "おしゃべり度",
+    "zipcover": "JPG|PNG|WEBP画像は自動的に圧縮されます"
   },
   "Greetings": {
-    "deletegreetings": "挨拶を削除",
+    "deletegreetings": "挨拶の削除",
     "thisoperationcannotbewithdrawn": "この操作は取り消せません！"
   },
   "HomePage": {
     "1": "キャラクターカードオンラインエディター",
-    "2": "強力なパフォーマンス、ユーザーフレンドリーなインターフェース、手動で保存する必要なし",
+    "2": "強力なパフォーマンス；ユーザーフレンドリーなインターフェース；手動で保存する必要はありません",
     "3": "作成を開始",
     "updatetime": "2023/12/04に更新",
-    "version": "公式バージョン"
+    "version": "メインブランチ"
   },
   "Metadata": {
     "description": "生きる理由があれば、ほとんどどんな方法でも耐えられる。",
@@ -42,39 +42,40 @@
   "Navigation": {
     "character": "キャラクター",
     "communityediton": "コミュニティエディション",
-    "cyberwaifu": "サイバーウェイフ",
+    "cyberwaifu": "CyberWaifu",
+    "github": "GitHub",
     "greetings": "代替挨拶",
     "help": "ヘルプ",
     "home": "ホーム",
     "previews": "プレビュー",
     "serverstatus": "サーバーステータス",
     "settings": "設定",
-    "worldbook": "ワールドブック",
-    "github": "GitHub"
+    "worldbook": "ワールドブック"
   },
   "Previews": {
-    "addgreetings": "挨拶を追加",
+    "addgreetings": "挨拶の追加",
     "charactercardnamesmust": "キャラクターカードの名前は必須です",
     "export": "エクスポート",
     "exportingcharactercards": "キャラクターカードのエクスポート",
     "import": "インポート",
     "importingcharactercards": "キャラクターカードのインポート",
-    "isitalldone": "すべて終わりましたか？",
-    "mymindismadeup": "私の考えは決まっています！",
+    "importok": "インポートが成功しました。コンテンツが表示されない場合はブラウザを更新してください",
+    "isitalldone": "すべて終了しましたか？",
+    "mymindismadeup": "私の考えは決まりました！",
     "thisoperationoverwritesthedata": "この操作はデータを上書きします！"
   },
   "Settings": {
     "DELETE": "削除！",
-    "DelDone": "データはすべてクリアされました。ブラウザをリフレッシュしてください。",
+    "DelDone": "データはすべてクリアされました。ブラウザを更新してください。",
     "changelanguage": "言語を変更",
     "clearalldata": "すべてのデータをクリア",
     "close": "閉じる",
     "darkmode": "ダークモード",
     "displaylanguage": "表示言語",
-    "haveyoureallythoughtthisthrough": "本当に考えましたか？",
+    "haveyoureallythoughtthisthrough": "よく考えましたか？",
     "hazardousoperations": "危険な操作",
     "idecidedtotry": "試してみることにしました",
-    "ifyouhaveproblemsusingityoucantry": "問題があれば試してみてください",
+    "ifyouhaveproblemsusingityoucantry": "問題がある場合は試してみてください",
     "imsure": "確信しています。",
     "settingthedisplayofthewebsite": "ウェブサイトの表示設定",
     "thisoperationsisirrevocable": "この操作は取り消せません",
@@ -82,20 +83,23 @@
   },
   "WorldBook": {
     "D": "@D",
-    "addnewbook": "新しいブックを追加",
+    "addnewbook": "新しいワールドブックの追加",
     "afteran": "ANの後",
     "afterchar": "キャラクターの後",
     "beforechar": "キャラクターの前",
     "berforean": "ANの前",
     "constan": "定数",
-    "content": "内容",
+    "content": "コンテンツ",
     "delete": "削除",
-    "deletebook": "ブックを削除",
+    "deletebook": "ワールドブックの削除",
     "depth": "深さ",
     "normal": "通常",
-    "optionalfilter": "オプションのフィルタ",
+    "optionalfilter": "オプションのフィルター",
     "orfer": "順序",
-    "primarykeywords": "主要キーワード",
-    "titlememo": "タイトル/メモ"
+    "position": "位置",
+    "primarykeywords": "主要なキーワード",
+    "status": "ステータス",
+    "titlememo": "タイトル/メモ",
+    "untitledbook": "無題のワールドブック"
   }
 }

@@ -2,6 +2,7 @@
   "Character": {
     "charactername": "角色名",
     "characterversion": "角色版本",
+    "cover": "封面",
     "createdby": "创建者",
     "creatorsnotes": "创作者注释",
     "description": "描述",
@@ -11,46 +12,45 @@
     "information": "信息",
     "jailbreak": "越狱",
     "jailbreaktoken": "越狱标记",
-    "mainprompt": "主提示",
-    "mainprompttoken": "主提示标记",
+    "mainprompt": "主要提示",
+    "mainprompttoken": "主要提示标记",
     "mesexample": "消息示例",
     "modifythebasicinsormationofthecharactercard": "修改角色卡的基本信息",
-    "personalitysummary": "个性总结",
+    "personalitysummary": "个性摘要",
     "promptoverrdies": "提示覆盖",
     "replacementofthecover": "更换",
-    "scenario": "场景",
+    "scenario": "情境",
     "tagstoembed": "嵌入标签",
     "talkativeness": "健谈程度",
-    "zipcover": "JPG|PNG|WEBP 图像将自动压缩",
-    "cover": "封面"
+    "zipcover": "JPG|PNG|WEBP 图片将自动压缩"
   },
   "Greetings": {
     "deletegreetings": "删除问候",
-    "thisoperationcannotbewithdrawn": "此操作无法撤回！"
+    "thisoperationcannotbewithdrawn": "此操作不可撤销！"
   },
   "HomePage": {
     "1": "角色卡在线编辑器",
     "2": "性能强大；用户界面友好；无需手动保存",
     "3": "开始创建",
-    "updatetime": "更新于2023/12/04",
-    "version": "正式版本"
+    "updatetime": "更新于 2023/12/04",
+    "version": "主要分支"
   },
   "Metadata": {
-    "description": "有了为何而生的理由，几乎可以忍受任何方式。",
+    "description": "有了为什么活着的理由，几乎就能承受任何怎么活。",
     "title": "角色编辑器 | CyberWaifu"
   },
   "Navigation": {
     "character": "角色",
-    "communityediton": "社区版本",
+    "communityediton": "社区版",
     "cyberwaifu": "CyberWaifu",
+    "github": "GitHub",
     "greetings": "替代问候",
     "help": "帮助",
-    "home": "首页",
+    "home": "主页",
     "previews": "预览",
     "serverstatus": "服务器状态",
     "settings": "设置",
-    "worldbook": "世界手册",
-    "github": "GitHub"
+    "worldbook": "世界书"
   },
   "Previews": {
     "addgreetings": "添加问候",
@@ -59,7 +59,8 @@
     "exportingcharactercards": "导出角色卡",
     "import": "导入",
     "importingcharactercards": "导入角色卡",
-    "isitalldone": "一切都完成了吗？",
+    "importok": "导入成功，请刷新浏览器如果没有内容",
+    "isitalldone": "一切完成了吗？",
     "mymindismadeup": "我已下定决心！",
     "thisoperationoverwritesthedata": "此操作将覆盖数据！"
   },
@@ -69,24 +70,24 @@
     "changelanguage": "更改语言",
     "clearalldata": "清除所有数据",
     "close": "关闭",
-    "darkmode": "深色模式",
+    "darkmode": "暗模式",
     "displaylanguage": "显示语言",
-    "haveyoureallythoughtthisthrough": "您真的考虑过吗？",
+    "haveyoureallythoughtthisthrough": "您真的考虑过这一点吗？",
     "hazardousoperations": "危险操作",
-    "idecidedtotry": "试试就逝世",
+    "idecidedtotry": "我决定试试",
     "ifyouhaveproblemsusingityoucantry": "如果您在使用时遇到问题，可以尝试",
-    "imsure": "怕锤子",
+    "imsure": "我确定。",
     "settingthedisplayofthewebsite": "设置网站显示",
-    "thisoperationsisirrevocable": "此操作是不可撤销的",
+    "thisoperationsisirrevocable": "此操作不可撤销",
     "websitedisplaysettings": "网站显示设置"
   },
   "WorldBook": {
     "D": "@D",
-    "addnewbook": "添加新世界书",
-    "afteran": "在AN之后",
-    "afterchar": "在角色之后",
-    "beforechar": "在角色之前",
-    "berforean": "在AN之前",
+    "addnewbook": "添加新的世界书",
+    "afteran": "AN之后",
+    "afterchar": "角色之后",
+    "beforechar": "角色之前",
+    "berforean": "AN之前",
     "constan": "常量",
     "content": "内容",
     "delete": "删除",
@@ -95,7 +96,10 @@
     "normal": "正常",
     "optionalfilter": "可选过滤器",
     "orfer": "顺序",
+    "position": "位置",
     "primarykeywords": "主要关键词",
-    "titlememo": "标题/备忘"
+    "status": "状态",
+    "titlememo": "标题/备忘",
+    "untitledbook": "无标题世界书"
   }
 }
