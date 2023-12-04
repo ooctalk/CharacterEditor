@@ -1,0 +1,101 @@
+{
+  "Character": {
+    "charactername": "キャラクター名",
+    "characterversion": "キャラクターバージョン",
+    "createdby": "作成者",
+    "creatorsnotes": "制作者のメモ",
+    "description": "説明",
+    "descriptiontoken": "説明トークン",
+    "firstmessage": "最初のメッセージ",
+    "firstmessagetoken": "最初のメッセージトークン",
+    "information": "情報",
+    "jailbreak": "ジェイルブレイク",
+    "jailbreaktoken": "ジェイルブレイクトークン",
+    "mainprompt": "メインプロンプト",
+    "mainprompttoken": "メインプロンプトトークン",
+    "mesexample": "メッセージの例",
+    "modifythebasicinsormationofthecharactercard": "キャラクターカードの基本情報を変更",
+    "personalitysummary": "個性の要約",
+    "promptoverrdies": "プロンプトの上書き",
+    "replacementofthecover": "変更",
+    "scenario": "シナリオ",
+    "tagstoembed": "埋め込むためのタグ",
+    "talkativeness": "話し好き度",
+    "zipcover": "JPG|PNG|WEBP画像は自動的に圧縮されます",
+    "cover": "表紙"
+  },
+  "Greetings": {
+    "deletegreetings": "挨拶を削除",
+    "thisoperationcannotbewithdrawn": "この操作は取り消せません！"
+  },
+  "HomePage": {
+    "1": "キャラクターカードオンラインエディター",
+    "2": "強力なパフォーマンス、ユーザーフレンドリーなインターフェース、手動で保存する必要なし",
+    "3": "作成を開始",
+    "updatetime": "2023/12/04に更新",
+    "version": "公式バージョン"
+  },
+  "Metadata": {
+    "description": "生きる理由があれば、ほとんどどんな方法でも耐えられる。",
+    "title": "キャラクターエディター | CyberWaifu"
+  },
+  "Navigation": {
+    "character": "キャラクター",
+    "communityediton": "コミュニティエディション",
+    "cyberwaifu": "サイバーウェイフ",
+    "greetings": "代替挨拶",
+    "help": "ヘルプ",
+    "home": "ホーム",
+    "previews": "プレビュー",
+    "serverstatus": "サーバーステータス",
+    "settings": "設定",
+    "worldbook": "ワールドブック",
+    "github": "GitHub"
+  },
+  "Previews": {
+    "addgreetings": "挨拶を追加",
+    "charactercardnamesmust": "キャラクターカードの名前は必須です",
+    "export": "エクスポート",
+    "exportingcharactercards": "キャラクターカードのエクスポート",
+    "import": "インポート",
+    "importingcharactercards": "キャラクターカードのインポート",
+    "isitalldone": "すべて終わりましたか？",
+    "mymindismadeup": "私の考えは決まっています！",
+    "thisoperationoverwritesthedata": "この操作はデータを上書きします！"
+  },
+  "Settings": {
+    "DELETE": "削除！",
+    "DelDone": "データはすべてクリアされました。ブラウザをリフレッシュしてください。",
+    "changelanguage": "言語を変更",
+    "clearalldata": "すべてのデータをクリア",
+    "close": "閉じる",
+    "darkmode": "ダークモード",
+    "displaylanguage": "表示言語",
+    "haveyoureallythoughtthisthrough": "本当に考えましたか？",
+    "hazardousoperations": "危険な操作",
+    "idecidedtotry": "試してみることにしました",
+    "ifyouhaveproblemsusingityoucantry": "問題があれば試してみてください",
+    "imsure": "確信しています。",
+    "settingthedisplayofthewebsite": "ウェブサイトの表示設定",
+    "thisoperationsisirrevocable": "この操作は取り消せません",
+    "websitedisplaysettings": "ウェブサイトの表示設定"
+  },
+  "WorldBook": {
+    "D": "@D",
+    "addnewbook": "新しいブックを追加",
+    "afteran": "ANの後",
+    "afterchar": "キャラクターの後",
+    "beforechar": "キャラクターの前",
+    "berforean": "ANの前",
+    "constan": "定数",
+    "content": "内容",
+    "delete": "削除",
+    "deletebook": "ブックを削除",
+    "depth": "深さ",
+    "normal": "通常",
+    "optionalfilter": "オプションのフィルタ",
+    "orfer": "順序",
+    "primarykeywords": "主要キーワード",
+    "titlememo": "タイトル/メモ"
+  }
+}

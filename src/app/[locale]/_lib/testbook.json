@@ -1,0 +1,45 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "keys": [],
+      "secondary_keys": [],
+      "comment": "CyberWaifu.org",
+      "content": "",
+      "constant": true,
+      "selective": true,
+      "insertion_order": 100,
+      "enabled": true,
+      "position": "after_char",
+      "extensions": {
+        "position": 3,
+        "exclude_recursion": false,
+        "display_index": 1,
+        "probability": 100,
+        "useProbability": true,
+        "depth": 4
+      }
+    },
+    {
+        "id": 2,
+        "keys": [],
+        "secondary_keys": [],
+        "comment": "2book",
+        "content": "",
+        "constant": true,
+        "selective": true,
+        "insertion_order": 100,
+        "enabled": true,
+        "position": "after_char",
+        "extensions": {
+          "position": 3,
+          "exclude_recursion": false,
+          "display_index": 2,
+          "probability": 100,
+          "useProbability": true,
+          "depth": 4
+        }
+      }
+  ],
+  "name": "1010"
+}

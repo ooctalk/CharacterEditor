@@ -1,0 +1,101 @@
+{
+  "Character": {
+    "charactername": "Character Name",
+    "characterversion": "Character Version",
+    "createdby": "Created by",
+    "creatorsnotes": "Creator's Notes",
+    "description": "Description",
+    "descriptiontoken": "Description Token",
+    "firstmessage": "First Message",
+    "firstmessagetoken": "First Message Token",
+    "information": "InforMation",
+    "jailbreak": "Jailbreak",
+    "jailbreaktoken": "Jailbreak Token",
+    "mainprompt": "Main Prompt",
+    "mainprompttoken": "Main Prompt Token",
+    "mesexample": "Mes Example",
+    "modifythebasicinsormationofthecharactercard": "Modify the basic information of the character card",
+    "personalitysummary": "Personality summary",
+    "promptoverrdies": "Prompt Overrides",
+    "replacementofthecover": "Change",
+    "scenario": "Scenario",
+    "tagstoembed": "Tag to Embed",
+    "talkativeness": "Talkativeness",
+    "zipcover": "JPG|PNG|WEBP images will be compressed automatically",
+    "cover": "Cover"
+  },
+  "Greetings": {
+    "deletegreetings": "Delete Greetings",
+    "thisoperationcannotbewithdrawn": "This operation cannot be withdrawn!"
+  },
+  "HomePage": {
+    "1": "Character Card Online Editor",
+    "2": "Strong performance; user-friendly interface; no need to save manually",
+    "3": "Start Creating",
+    "updatetime": "Updated 2023/12/04",
+    "version": "Official version"
+  },
+  "Metadata": {
+    "description": "He who has a why to live can bear almost any how.",
+    "title": "CharacterEditor | CyberWaifu"
+  },
+  "Navigation": {
+    "character": "Character",
+    "communityediton": "Community Edition",
+    "cyberwaifu": "CyberWaifu",
+    "greetings": "Alternate Greetings",
+    "help": "Help",
+    "home": "Home",
+    "previews": "Previews",
+    "serverstatus": "Server Status",
+    "settings": "Settings",
+    "worldbook": "World Book",
+    "github": "GitHub"
+  },
+  "Previews": {
+    "addgreetings": "Add Greetings",
+    "charactercardnamesmust": "Character card names must",
+    "export": "Export",
+    "exportingcharactercards": "Exporting Character Cards",
+    "import": "Import",
+    "importingcharactercards": "Importing Character Cards",
+    "isitalldone": "Is it all done?",
+    "mymindismadeup": "My mind is made up!",
+    "thisoperationoverwritesthedata": "This operation overwrites the data!"
+  },
+  "Settings": {
+    "DELETE": "Delete!",
+    "DelDone": "The data is all cleared. Please refresh your browser.",
+    "changelanguage": "Change Language",
+    "clearalldata": "Clear all data",
+    "close": "Close",
+    "darkmode": "Dark Mode",
+    "displaylanguage": "Display Language",
+    "haveyoureallythoughtthisthrough": "Have you really thought this through?",
+    "hazardousoperations": "Hazardous operations",
+    "idecidedtotry": "I decided to try",
+    "ifyouhaveproblemsusingityoucantry": "If you have problems using it, you can try",
+    "imsure": "I'm sure.",
+    "settingthedisplayofthewebsite": "Setting the display of the website",
+    "thisoperationsisirrevocable": "This operation is irrevocable",
+    "websitedisplaysettings": "Website Display Settings"
+  },
+  "WorldBook": {
+    "D": "@D",
+    "addnewbook": "Add NewBook",
+    "afteran": "After AN",
+    "afterchar": "After Char",
+    "beforechar": "Before Char",
+    "berforean": "Before AN",
+    "constan": "Constan",
+    "content": "Content",
+    "delete": "Delete",
+    "deletebook": "Delete Book",
+    "depth": "Depth",
+    "normal": "Normal",
+    "optionalfilter": "Optional Filter",
+    "orfer": "Order",
+    "primarykeywords": "Primary Keywords",
+    "titlememo": "Title/Memo"
+  }
+}

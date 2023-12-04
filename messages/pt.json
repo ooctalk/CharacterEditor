@@ -1,0 +1,101 @@
+{
+  "Character": {
+    "charactername": "Nome do Personagem",
+    "characterversion": "Versão do Personagem",
+    "createdby": "Criado por",
+    "creatorsnotes": "Notas do Criador",
+    "description": "Descrição",
+    "descriptiontoken": "Token de Descrição",
+    "firstmessage": "Primeira Mensagem",
+    "firstmessagetoken": "Token da Primeira Mensagem",
+    "information": "Informação",
+    "jailbreak": "Desbloquear",
+    "jailbreaktoken": "Token de Desbloqueio",
+    "mainprompt": "Prompt Principal",
+    "mainprompttoken": "Token do Prompt Principal",
+    "mesexample": "Exemplo de Mensagem",
+    "modifythebasicinsormationofthecharactercard": "Modificar as informações básicas do cartão do personagem",
+    "personalitysummary": "Resumo da Personalidade",
+    "promptoverrdies": "Substituições de Prompt",
+    "replacementofthecover": "Mudar",
+    "scenario": "Cenário",
+    "tagstoembed": "Tags para Incorporar",
+    "talkativeness": "Conversador",
+    "zipcover": "As imagens JPG|PNG|WEBP serão comprimidas automaticamente",
+    "cover": "capa"
+  },
+  "Greetings": {
+    "deletegreetings": "Excluir Saudações",
+    "thisoperationcannotbewithdrawn": "Esta operação não pode ser retirada!"
+  },
+  "HomePage": {
+    "1": "Editor Online de Cartões de Personagem",
+    "2": "Alto desempenho; interface amigável; não é necessário salvar manualmente",
+    "3": "Começar a Criar",
+    "updatetime": "Atualizado em 04/12/2023",
+    "version": "Versão Oficial"
+  },
+  "Metadata": {
+    "description": "Aquele que tem um porquê para viver pode suportar quase qualquer como.",
+    "title": "Editor de Personagens | CyberWaifu"
+  },
+  "Navigation": {
+    "character": "Personagem",
+    "communityediton": "Edição da Comunidade",
+    "cyberwaifu": "CyberWaifu",
+    "greetings": "Saudações Alternativas",
+    "help": "Ajuda",
+    "home": "Página Inicial",
+    "previews": "Prévias",
+    "serverstatus": "Status do Servidor",
+    "settings": "Configurações",
+    "worldbook": "Livro do Mundo",
+    "github": "GitHub"
+  },
+  "Previews": {
+    "addgreetings": "Adicionar Saudações",
+    "charactercardnamesmust": "Os nomes dos cartões de personagem devem",
+    "export": "Exportar",
+    "exportingcharactercards": "Exportando Cartões de Personagem",
+    "import": "Importar",
+    "importingcharactercards": "Importando Cartões de Personagem",
+    "isitalldone": "Está tudo feito?",
+    "mymindismadeup": "Minha decisão está tomada!",
+    "thisoperationoverwritesthedata": "Esta operação sobrescreve os dados!"
+  },
+  "Settings": {
+    "DELETE": "Excluir!",
+    "DelDone": "Os dados foram apagados. Por favor, atualize seu navegador.",
+    "changelanguage": "Mudar Idioma",
+    "clearalldata": "Limpar Todos os Dados",
+    "close": "Fechar",
+    "darkmode": "Modo Escuro",
+    "displaylanguage": "Idioma de Exibição",
+    "haveyoureallythoughtthisthrough": "Você realmente pensou nisso?",
+    "hazardousoperations": "Operações Perigosas",
+    "idecidedtotry": "Decidi tentar",
+    "ifyouhaveproblemsusingityoucantry": "Se você tiver problemas usando, pode tentar",
+    "imsure": "Tenho certeza.",
+    "settingthedisplayofthewebsite": "Configurando a Exibição do Site",
+    "thisoperationsisirrevocable": "Esta operação é irreversível",
+    "websitedisplaysettings": "Configurações de Exibição do Site"
+  },
+  "WorldBook": {
+    "D": "@D",
+    "addnewbook": "Adicionar Novo Livro",
+    "afteran": "Após AN",
+    "afterchar": "Após Personagem",
+    "beforechar": "Antes do Personagem",
+    "berforean": "Antes de AN",
+    "constan": "Constante",
+    "content": "Conteúdo",
+    "delete": "Excluir",
+    "deletebook": "Excluir Livro",
+    "depth": "Profundidade",
+    "normal": "Normal",
+    "optionalfilter": "Filtro Opcional",
+    "orfer": "Ordem",
+    "primarykeywords": "Palavras-Chave Principais",
+    "titlememo": "Título/Memo"
+  }
+}

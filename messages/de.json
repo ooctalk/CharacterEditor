@@ -1,0 +1,101 @@
+{
+  "Character": {
+    "charactername": "Charaktername",
+    "characterversion": "Charakterversion",
+    "createdby": "Erstellt von",
+    "creatorsnotes": "Notizen des Erstellers",
+    "description": "Beschreibung",
+    "descriptiontoken": "Beschreibungstoken",
+    "firstmessage": "Erste Nachricht",
+    "firstmessagetoken": "Token der ersten Nachricht",
+    "information": "Information",
+    "jailbreak": "Jailbreak",
+    "jailbreaktoken": "Jailbreak-Token",
+    "mainprompt": "Hauptprompt",
+    "mainprompttoken": "Token des Hauptprompts",
+    "mesexample": "Beispiel für Nachrichten",
+    "modifythebasicinsormationofthecharactercard": "Grundinformationen der Charakterkarte ändern",
+    "personalitysummary": "Persönlichkeitszusammenfassung",
+    "promptoverrdies": "Prompt-Überschreibungen",
+    "replacementofthecover": "Ändern",
+    "scenario": "Szenario",
+    "tagstoembed": "Tags zum Einbetten",
+    "talkativeness": "Gesprächigkeit",
+    "zipcover": "JPG|PNG|WEBP-Bilder werden automatisch komprimiert",
+    "cover": "Umschlag"
+  },
+  "Greetings": {
+    "deletegreetings": "Grüße löschen",
+    "thisoperationcannotbewithdrawn": "Diese Operation kann nicht rückgängig gemacht werden!"
+  },
+  "HomePage": {
+    "1": "Online-Editor für Charakterkarten",
+    "2": "Leistungsstark; benutzerfreundliche Oberfläche; manuelles Speichern nicht erforderlich",
+    "3": "Erstellung starten",
+    "updatetime": "Aktualisiert am 04.12.2023",
+    "version": "Offizielle Version"
+  },
+  "Metadata": {
+    "description": "Wer ein Warum zum Leben hat, erträgt fast jedes Wie.",
+    "title": "Charakter-Editor | CyberWaifu"
+  },
+  "Navigation": {
+    "character": "Charakter",
+    "communityediton": "Community-Edition",
+    "cyberwaifu": "CyberWaifu",
+    "greetings": "Alternative Grüße",
+    "help": "Hilfe",
+    "home": "Startseite",
+    "previews": "Vorschauen",
+    "serverstatus": "Serverstatus",
+    "settings": "Einstellungen",
+    "worldbook": "Weltbuch",
+    "github": "GitHub"
+  },
+  "Previews": {
+    "addgreetings": "Grüße hinzufügen",
+    "charactercardnamesmust": "Charakterkartennamen müssen",
+    "export": "Exportieren",
+    "exportingcharactercards": "Charakterkarten exportieren",
+    "import": "Importieren",
+    "importingcharactercards": "Charakterkarten importieren",
+    "isitalldone": "Ist alles erledigt?",
+    "mymindismadeup": "Mein Entschluss steht fest!",
+    "thisoperationoverwritesthedata": "Diese Operation überschreibt die Daten!"
+  },
+  "Settings": {
+    "DELETE": "Löschen!",
+    "DelDone": "Die Daten sind gelöscht. Bitte aktualisieren Sie Ihren Browser.",
+    "changelanguage": "Sprache ändern",
+    "clearalldata": "Alle Daten löschen",
+    "close": "Schließen",
+    "darkmode": "Dunkelmodus",
+    "displaylanguage": "Anzeigesprache",
+    "haveyoureallythoughtthisthrough": "Hast du das wirklich durchdacht?",
+    "hazardousoperations": "Gefährliche Operationen",
+    "idecidedtotry": "Ich habe mich entschieden, es zu versuchen",
+    "ifyouhaveproblemsusingityoucantry": "Wenn Sie Probleme beim Verwenden haben, können Sie es versuchen",
+    "imsure": "Ich bin sicher.",
+    "settingthedisplayofthewebsite": "Einstellen der Anzeige der Website",
+    "thisoperationsisirrevocable": "Diese Operation ist unwiderruflich",
+    "websitedisplaysettings": "Einstellungen für die Website-Anzeige"
+  },
+  "WorldBook": {
+    "D": "@D",
+    "addnewbook": "Neues Buch hinzufügen",
+    "afteran": "Nach AN",
+    "afterchar": "Nach Char",
+    "beforechar": "Vor Char",
+    "berforean": "Vor AN",
+    "constan": "Konstant",
+    "content": "Inhalt",
+    "delete": "Löschen",
+    "deletebook": "Buch löschen",
+    "depth": "Tiefe",
+    "normal": "Normal",
+    "optionalfilter": "Optionaler Filter",
+    "orfer": "Reihenfolge",
+    "primarykeywords": "Hauptstichwörter",
+    "titlememo": "Titel/Memo"
+  }
+}

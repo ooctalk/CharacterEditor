@@ -1,0 +1,101 @@
+{
+  "Character": {
+    "charactername": "Имя персонажа",
+    "characterversion": "Версия персонажа",
+    "createdby": "Создано",
+    "creatorsnotes": "Заметки создателя",
+    "description": "Описание",
+    "descriptiontoken": "Токен описания",
+    "firstmessage": "Первое сообщение",
+    "firstmessagetoken": "Токен первого сообщения",
+    "information": "Информация",
+    "jailbreak": "Взлом",
+    "jailbreaktoken": "Токен взлома",
+    "mainprompt": "Основной запрос",
+    "mainprompttoken": "Токен основного запроса",
+    "mesexample": "Пример сообщения",
+    "modifythebasicinsormationofthecharactercard": "Изменить основную информацию карточки персонажа",
+    "personalitysummary": "Сводка личности",
+    "promptoverrdies": "Переопределение запроса",
+    "replacementofthecover": "Изменение обложки",
+    "scenario": "Сценарий",
+    "tagstoembed": "Теги для вставки",
+    "talkativeness": "Болтливость",
+    "zipcover": "Изображения JPG|PNG|WEBP будут автоматически сжиматься",
+    "cover": "обложка"
+  },
+  "Greetings": {
+    "deletegreetings": "Удалить приветствия",
+    "thisoperationcannotbewithdrawn": "Эта операция не может быть отменена!"
+  },
+  "HomePage": {
+    "1": "Онлайн-редактор карточек персонажей",
+    "2": "Высокая производительность; удобный интерфейс; не требуется ручное сохранение",
+    "3": "Начать создание",
+    "updatetime": "Обновлено 04.12.2023",
+    "version": "Официальная версия"
+  },
+  "Metadata": {
+    "description": "Тот, у кого есть почему жить, может вынести практически любое как.",
+    "title": "Редактор персонажей | CyberWaifu"
+  },
+  "Navigation": {
+    "character": "Персонаж",
+    "communityediton": "Сообщество",
+    "cyberwaifu": "CyberWaifu",
+    "greetings": "Альтернативные приветствия",
+    "help": "Помощь",
+    "home": "Главная",
+    "previews": "Превью",
+    "serverstatus": "Статус сервера",
+    "settings": "Настройки",
+    "worldbook": "Мир книг",
+    "github": "GitHub"
+  },
+  "Previews": {
+    "addgreetings": "Добавить приветствие",
+    "charactercardnamesmust": "Имена карточек персонажей должны",
+    "export": "Экспорт",
+    "exportingcharactercards": "Экспорт карточек персонажей",
+    "import": "Импорт",
+    "importingcharactercards": "Импорт карточек персонажей",
+    "isitalldone": "Всё готово?",
+    "mymindismadeup": "Я решил!",
+    "thisoperationoverwritesthedata": "Эта операция перезаписывает данные!"
+  },
+  "Settings": {
+    "DELETE": "Удалить!",
+    "DelDone": "Данные удалены. Пожалуйста, обновите свой браузер.",
+    "changelanguage": "Изменить язык",
+    "clearalldata": "Очистить все данные",
+    "close": "Закрыть",
+    "darkmode": "Тёмный режим",
+    "displaylanguage": "Язык отображения",
+    "haveyoureallythoughtthisthrough": "Вы действительно обдумали это?",
+    "hazardousoperations": "Опасные операции",
+    "idecidedtotry": "Я решил попробовать",
+    "ifyouhaveproblemsusingityoucantry": "Если у вас проблемы с использованием, вы можете попробовать",
+    "imsure": "Я уверен.",
+    "settingthedisplayofthewebsite": "Настройка отображения сайта",
+    "thisoperationsisirrevocable": "Эта операция необратима",
+    "websitedisplaysettings": "Настройки отображения веб-сайта"
+  },
+  "WorldBook": {
+    "D": "@D",
+    "addnewbook": "Добавить новую книгу",
+    "afteran": "После AN",
+    "afterchar": "После персонажа",
+    "beforechar": "До персонажа",
+    "berforean": "До AN",
+    "constan": "Постоянный",
+    "content": "Содержание",
+    "delete": "Удалить",
+    "deletebook": "Удалить книгу",
+    "depth": "Глубина",
+    "normal": "Нормальный",
+    "optionalfilter": "Дополнительный фильтр",
+    "orfer": "Порядок",
+    "primarykeywords": "Основные ключевые слова",
+    "titlememo": "Заголовок/Заметка"
+  }
+}
