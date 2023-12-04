@@ -86,7 +86,7 @@ export default function WorldBook() {
         items={character_book.entries}
       >
         {(item) => (
-          <Tab key={item.id} title={item.comment || "Untitled book"}>
+          <Tab key={item.id} title={item.comment || t('WorldBook.untitledbook')}>
             <Card>
               <CardBody>
                 <div className="md:p-4 p-2 w-full flex flex-col gap-2">
@@ -95,6 +95,17 @@ export default function WorldBook() {
                       {t('WorldBook.content')}
                     </label>
                     <Textarea
+                      value={item.content}
+                      onChange={(e) =>
+                        setCharacter_Book((prevChara) => ({
+                          ...prevChara,
+                          entries: (prevChara.entries || []).map((entry) =>
+                            entry.id === item.id
+                              ? { ...entry, content: e.target.value }
+                              : entry
+                          ),
+                        }))
+                      }
                       variant="underlined"
                       labelPlacement="outside"
                       maxRows={100}
@@ -219,7 +230,7 @@ export default function WorldBook() {
                   <div>
                   <RadioGroup
                     color="warning"
-                    label="Position"
+                    label={t('WorldBook.position')}
                     orientation="horizontal"
                     value={String(item.extensions.position)}
                     onChange={(e) =>
@@ -245,7 +256,7 @@ export default function WorldBook() {
                   <div>
                   <RadioGroup
                     color="secondary"
-                    label="Status"
+                    label={t('WorldBook.status')}
                     orientation="horizontal"
                     value={String(item.constant)}
                     onChange={(e) =>

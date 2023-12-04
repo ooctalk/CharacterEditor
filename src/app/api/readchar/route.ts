@@ -3,7 +3,6 @@ import sharp from "sharp";
 export async function POST(request: Request) {
   const extract = require("png-chunks-extract");
   const text = require("png-chunk-text");
-  const _ = require("lodash");
   const data = await request.arrayBuffer();
 
   const image = sharp(Buffer.from(data));
