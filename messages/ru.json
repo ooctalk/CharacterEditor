@@ -1,42 +1,44 @@
 {
   "Character": {
     "charactername": "Имя персонажа",
+    "characternote": "Тег персонажа",
     "characterversion": "Версия персонажа",
     "cover": "Обложка",
     "createdby": "Создано",
     "creatorsnotes": "Заметки создателя",
+    "depthprompt": "Глубина и подсказки персонажа",
     "description": "Описание",
-    "descriptiontoken": "Токен описания",
+    "descriptiontoken": "Метка описания",
     "firstmessage": "Первое сообщение",
-    "firstmessagetoken": "Токен первого сообщения",
+    "firstmessagetoken": "Метка первого сообщения",
     "information": "Информация",
     "jailbreak": "Взлом",
-    "jailbreaktoken": "Токен взлома",
-    "mainprompt": "Главный запрос",
-    "mainprompttoken": "Токен главного запроса",
+    "jailbreaktoken": "Метка взлома",
+    "mainprompt": "Основная подсказка",
+    "mainprompttoken": "Метка основной подсказки",
     "mesexample": "Пример сообщения",
-    "modifythebasicinsormationofthecharactercard": "Изменить основную информацию на карте персонажа",
+    "modifythebasicinsormationofthecharactercard": "Изменить основную информацию карточки персонажа",
     "personalitysummary": "Краткое описание характера",
-    "promptoverrdies": "Отмена запроса",
-    "replacementofthecover": "Изменение обложки",
+    "promptoverrdies": "Переопределение подсказок",
+    "replacementofthecover": "Замена обложки",
     "scenario": "Сценарий",
     "tagstoembed": "Теги для внедрения",
-    "talkativeness": "Разговорчивость",
-    "zipcover": "JPG|PNG|WEBP изображения будут автоматически сжиматься"
+    "talkativeness": "Уровень разговорчивости",
+    "zipcover": "Изображения в форматах JPG|PNG|WEBP будут автоматически сжаты"
   },
   "Greetings": {
     "deletegreetings": "Удалить приветствия",
     "thisoperationcannotbewithdrawn": "Эта операция не может быть отменена!"
   },
   "HomePage": {
-    "1": "Онлайн-редактор карточки персонажа",
-    "2": "Мощная производительность; удобный интерфейс; не требуется ручное сохранение",
+    "1": "Онлайн-редактор карточек персонажей",
+    "2": "Мощный; дружественный интерфейс; не требует ручного сохранения",
     "3": "Начать создание",
-    "updatetime": "Обновлено 2023/12/04",
-    "version": "Основные ветки"
+    "updatetime": "Обновлено 10/12/2023",
+    "version": "Основная ветвь"
   },
   "Metadata": {
-    "description": "Тот, у кого есть почему жить, может вынести почти любое как.",
+    "description": "Сладкое, как мед",
     "title": "Редактор персонажей | CyberWaifu"
   },
   "Navigation": {
@@ -50,56 +52,56 @@
     "previews": "Превью",
     "serverstatus": "Статус сервера",
     "settings": "Настройки",
-    "worldbook": "Мир книг"
+    "worldbook": "Мировая книга"
   },
   "Previews": {
-    "addgreetings": "Добавить приветствие",
+    "addgreetings": "Добавить приветствия",
     "charactercardnamesmust": "Имена карточек персонажей должны",
     "export": "Экспорт",
     "exportingcharactercards": "Экспорт карточек персонажей",
     "import": "Импорт",
     "importingcharactercards": "Импорт карточек персонажей",
-    "importok": "Успешно импортировано, обновите браузер, если контента нет",
-    "isitalldone": "Всё готово?",
-    "mymindismadeup": "Мой выбор сделан!",
-    "thisoperationoverwritesthedata": "Эта операция перезаписывает данные!"
+    "importok": "Импорт успешен, обновите браузер, если ничего не отображается",
+    "isitalldone": "Продолжить: Все сделано?",
+    "mymindismadeup": "Я решил!",
+    "thisoperationoverwritesthedata": "Продолжить: Эта операция перезапишет данные!"
   },
   "Settings": {
     "DELETE": "Удалить!",
-    "DelDone": "Данные полностью очищены. Пожалуйста, обновите браузер.",
+    "DelDone": "Данные очищены, обновите ваш браузер.",
     "changelanguage": "Изменить язык",
     "clearalldata": "Очистить все данные",
     "close": "Закрыть",
-    "darkmode": "Тёмный режим",
+    "darkmode": "Темный режим",
     "displaylanguage": "Язык отображения",
-    "haveyoureallythoughtthisthrough": "Вы действительно обдумали это?",
+    "haveyoureallythoughtthisthrough": "Действительно ли вы обдумали это?",
     "hazardousoperations": "Опасные операции",
-    "idecidedtotry": "Я решил попробовать",
-    "ifyouhaveproblemsusingityoucantry": "Если у вас есть проблемы с использованием, вы можете попробовать",
+    "idecidedtotry": "Решил попробовать",
+    "ifyouhaveproblemsusingityoucantry": "Если у вас возникли проблемы, вы можете попробовать",
     "imsure": "Уверен.",
     "settingthedisplayofthewebsite": "Настройка отображения сайта",
-    "thisoperationsisirrevocable": "Эта операция необратима",
-    "websitedisplaysettings": "Настройки отображения веб-сайта"
+    "thisoperationsisirrevocable": "Продолжить: Эта операция необратима",
+    "websitedisplaysettings": "Настройки отображения сайта"
   },
   "WorldBook": {
     "D": "@D",
-    "addnewbook": "Добавить новый мир",
-    "afteran": "После AN",
+    "addnewbook": "Добавить новую мировую книгу",
+    "afteran": "После персонажа",
     "afterchar": "После персонажа",
-    "beforechar": "Перед персонажем",
-    "berforean": "До AN",
+    "beforechar": "До персонажа",
+    "berforean": "До персонажа",
     "constan": "Константа",
     "content": "Содержание",
     "delete": "Удалить",
-    "deletebook": "Удалить мир",
+    "deletebook": "Удалить мировую книгу",
     "depth": "Глубина",
-    "normal": "Обычный",
+    "normal": "Нормально",
     "optionalfilter": "Дополнительный фильтр",
     "orfer": "Порядок",
     "position": "Позиция",
     "primarykeywords": "Основные ключевые слова",
     "status": "Статус",
     "titlememo": "Заголовок/Заметка",
-    "untitledbook": "Безымянный мир"
+    "untitledbook": "Мировая книга без названия"
   }
 }

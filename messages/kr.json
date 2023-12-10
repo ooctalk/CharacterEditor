@@ -1,10 +1,12 @@
 {
   "Character": {
     "charactername": "캐릭터 이름",
+    "characternote": "",
     "characterversion": "캐릭터 버전",
     "cover": "커버",
     "createdby": "만든이",
     "creatorsnotes": "제작자 노트",
+    "depthprompt": "",
     "description": "설명",
     "descriptiontoken": "설명 토큰",
     "firstmessage": "첫 번째 메시지",

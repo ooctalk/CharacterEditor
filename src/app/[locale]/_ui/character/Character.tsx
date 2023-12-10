@@ -7,6 +7,7 @@ import First_Message from "./First_Message";
 import Prompt_Overrides from "./Prompt_Overrides";
 import { useTranslations } from "next-intl";
 import Mes_Example from "./Mes_Example";
+import Depth_Prompt from "./Depth_Prompt";
 
 export default function Character() {
   const t = useTranslations();
@@ -44,6 +45,13 @@ export default function Character() {
           <Card>
             <CardBody>
               <Mes_Example/>
+            </CardBody>
+          </Card>  
+        </Tab>
+        <Tab key="depth_prompt" title={t('Character.depthandprompt')}>
+          <Card>
+            <CardBody>
+              <Depth_Prompt/>
             </CardBody>
           </Card>  
         </Tab>
