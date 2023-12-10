@@ -1,10 +1,12 @@
 {
   "Character": {
     "charactername": "角色名",
+    "characternote": "角色卡标签",
     "characterversion": "角色版本",
     "cover": "封面",
     "createdby": "创建者",
     "creatorsnotes": "创作者注释",
+    "depthprompt": "角色卡深度和提示",
     "description": "描述",
     "descriptiontoken": "描述标记",
     "firstmessage": "首条消息",
@@ -32,11 +34,11 @@
     "1": "角色卡在线编辑器",
     "2": "性能强大；用户界面友好；无需手动保存",
     "3": "开始创建",
-    "updatetime": "更新于 2023/12/04",
+    "updatetime": "更新于 2023/12/10",
     "version": "主要分支"
   },
   "Metadata": {
-    "description": "有了为什么活着的理由，几乎就能承受任何怎么活。",
+    "description": "甘之若饴",
     "title": "角色编辑器 | CyberWaifu"
   },
   "Navigation": {
@@ -60,17 +62,17 @@
     "import": "导入",
     "importingcharactercards": "导入角色卡",
     "importok": "导入成功，请刷新浏览器如果没有内容",
-    "isitalldone": "一切完成了吗？",
-    "mymindismadeup": "我已下定决心！",
-    "thisoperationoverwritesthedata": "此操作将覆盖数据！"
+    "isitalldone": "继续:一切完成了吗?",
+    "mymindismadeup": "我已下定决心!",
+    "thisoperationoverwritesthedata": "继续:此操作将覆盖数据!"
   },
   "Settings": {
-    "DELETE": "删除！",
+    "DELETE": "删除!",
     "DelDone": "数据已清空，请刷新您的浏览器。",
     "changelanguage": "更改语言",
     "clearalldata": "清除所有数据",
     "close": "关闭",
-    "darkmode": "暗模式",
+    "darkmode": "黑夜模式",
     "displaylanguage": "显示语言",
     "haveyoureallythoughtthisthrough": "您真的考虑过这一点吗？",
     "hazardousoperations": "危险操作",
@@ -78,16 +80,16 @@
     "ifyouhaveproblemsusingityoucantry": "如果您在使用时遇到问题，可以尝试",
     "imsure": "我确定。",
     "settingthedisplayofthewebsite": "设置网站显示",
-    "thisoperationsisirrevocable": "此操作不可撤销",
+    "thisoperationsisirrevocable": "继续:此操作不可撤销",
     "websitedisplaysettings": "网站显示设置"
   },
   "WorldBook": {
     "D": "@D",
     "addnewbook": "添加新的世界书",
-    "afteran": "AN之后",
+    "afteran": "字符之后",
     "afterchar": "角色之后",
     "beforechar": "角色之前",
-    "berforean": "AN之前",
+    "berforean": "字符之前",
     "constan": "常量",
     "content": "内容",
     "delete": "删除",

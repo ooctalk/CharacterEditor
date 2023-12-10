@@ -189,8 +189,8 @@ function InforMation() {
               </label>
               <div className="mt-2">
                 <Input
-                  value={chara.data.personality}
-                  onChange={(e) => setChara((prevChara) => ({ ...prevChara, data: { ...prevChara.data, personality: e.target.value } }))}
+                  value={chara.data.scenario}
+                  onChange={(e) => setChara((prevChara) => ({ ...prevChara, data: { ...prevChara.data, scenario: e.target.value } }))}
                   maxLength={256}
                   autoComplete="off"
                   type="text"

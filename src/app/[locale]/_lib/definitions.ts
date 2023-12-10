@@ -32,7 +32,7 @@ export type TypeChara = {
       world: string;
       depth_prompt: {
         prompt: string;
-        depth: Number;
+        depth: string;
       };
     };
     // character_book: {

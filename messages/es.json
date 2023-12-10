@@ -1,47 +1,49 @@
 {
   "Character": {
     "charactername": "Nombre del Personaje",
+    "characternote": "Etiqueta de la Tarjeta del Personaje",
     "characterversion": "Versión del Personaje",
     "cover": "Portada",
     "createdby": "Creado por",
     "creatorsnotes": "Notas del Creador",
+    "depthprompt": "Profundidad y Pistas de la Tarjeta del Personaje",
     "description": "Descripción",
     "descriptiontoken": "Token de Descripción",
     "firstmessage": "Primer Mensaje",
     "firstmessagetoken": "Token del Primer Mensaje",
     "information": "Información",
-    "jailbreak": "Jailbreak",
-    "jailbreaktoken": "Token de Jailbreak",
-    "mainprompt": "Prompt Principal",
-    "mainprompttoken": "Token del Prompt Principal",
-    "mesexample": "Ejemplo de Mes",
-    "modifythebasicinsormationofthecharactercard": "Modificar la información básica de la tarjeta del personaje",
+    "jailbreak": "Desbloqueo",
+    "jailbreaktoken": "Token de Desbloqueo",
+    "mainprompt": "Pista Principal",
+    "mainprompttoken": "Token de Pista Principal",
+    "mesexample": "Ejemplo de Mensaje",
+    "modifythebasicinsormationofthecharactercard": "Modificar la Información Básica de la Tarjeta del Personaje",
     "personalitysummary": "Resumen de Personalidad",
-    "promptoverrdies": "Anulaciones de Prompt",
-    "replacementofthecover": "Cambiar",
+    "promptoverrdies": "Anulaciones de Pistas",
+    "replacementofthecover": "Reemplazo de la Portada",
     "scenario": "Escenario",
-    "tagstoembed": "Etiquetas para Incrustar",
-    "talkativeness": "Hablador",
-    "zipcover": "Las imágenes JPG|PNG|WEBP se comprimirán automáticamente"
+    "tagstoembed": "Etiquetas a Incrustar",
+    "talkativeness": "Habladuría",
+    "zipcover": "Las imágenes en formato JPG|PNG|WEBP se comprimirán automáticamente"
   },
   "Greetings": {
     "deletegreetings": "Eliminar Saludos",
-    "thisoperationcannotbewithdrawn": "¡Esta operación no se puede deshacer!"
+    "thisoperationcannotbewithdrawn": "¡Esta operación no puede deshacerse!"
   },
   "HomePage": {
-    "1": "Editor en Línea de Tarjetas de Personaje",
+    "1": "Editor en Línea de Tarjetas de Personajes",
     "2": "Rendimiento potente; interfaz fácil de usar; no es necesario guardar manualmente",
     "3": "Comenzar a Crear",
-    "updatetime": "Actualizado el 2023/12/04",
-    "version": "Ramas Principales"
+    "updatetime": "Actualizado el 10/12/2023",
+    "version": "Rama Principal"
   },
   "Metadata": {
-    "description": "Quien tiene un porqué para vivir puede soportar casi cualquier cómo.",
+    "description": "Dulce como la Miel",
     "title": "Editor de Personajes | CyberWaifu"
   },
   "Navigation": {
     "character": "Personaje",
-    "communityediton": "Edición Comunitaria",
+    "communityediton": "Edición de la Comunidad",
     "cyberwaifu": "CyberWaifu",
     "github": "GitHub",
     "greetings": "Saludos Alternativos",
@@ -59,14 +61,14 @@
     "exportingcharactercards": "Exportando Tarjetas de Personajes",
     "import": "Importar",
     "importingcharactercards": "Importando Tarjetas de Personajes",
-    "importok": "Importación exitosa, por favor actualice su navegador si no hay contenido",
-    "isitalldone": "¿Está todo hecho?",
+    "importok": "Importación exitosa, por favor, actualiza el navegador si no se muestra contenido",
+    "isitalldone": "Continuar: ¿Está todo hecho?",
     "mymindismadeup": "¡Mi decisión está tomada!",
-    "thisoperationoverwritesthedata": "¡Esta operación sobrescribe los datos!"
+    "thisoperationoverwritesthedata": "Continuar: ¡Esta operación sobrescribirá los datos!"
   },
   "Settings": {
     "DELETE": "¡Eliminar!",
-    "DelDone": "Los datos se han borrado. Por favor, actualice su navegador.",
+    "DelDone": "Los datos se han eliminado, por favor, actualiza tu navegador.",
     "changelanguage": "Cambiar Idioma",
     "clearalldata": "Borrar Todos los Datos",
     "close": "Cerrar",
@@ -78,16 +80,16 @@
     "ifyouhaveproblemsusingityoucantry": "Si tienes problemas usándolo, puedes intentar",
     "imsure": "Estoy seguro.",
     "settingthedisplayofthewebsite": "Configurando la Visualización del Sitio Web",
-    "thisoperationsisirrevocable": "Esta operación es irrevocable",
+    "thisoperationsisirrevocable": "Continuar: ¡Esta operación es irrevocable!",
     "websitedisplaysettings": "Configuraciones de Visualización del Sitio Web"
   },
   "WorldBook": {
     "D": "@D",
     "addnewbook": "Agregar Nuevo Libro Mundial",
-    "afteran": "Después de AN",
-    "afterchar": "Después de Personaje",
-    "beforechar": "Antes de Personaje",
-    "berforean": "Antes de AN",
+    "afteran": "Después del personaje",
+    "afterchar": "Después del personaje",
+    "beforechar": "Antes del personaje",
+    "berforean": "Antes del personaje",
     "constan": "Constante",
     "content": "Contenido",
     "delete": "Eliminar",
