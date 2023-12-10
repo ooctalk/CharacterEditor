@@ -48,7 +48,7 @@ export default function Character() {
             </CardBody>
           </Card>  
         </Tab>
-        <Tab key="depth_prompt" title={t('Character.depthandprompt')}>
+        <Tab key="depth_prompt" title={t('Character.depthprompt')}>
           <Card>
             <CardBody>
               <Depth_Prompt/>
