@@ -184,7 +184,7 @@ export function useChara() {
         ...chara.data,
         character_book: updatedCharacterBook,
         ...chara.data.extensions,
-        world: ''
+        world: chara.data.name + chara.data.character_version,
       }
     };
     

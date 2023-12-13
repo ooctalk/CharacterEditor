@@ -45,7 +45,7 @@ function Previews() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = chara.data.name + ".png";
+        a.download = chara.data.name + chara.data.character_version + ".png";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

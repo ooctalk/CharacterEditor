@@ -13,6 +13,7 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
+  Kbd,
 } from "@nextui-org/react";
 import { useCharacterBook } from "../../_lib/utils";
 import { useTranslations } from "next-intl";
@@ -81,7 +82,6 @@ export default function WorldBook() {
   return (
     <>
       <Tabs
-        aria-label="Dynamic tabs"
         variant="light"
         items={character_book.entries}
       >
@@ -229,7 +229,7 @@ export default function WorldBook() {
                   </div>
                   <div>
                   <RadioGroup
-                    color="warning"
+                    color="default"
                     label={t('WorldBook.position')}
                     orientation="horizontal"
                     value={String(item.extensions.position)}
@@ -255,7 +255,6 @@ export default function WorldBook() {
                   </div>
                   <div>
                   <RadioGroup
-                    color="secondary"
                     label={t('WorldBook.status')}
                     orientation="horizontal"
                     value={String(item.constant)}
@@ -270,8 +269,8 @@ export default function WorldBook() {
                       }))
                     }
                   >
-                    <Radio value="false">{t('WorldBook.normal')}</Radio>
-                    <Radio value="true">{t('WorldBook.constan')}</Radio>
+                    <Radio color="success" value="false">{t('WorldBook.normal')}</Radio>
+                    <Radio color="primary" value="true">{t('WorldBook.constan')}</Radio>
                   </RadioGroup>
 
                   </div>
@@ -322,6 +321,9 @@ export default function WorldBook() {
       <Button onClick={handleAddNewBookClick} size="lg">
         {t('WorldBook.addnewbook')}
       </Button>
+      <div className="hidden md:block text-center text-gray-500 text-sm pt-4">
+      電腦請使用鼠標中間左右滑動或鍵盤<Kbd keys={["left"]}></Kbd>和<Kbd keys={["right"]}></Kbd>
+    </div>
     </>
   );
 }
