@@ -174,18 +174,19 @@ export function useChara() {
   
   
     const updatedCharacterBook = {
-      ...character_book,
+      ...character_book.entries,
       name : chara.data.name + chara.data.character_version,
     };
     
     const updateChara = {
-      ...chara,
       data: {
         ...chara.data,
+        extensions: {
+          ...chara.data.extensions,
+          world: updatedCharacterBook.name,
+        },
         character_book: updatedCharacterBook,
-        ...chara.data.extensions,
-        world: chara.data.name + chara.data.character_version,
-      }
+      },
     };
     
     

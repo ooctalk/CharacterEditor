@@ -121,7 +121,6 @@ function InforMation() {
                 <Input
                   value={chara.data.tags}
                   onChange={(e) => setChara((prevChara) => ({ ...prevChara, data: { ...prevChara.data, tags: e.target.value } }))}
-                  maxLength={256}
                   autoComplete="off"
                   type="text"
                 />
@@ -138,7 +137,6 @@ function InforMation() {
                 <Input
                   value={chara.data.creator_notes}
                   onChange={(e) => setChara((prevChara) => ({ ...prevChara, data: { ...prevChara.data, creator_notes: e.target.value } }))}
-                  maxLength={256}
                   autoComplete="off"
                   type="text"
                 />
@@ -174,7 +172,6 @@ function InforMation() {
                 <Input
                   value={chara.data.personality}
                   onChange={(e) => setChara((prevChara) => ({ ...prevChara, data: { ...prevChara.data, personality: e.target.value } }))}
-                  maxLength={256}
                   autoComplete="off"
                   type="text"
                 />
@@ -191,7 +188,6 @@ function InforMation() {
                 <Input
                   value={chara.data.scenario}
                   onChange={(e) => setChara((prevChara) => ({ ...prevChara, data: { ...prevChara.data, scenario: e.target.value } }))}
-                  maxLength={256}
                   autoComplete="off"
                   type="text"
                 />
