@@ -16,7 +16,6 @@ function Homepage() {
               {t("HomePage.version")}
             </span>
             <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600 dark:text-gray-400">
-              {/* <span>{t("HomePage.updatetime")}</span> */}
               <span>Updated on 2023/12/21 </span>
               <ChevronRightIcon
                 className="h-5 w-5 text-gray-400"
@@ -29,8 +28,9 @@ function Homepage() {
           {t("HomePage.1")}
         </h1>
         <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
-          {t("HomePage.2")}Don't use the no-trace mode
+          {t("HomePage.2")}
         </p>
+        <p>Dont use the no-trace mode</p>
         <div className="mt-10 flex items-center gap-x-6">
           <Link
             href="/character"
