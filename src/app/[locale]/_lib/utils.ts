@@ -169,15 +169,19 @@ export function useChara() {
   }
 
   export const usePostChara = () => {
-    const { chara , setChara} = useChara();
+    const { chara, setChara } = useChara();
     const { character_book, setCharacter_Book } = useCharacterBook();
   
-  
     const updatedCharacterBook = {
-      ...character_book.entries,
-      name : chara.data.name + chara.data.character_version,
+      ...character_book,
+      entries: character_book.entries?.map(entry => ({
+        ...entry,
+        keys: entry.keys !== undefined ? [entry.keys].flat() : [],                    
+        secondary_keys: entry.secondary_keys !== undefined ? [entry.secondary_keys].flat() : [],
+      })) || [],
+      name: chara.data.name + chara.data.character_version,
     };
-    
+  
     const updateChara = {
       ...chara,
       data: {
@@ -186,13 +190,14 @@ export function useChara() {
           ...chara.data.extensions,
           world: updatedCharacterBook.name,
         },
-        character_book:{
+        character_book: {
           ...character_book,
+          entries: updatedCharacterBook.entries,
           name: chara.data.name + chara.data.character_version,
-        }
+        },
       },
     };
-    
-    return {updateChara}
-    
+  
+    return { updateChara };
   };
+  
