@@ -5,17 +5,19 @@ import React, { useState } from "react";
 function CC() {
   const [isCCloading, setIsCCloading] = useState(false);
   const [CCSelect, setCCselect] = useState("BYNC");
-  const [CCauthor, setCCauthor] = useState("")
-  const [CCfilename, setCCfilename] = useState("")
-  const [CCmes , setCCmes] = useState("")
-  const [CCtitleimg , setCCtitleimg] = useState("")
-  const [CCbgimg , setCCbgimg] = useState("")
+  const [CCauthor, setCCauthor] = useState<string>("");
+  const [CCfilename, setCCfilename] = useState<string>("");
+  const [CCmes, setCCmes] = useState<string>("");
+  const [CCtitleimg, setCCtitleimg] = useState<string>("");
+  const [CCbgimg, setCCbgimg] = useState<string>("");
+  
 
   const handleCCSelectChange: React.ChangeEventHandler<HTMLInputElement> = (
     e
   ) => {
     setCCselect(e.target.value);
   };
+  
 
   const handleCC = async (e: any) => {
     setIsCCloading(true);
@@ -31,7 +33,7 @@ function CC() {
       formData.append("ccfilename", CCfilename)
       formData.append("ccmes", CCmes)
       formData.append("cctitleimg", CCtitleimg)
-      formData.append("CCbgimg", CCbgimg)
+      formData.append("ccbgimg", CCbgimg)
       try {
         const charDataRes = await fetch("/api/CC", {
           method: "POST",
@@ -44,7 +46,7 @@ function CC() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "CC.png";
+        a.download = CCfilename + " CC4.0.png";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -156,11 +158,11 @@ function CC() {
       </div>
       <div className="pt-4 w-full flex flex-col gap-4">
         <h4>可选内容</h4>
-        <Input value={CCauthor}  label="作者名" />
-        <Input value={CCfilename}  label="角色卡名" />
-        <Input value={CCmes}  label="自定义消息" />
-        <Input value={CCtitleimg}  label="自定义头图[链接]" />
-        <Input value={CCbgimg} label="自定义CC页背景[链接]" />
+        <Input value={CCauthor} onChange={(e) => setCCauthor(e.target.value)} label="作者名" />
+        <Input value={CCfilename} onChange={(e) => setCCfilename(e.target.value)} label="角色卡名" />
+        <Input value={CCmes} onChange={(e) => setCCmes(e.target.value)} label="自定义消息" />
+        <Input value={CCtitleimg} onChange={(e) => setCCtitleimg(e.target.value)} label="自定义头图[链接]" />
+        <Input value={CCbgimg} onChange={(e) => setCCbgimg(e.target.value)} label="自定义CC页背景[链接]" />
       </div>
     </div>
   );

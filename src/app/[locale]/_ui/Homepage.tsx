@@ -16,7 +16,7 @@ function Homepage() {
               {t("HomePage.version")}
             </span>
             <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600 dark:text-gray-400">
-              <span>Updated on 2023/12/21 </span>
+              <span>Updated on 2024/01/30 不要使用无痕模式 </span>
               <ChevronRightIcon
                 className="h-5 w-5 text-gray-400"
                 aria-hidden="true"
