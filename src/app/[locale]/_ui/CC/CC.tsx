@@ -10,18 +10,16 @@ function CC() {
   const [CCmes, setCCmes] = useState<string>("");
   const [CCtitleimg, setCCtitleimg] = useState<string>("");
   const [CCbgimg, setCCbgimg] = useState<string>("");
-  
 
   const handleCCSelectChange: React.ChangeEventHandler<HTMLInputElement> = (
     e
   ) => {
     setCCselect(e.target.value);
   };
-  
 
   const handleCC = async (e: any) => {
     setIsCCloading(true);
-  
+
     if (typeof window !== "undefined") {
       const file = e.target.files[0];
       const formData = new FormData();
@@ -29,29 +27,29 @@ function CC() {
       if (CCSelect) {
         formData.append("ccselect", CCSelect);
       }
-      formData.append("ccauthor", CCauthor)
-      formData.append("ccfilename", CCfilename)
-      formData.append("ccmes", CCmes)
-      formData.append("cctitleimg", CCtitleimg)
-      formData.append("ccbgimg", CCbgimg)
+      formData.append("ccauthor", CCauthor);
+      formData.append("ccfilename", CCfilename);
+      formData.append("ccmes", CCmes);
+      formData.append("cctitleimg", CCtitleimg);
+      formData.append("ccbgimg", CCbgimg);
       try {
         const charDataRes = await fetch("/api/CC", {
           method: "POST",
           body: formData,
         });
-  
+
         if (charDataRes.ok) {
-        const res = await charDataRes.text();
-        const blob = await fetch(res).then((r) => r.blob());
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = CCfilename + " CC4.0.png";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-          setIsCCloading(false)
+          const res = await charDataRes.text();
+          const blob = await fetch(res).then((r) => r.blob());
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = CCfilename + " CC4.0.png";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          setIsCCloading(false);
           console.log("OK");
         }
       } catch (error) {
@@ -59,9 +57,7 @@ function CC() {
       }
     }
   };
-  
-  
-  
+
   return (
     <div>
       <div className="rounded-md bg-yellow-50 p-4">
@@ -127,11 +123,12 @@ function CC() {
       <div className="pt-4">
         <form encType="multipart/form-data">
           <label className="relative block w-full rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-            <input 
-            accept=".png"
-            type="file" 
-            onChange={handleCC}
-            className="hidden" />
+            <input
+              accept=".png"
+              type="file"
+              onChange={handleCC}
+              className="hidden"
+            />
             <svg
               className="mx-auto h-12 w-12 text-gray-400"
               stroke="currentColor"
@@ -158,11 +155,31 @@ function CC() {
       </div>
       <div className="pt-4 w-full flex flex-col gap-4">
         <h4>可选内容</h4>
-        <Input value={CCauthor} onChange={(e) => setCCauthor(e.target.value)} label="作者名" />
-        <Input value={CCfilename} onChange={(e) => setCCfilename(e.target.value)} label="角色卡名" />
-        <Input value={CCmes} onChange={(e) => setCCmes(e.target.value)} label="自定义消息" />
-        <Input value={CCtitleimg} onChange={(e) => setCCtitleimg(e.target.value)} label="自定义头图[链接]" />
-        <Input value={CCbgimg} onChange={(e) => setCCbgimg(e.target.value)} label="自定义CC页背景[链接]" />
+        <Input
+          value={CCauthor}
+          onChange={(e) => setCCauthor(e.target.value)}
+          label="作者名"
+        />
+        <Input
+          value={CCfilename}
+          onChange={(e) => setCCfilename(e.target.value)}
+          label="角色卡名"
+        />
+        <Input
+          value={CCmes}
+          onChange={(e) => setCCmes(e.target.value)}
+          label="自定义消息"
+        />
+        <Input
+          value={CCtitleimg}
+          onChange={(e) => setCCtitleimg(e.target.value)}
+          label="自定义头图[链接]"
+        />
+        <Input
+          value={CCbgimg}
+          onChange={(e) => setCCbgimg(e.target.value)}
+          label="自定义CC页背景[链接]"
+        />
       </div>
     </div>
   );
