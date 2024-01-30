@@ -4,7 +4,52 @@ import React, { useState } from "react";
 
 function CC() {
   const [isCCloading, setIsCCloading] = useState(false);
+  const [CCSelect, setCCselect] = useState("BYNC");
 
+  const handleCCSelectChange: React.ChangeEventHandler<HTMLInputElement> = (
+    e
+  ) => {
+    setCCselect(e.target.value);
+  };
+
+  const handleCC = async (e: any) => {
+    setIsCCloading(true);
+  
+    if (typeof window !== "undefined") {
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append("card", file);
+      if (CCSelect) {
+        formData.append("ccselect", CCSelect);
+      }
+      try {
+        const charDataRes = await fetch("/api/CC", {
+          method: "POST",
+          body: formData,
+        });
+  
+        if (charDataRes.ok) {
+        const res = await charDataRes.text();
+        const blob = await fetch(res).then((r) => r.blob());
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "CC.png";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+          setIsCCloading(false)
+          console.log("OK");
+        }
+      } catch (error) {
+        console.error("error:", error);
+      }
+    }
+  };
+  
+  
+  
   return (
     <div>
       <div className="rounded-md bg-yellow-50 p-4">
@@ -20,7 +65,8 @@ function CC() {
         <RadioGroup
           label="选择你的CC许可证协议[4.0]"
           color="primary"
-          defaultValue="NC"
+          defaultValue={CCSelect}
+          onChange={handleCCSelectChange}
         >
           <Radio
             color="success"
@@ -31,35 +77,35 @@ function CC() {
           </Radio>
           <Radio
             color="success"
-            value="NC"
+            value="BYNC"
             description="允许他人以任何目的使用作品，但不允许用于商业目的"
           >
             CC BY-NC （非商业性使用）
           </Radio>
           <Radio
             color="danger"
-            value="ND"
+            value="BYND"
             description="允许他人下载作品并与他人共享，但不允许对作品进行修改或以其为基础进行新的创作"
           >
             CC BY-ND （禁止演绎）
           </Radio>
           <Radio
             color="success"
-            value="SA"
+            value="BYSA"
             description="允许他人以任何目的使用、修改、演绎作品，但新作品必须使用相同的许可协议"
           >
             CC BY-SA （相同方式共享）
           </Radio>
           <Radio
             color="warning"
-            value="NCND"
+            value="BYNCND"
             description="允许他人以任何目的使用、修改、演绎作品，但新作品必须使用相同的许可协议。不允许商业性使用，即不可在商业活动中使用作品。他人必须提供适当的署名给原作者"
           >
             CC BY-NC-ND （署名-非商业性使用）
           </Radio>
           <Radio
             color="warning"
-            value="NCSA"
+            value="BYNCSA"
             description="允许他人以任何目的使用、修改、演绎作品，但新作品必须使用相同的许可协议。不允许商业性使用，即不可在商业活动中使用作品。他人必须提供适当的署名给原作者。"
           >
             CC BY-NC-SA （署名-相同方式共享）
@@ -69,7 +115,11 @@ function CC() {
       <div className="pt-4">
         <form encType="multipart/form-data">
           <label className="relative block w-full rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-            <input type="file" className="hidden" />
+            <input 
+            accept=".png"
+            type="file" 
+            onChange={handleCC}
+            className="hidden" />
             <svg
               className="mx-auto h-12 w-12 text-gray-400"
               stroke="currentColor"
