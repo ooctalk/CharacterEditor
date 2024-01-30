@@ -27,9 +27,9 @@ const navigation = [
 ]
 const teams = [
   { id: 1, name: 'Navigation.help', href: 'https://help.cyberwaifu.org', initial: 'H', current: false },
-  { id: 2, name: 'Navigation.communityediton', href: 'https://chara.cyberwaifu.org', initial: 'C', current: false },
-  { id: 3, name: 'Navigation.serverstatus', href: 'https://status.cyberwaifu.org', initial: 'S', current: false },
+  { id: 2, name: 'Navigation.serverstatus', href: 'https://status.cyberwaifu.org', initial: 'S', current: false },
   { id: 3, name: 'Navigation.github', href: 'https://github.com/CyberWaifu-org/CharacterEditor', initial: 'G', current: false },
+  { id: 4, name: '防倒狗', href: '/CC', initial: '🐕', current: false },
 ]
 
 function classNames(...classes:any) {
