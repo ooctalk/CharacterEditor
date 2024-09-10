@@ -1,21 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[English](README.md) | [中文](README.zh.md)
+
+# CharacterEditor by OoCTalk
+
+> A modern, responsive character card editor based on the [Next.js](https://nextjs.org/) framework, designed for creating, editing, importing, and exporting AI character cards in JSON format, such as those for SillyTavern.
+
+[Online Demo](https://ce.ooctalk.com)
+
+## Features
+
+- No need to save
+- Dark mode
+- Multi-language support
+- Better performance
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+git clone https://github.com/ooctalk/CharacterEditor.git
+cd CharacterEditor
+npm install
+npm run build
+npm run dev & npm run start
