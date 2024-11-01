@@ -1,11 +1,9 @@
 import createMiddleware from 'next-intl/middleware';
-import {locales,} from './navigation';
-export default createMiddleware({
-  defaultLocale: 'en',
-  locales
-});
+import { routing } from './i18n/routing';
+ 
+export default createMiddleware(routing);
  
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(en|zh-CN|zh-TW|de|es|fr|it|ja|kr|pt|ru)/:path*']
+  matcher: ['/', '/(en|zh-CN)/:path*']
 };

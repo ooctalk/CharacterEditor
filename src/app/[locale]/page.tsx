@@ -1,12 +1,9 @@
-import Homepage from "./_ui/Homepage";
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import IndexBoostrap from "./_components/UI/IndexBoostrap";
+
 export default function Home() {
-  const messages = useMessages();
   return (
     <>
-      <NextIntlClientProvider messages={messages}>
-        <Homepage />
-      </NextIntlClientProvider>
+      <IndexBoostrap />
     </>
   );
 }
