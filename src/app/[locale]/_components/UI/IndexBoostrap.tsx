@@ -205,7 +205,7 @@ function IndexBoostrap() {
 
           <Link
             className="animate-fade-up animate-delay-300 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-            href="https://github.com/ooctalk/CharacterEditor"
+            href="https://status.ooctalk.com"
             target="_blanks"
           >
             <svg
