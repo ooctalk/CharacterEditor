@@ -1,0 +1,135 @@
+{
+  "product by ooctalk": {},
+  "please-select-character": "Please select Character",
+  "workspaces": "WorkSpaces",
+  "IndexBoostrap": {
+    "its-late-at-night": "It's late at night",
+    "good-evening": "Good evening",
+    "good-afternoon": "Good afternoon",
+    "good-morning": "Good morning",
+    "edit-character": "Edit Character",
+    "community": "Community",
+    "code": "Code",
+    "uptime": "Uptime",
+    "release-under-development": "Release under development",
+    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution": "While the function content is being improved, the website may contain unknown errors, please use caution"
+  },
+  "SideBarLayout": {
+    "character": "Character",
+    "worldBook": "WorldBook",
+    "regex": "Regex",
+    "settings": "Settings",
+    "greeting": "Greeting",
+    "workbenches": "Workbenches",
+    "convertor": "Char Convertor",
+    "project-address": "Project address",
+    "community": "Community",
+    "other": "Other",
+    "tools": "Tools",
+    "character-description": "Description",
+    "firstmessage": "FirstMessage",
+    "preview-version": "Preview Version",
+    "advanced": "Advanced"
+  },
+  "Workspaces/Settings": {
+    "settings": "Settings",
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "Workspaces/Convertor": {
+    "import": "Import",
+    "copy": "Copy",
+    "character-convertor": "Character Convertor"
+  },
+  "Workspaces/Regex": {
+    "character-regex": "Character Regex",
+    "disable-this-script": "Disable this script",
+    "script-name": "Script Name",
+    "find-regular-expression": "Find regular expression",
+    "place-here": "Place here",
+    "replace-with": "Replace with",
+    "user-input": "User input",
+    "ai-output": "AI output",
+    "shortcut-command": "Shortcut command",
+    "world-information": "World information",
+    "minimum-depth": "Minimum depth",
+    "maximum-depth": "Maximum depth",
+    "run-while-editing": "Run while editing",
+    "substitute-regular-expression": "Substitute regular expression",
+    "format-only-display": "Format only display",
+    "format-prompt-words-only": "Format prompt words only",
+    "regex-setting": "Regex Setting",
+    "delete": "Delete",
+    "add": "Add"
+  },
+  "Workspaces/Worldbook": {
+    "character-worldbooks": "Character WorldBooks",
+    "basic-setup": "Basic setup",
+    "switch": "Switch",
+    "tittle": "Tittle",
+    "key-word": "Key Word",
+    "strategy": "Strategy",
+    "content": "Content",
+    "constant": "Constant",
+    "normal": "Normal",
+    "position": "Position",
+    "aftercharcter": "AfterCharcter",
+    "beforecharacter": "BeforeCharacter",
+    "beforeauthor": "BeforeAuthor",
+    "afterauthor": "AfterAuthor",
+    "advanced-options": "Advanced options",
+    "second-key-word": "Second Key Word",
+    "anywherewith": "Anywherewith",
+    "notany": "NotAny",
+    "nonpossession": "NonPossession",
+    "with-all": "With All",
+    "second-key-word-0": "Second Key Word",
+    "order": "Order",
+    "depth": "Depth",
+    "probability": "Probability",
+    "select-a-world-book": "Select a World Book",
+    "delete": "Delete",
+    "add": "Add"
+  },
+  "Workspaces/Greetings": {
+    "character-greetings": "Character Greetings",
+    "delete": "Delete",
+    "add": "Add"
+  },
+  "Workspaces/Firstmessages": {
+    "character-first-message": "Character First Message"
+  },
+  "Workspaces/Description": {
+    "character-description": "Character Description"
+  },
+  "Workspaces": {
+    "characterpppp": "Character #",
+    "edit-character": "Edit Character",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "irretrievability": "Irretrievability",
+    "version": "Version",
+    "character-gallery": "Character Gallery",
+    "import": "Import",
+    "new": "New",
+    "export-character": "Export Character",
+    "preview-version": "Preview Version"
+  },
+  "Workspaces/AdvancedDefinitions": {
+    "advanced-definitions": "Advanced Definitions",
+    "prompt-overrides": "Prompt Overrides",
+    "main-prompt": "Main Prompt",
+    "main-prompt-0": "Main Prompt",
+    "creators-metadata": "Creator's Metadata",
+    "created-by": "Created by",
+    "character-version": "Character Version",
+    "creators-notes": "Creator's Notes",
+    "tags-to-embed": "Tags to Embed",
+    "personality-summary": "Personality summary",
+    "scenario": "Scenario",
+    "characters-note": "Character's Note",
+    "examples-of-dialogue": "Examples of dialogue",
+    "post-history-instructions": "Post-History Instructions"
+  }
+
+}

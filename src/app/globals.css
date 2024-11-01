@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+<<<<<<< Updated upstream
 @tailwind utilities;
 
 :root {
@@ -25,3 +26,6 @@ body {
     text-wrap: balance;
   }
 }
+=======
+@tailwind utilities;
+>>>>>>> Stashed changes

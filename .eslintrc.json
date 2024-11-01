@@ -1,3 +1,10 @@
 {
+<<<<<<< Updated upstream
   "extends": ["next/core-web-vitals", "next/typescript"]
+=======
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rule":{
+    "@typescript-eslint/no-explicit-any": ["off"]
+  }
+>>>>>>> Stashed changes
 }
