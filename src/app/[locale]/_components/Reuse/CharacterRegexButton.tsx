@@ -8,6 +8,7 @@ import { Character } from "../../_lib/db";
 import { v4 as uuidv4 } from "uuid";
 import { Button } from "../Catalyst/button";
 import { useTranslations } from "next-intl";
+import { enqueueSnackbar } from "notistack";
 
 export default function CharacterRegexSelect() {
   const t = useTranslations('Workspaces/Regex')
@@ -29,7 +30,7 @@ export default function CharacterRegexSelect() {
               name="Regex"
               onChange={(e) => setSelectedRegexIndex(Number(e.target.value))}
             >
-              <option value="">Select a Regex</option>
+              <option>{t('select-a-regex')}</option>
               {regexsList.map((regex, index) => (
                 <option key={index} value={index}>
                   # {regex.scriptName}
@@ -99,6 +100,7 @@ export function CharacterRegexAddButton() {
           },
         },
       });
+      enqueueSnackbar('Add It',{variant:"info"})
     } else {
       console.error("Character cid is undefined");
     }
@@ -146,6 +148,7 @@ export function CharacterRegexDeleteButton() {
             },
           },
         });
+        enqueueSnackbar('Delete It',{variant:"error"})
       } else {
         console.error("Character cid is undefined");
       }

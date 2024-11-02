@@ -7,6 +7,7 @@ import db from "../../_lib/db";
 import { Character } from "../../_lib/db";
 import { Button } from "../Catalyst/button";
 import { useTranslations } from "next-intl";
+import { enqueueSnackbar } from "notistack";
 
 export default function CharacterGreetingsSelect() {
   const t = useTranslations('Workspaces/Greetings');
@@ -29,7 +30,7 @@ export default function CharacterGreetingsSelect() {
                   setSelectGreetingsIndex(Number(e.target.value))
                 }
               >
-                <option value="">Select a Greeting</option>
+                <option>Select a Greeting</option>
                 {greetingsList.map((greeting, index) => (
                   <option key={index} value={index}>
                     # {index + 1}
@@ -75,6 +76,7 @@ export function CharacterGreetingsDeleteButton() {
           await db.characters.update(character.cid, {
             "json.data.alternate_greetings": updatedGreetings,
           });
+          enqueueSnackbar('Delete It',{variant:"error"})
         } else {
           console.error("Character ID is undefined");
         }
@@ -110,6 +112,7 @@ export function CharacterGreetingsNewButton() {
       await db.characters.update(character.cid, {
         "json.data.alternate_greetings": updatedGreetings,
       });
+      enqueueSnackbar('Add It',{variant:"info"})
     } else {
       console.error("Character ID is undefined");
     }

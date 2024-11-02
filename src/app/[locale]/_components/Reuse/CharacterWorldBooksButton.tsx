@@ -7,6 +7,7 @@ import db from "../../_lib/db";
 import { Character } from "../../_lib/db";
 import { Button } from "../Catalyst/button";
 import { useTranslations } from "next-intl";
+import { enqueueSnackbar } from "notistack";
 
 function CharacterWorldBooksSelect() {
   const t = useTranslations("Workspaces/Worldbook");
@@ -25,7 +26,7 @@ function CharacterWorldBooksSelect() {
                 key={character.cid}
                 onChange={(e) => setSelectedWorldBooks(Number(e.target.value))}
               >
-                <option value="">{t("select-a-world-book")}</option>
+                <option>{t("select-a-world-book")}</option>
                 {entries.map((entry) => (
                   <option key={entry.id} value={entry.id}>
                     {entry.comment}
@@ -116,6 +117,7 @@ export function CharacterBookAddButton() {
           },
         },
       });
+      enqueueSnackbar('Add It',{variant:"info"})
     }
   };
 
@@ -164,6 +166,7 @@ export function CharacterBookDeleteButton() {
           },
         },
       });
+      enqueueSnackbar('Delete It',{variant:"error"})
     } else {
       console.error("Character cid is undefined");
     }

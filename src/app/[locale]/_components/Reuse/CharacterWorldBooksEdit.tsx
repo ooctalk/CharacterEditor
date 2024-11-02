@@ -125,7 +125,7 @@ function CharacterWorldBooksEdit() {
                       <Label>{t('content')}</Label>
                       <Textarea
                         rows={5}
-                        value={selectedEntry.content}
+                        defaultValue={selectedEntry.content}
                         onChange={(e) => {
                           if (character.cid !== undefined) {
                             handleUpdate(
@@ -177,7 +177,7 @@ function CharacterWorldBooksEdit() {
                   </div>
                   <div className="space-y-4">
                     <Field>
-                      <Label>{t('second-key-word')}</Label>
+                      <Label>{t('second-key-word-logic')}</Label>
                       <Select
                         defaultValue={
                           character.json.data.character_book?.entries[
@@ -205,12 +205,12 @@ function CharacterWorldBooksEdit() {
                       <Label>{t('second-key-word-0')}</Label>
                       <Input
                         type="text"
-                        defaultValue={selectedEntry.keys}
+                        defaultValue={selectedEntry.secondary_keys}
                         onChange={(e) => {
                           if (character.cid !== undefined) {
                             handleUpdate(
                               character.cid,
-                              `json.data.character_book.entries.${selectedWorldBooks}.keys`,
+                              `json.data.character_book.entries.${selectedWorldBooks}.secondary_keys`,
                               e.target.value
                             );
                           }

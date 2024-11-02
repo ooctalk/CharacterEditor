@@ -363,7 +363,7 @@ function CharacterRegexEdit() {
                 </section>
               </div>
             ) : (
-              <p>No Regex found for the selected Regex.</p>
+              <p>{t('select-the-regular-expression-you-want-to-edit')}</p>
             );
           })
         : <NoSelectCharacterCTA />}

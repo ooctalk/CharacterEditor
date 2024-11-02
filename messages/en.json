@@ -60,7 +60,9 @@
     "format-prompt-words-only": "Format prompt words only",
     "regex-setting": "Regex Setting",
     "delete": "Delete",
-    "add": "Add"
+    "add": "Add",
+    "select-the-regular-expression-you-want-to-edit": "Select the regular expression you want to edit.",
+    "select-a-regex": "Select a Regex"
   },
   "Workspaces/Worldbook": {
     "character-worldbooks": "Character WorldBooks",
@@ -89,7 +91,9 @@
     "probability": "Probability",
     "select-a-world-book": "Select a World Book",
     "delete": "Delete",
-    "add": "Add"
+    "add": "Add",
+    "second-key-word-logic": "Second Key Word Logic",
+    "please-select-a-valid-world-book": "Please select a valid World Book."
   },
   "Workspaces/Greetings": {
     "character-greetings": "Character Greetings",
@@ -131,5 +135,4 @@
     "examples-of-dialogue": "Examples of dialogue",
     "post-history-instructions": "Post-History Instructions"
   }
-
 }

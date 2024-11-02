@@ -15,7 +15,7 @@ function CharacterWorldBooks() {
       {/* Title  */}
       <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
         <Heading>{t('character-worldbooks')}</Heading>
-        <div className="flex gap-4 sm:justify-self-end justify-self-auto">
+        <div className="flex gap-4 sm:justify-self-end text-nowrap">
           <CharacterBookDeleteButton />
           <CharacterBookAddButton />
           <CharacterWorldBooksSelect />

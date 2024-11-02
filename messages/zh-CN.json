@@ -60,7 +60,9 @@
     "format-prompt-words-only": "仅格式化提示词",
     "regex-setting": "正则设置",
     "delete": "删除",
-    "add": "新建"
+    "add": "新建",
+    "select-the-regular-expression-you-want-to-edit": "选择要编辑的正则表达式.",
+    "select-a-regex": "选择一个正则表达式"
   },
   "Workspaces/Worldbook": {
     "character-worldbooks": "角色世界书",
@@ -89,7 +91,9 @@
     "probability": "概率",
     "select-a-world-book": "选择一本世界书",
     "delete": "删除",
-    "add": "新建"
+    "add": "新建",
+    "second-key-word-logic": "第二关键词逻辑",
+    "please-select-a-valid-world-book": "请选择一个世界书条目"
   },
   "Workspaces/Greetings": {
     "character-greetings": "角色问候",
