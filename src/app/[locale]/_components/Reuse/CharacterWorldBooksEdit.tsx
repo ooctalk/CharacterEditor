@@ -36,7 +36,7 @@ function CharacterWorldBooksEdit() {
               selectedWorldBooks < 0 ||
               selectedWorldBooks >= entries.length
             ) {
-              return <p>Please select a valid World Book.</p>;
+              return <p>{t('please-select-a-valid-world-book')}</p>;
             }
 
             const selectedEntry = entries[selectedWorldBooks];

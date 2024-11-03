@@ -148,27 +148,31 @@ export function CharacterBookDeleteButton() {
     const character = selectedCharacter[0];
     const entries = character.json.data.character_book?.entries || [];
 
-    if (character.cid !== undefined) {
-      const updatedEntries = entries.filter(
-        (entry) => entry.id !== selectedWorldBooks
-      );
+if (selectedWorldBooks >= 0 && selectedWorldBooks < entries.length) {
+      entries.splice(selectedWorldBooks, 1);
 
-      await db.characters.update(character.cid, {
-        json: {
-          ...character.json,
-          data: {
-            ...character.json.data,
-            character_book: {
-              name:
-                character.json.data.character_book?.name || "Default Book Name",
-              entries: updatedEntries,
+      if (character.cid !== undefined) {
+        await db.characters.update(character.cid, {
+          json: {
+            ...character.json,
+            data: {
+              ...character.json.data,
+              character_book: {
+                ...character.json.data.character_book,
+                entries: entries,
+              },
             },
           },
-        },
-      });
-      enqueueSnackbar("Delete It", { variant: "error" });
+        });
+        
+        
+        
+        enqueueSnackbar('Delete It',{variant:"error"})
+      } else {
+        console.error("Character cid is undefined");
+      }
     } else {
-      console.error("Character cid is undefined");
+      console.error("");
     }
   };
 

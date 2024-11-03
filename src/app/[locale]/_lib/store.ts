@@ -20,7 +20,7 @@ interface Store {
   selectedCid: number | null;
   selectedGreetingsIndex: number | null;
   selectedWorldBooks: number | null;
-  selectedRegexIndex: number | null; // 修改为 string | null
+  selectedRegexIndex: number | null;
   openDrawer: (character: DrawerCharacter) => void;
   closeDrawer: () => void;
   openDialog: () => void;
@@ -28,7 +28,7 @@ interface Store {
   setSelectedCid: (cid: number | null) => void;
   setSelectGreetingsIndex: (index: number | null) => void;
   setSelectedWorldBooks: (id: number | null) => void;
-  setSelectedRegexIndex: (id: number | null) => void; // 修改为 string | null
+  setSelectedRegexIndex: (id: number | null) => void;
 }
 
 const useStore = create<Store>((set) => ({
@@ -37,8 +37,8 @@ const useStore = create<Store>((set) => ({
   drawerCharacter: null,
   selectedCid: null,
   selectedGreetingsIndex: null,
-  selectedWorldBooks: null, // 初始化 selectedWorldBooks
-  selectedRegexIndex: null, // 初始化为 null
+  selectedWorldBooks: null,
+  selectedRegexIndex: null,
   openDrawer: (drawerCharacter: DrawerCharacter) =>
     set({ isOpen: true, drawerCharacter }),
   closeDrawer: () => set({ isOpen: false }),
@@ -47,7 +47,7 @@ const useStore = create<Store>((set) => ({
   setSelectedCid: (cid: number | null) => set({ selectedCid: cid }),
   setSelectGreetingsIndex: (index: number | null) =>
     set({ selectedGreetingsIndex: index }),
-  setSelectedWorldBooks: (id: number | null) => set({ selectedWorldBooks: id }), // 实现 setSelectedWorldBooks
+  setSelectedWorldBooks: (id: number | null) => set({ selectedWorldBooks: id }),
   setSelectedRegexIndex: (id: number | null) => set({ selectedRegexIndex: id }),
 }));
 

@@ -97,7 +97,7 @@ export interface Character {
             delay: number;
           };
         }>;
-        name: string;
+        name?: string
       };
     };
     create_date: string;
