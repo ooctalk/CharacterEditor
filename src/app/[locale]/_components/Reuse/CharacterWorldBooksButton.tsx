@@ -20,16 +20,18 @@ function CharacterWorldBooksSelect() {
     <>
       {selectedCharacter && selectedCharacter.length > 0
         ? selectedCharacter.map((character: Character) => {
-            const entries = character.json.data.character_book?.entries || [];
+            const characterBookList =
+              character.json.data.character_book?.entries || [];
+
             return (
               <Select
                 key={character.cid}
                 onChange={(e) => setSelectedWorldBooks(Number(e.target.value))}
               >
                 <option>{t("select-a-world-book")}</option>
-                {entries.map((entry) => (
-                  <option key={entry.id} value={entry.id}>
-                    {entry.comment}
+                {characterBookList.map((book, index) => (
+                  <option key={index} value={index}>
+                    {book.comment}
                   </option>
                 ))}
               </Select>
@@ -52,7 +54,6 @@ export function CharacterBookAddButton() {
   if (!selectedCharacter || selectedCharacter.length === 0) {
     return null;
   }
-
 
   const handleAddBook = async () => {
     if (
@@ -117,11 +118,11 @@ export function CharacterBookAddButton() {
           },
         },
       });
-      enqueueSnackbar('Add It',{variant:"info"})
+      enqueueSnackbar("Add It", { variant: "info" });
     }
   };
 
-  return <Button onClick={handleAddBook}>{t('add')}</Button>;
+  return <Button onClick={handleAddBook}>{t("add")}</Button>;
 }
 
 export function CharacterBookDeleteButton() {
@@ -134,7 +135,6 @@ export function CharacterBookDeleteButton() {
   if (!selectedCharacter || selectedCharacter.length === 0) {
     return null;
   }
-
 
   const handleDeleteBook = async () => {
     if (
@@ -166,7 +166,7 @@ export function CharacterBookDeleteButton() {
           },
         },
       });
-      enqueueSnackbar('Delete It',{variant:"error"})
+      enqueueSnackbar("Delete It", { variant: "error" });
     } else {
       console.error("Character cid is undefined");
     }
