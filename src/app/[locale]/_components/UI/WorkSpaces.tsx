@@ -14,7 +14,7 @@ function WorkSpaces() {
     <>
       {/* Title  */}
       <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-        <Heading>{t('character-gallery')}</Heading>
+        <Heading>{t("character-gallery")}</Heading>
         <div className="flex gap-4 sm:justify-self-end justify-self-auto">
           <WorkSpacesImportCharacterButton />
           <WorkSpacesAddCharacterButton />

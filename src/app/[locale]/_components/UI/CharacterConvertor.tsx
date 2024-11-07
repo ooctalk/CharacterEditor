@@ -9,7 +9,7 @@ import {
 import { useTranslations } from "next-intl";
 
 function CharacterConvertor() {
-  const t = useTranslations('Workspaces/Convertor')
+  const t = useTranslations("Workspaces/Convertor");
   const [characterConvertorJson] = useState(
     localStorage.getItem("characterConvertorJson") || null
   );
@@ -17,7 +17,7 @@ function CharacterConvertor() {
     <>
       {/* Title  */}
       <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-        <Heading>{t('character-convertor')}</Heading>
+        <Heading>{t("character-convertor")}</Heading>
         <div className="flex gap-4 sm:justify-self-end justify-self-auto">
           <CopyCharacterJsonButton />
           <ImportCharacterConvertorButton />

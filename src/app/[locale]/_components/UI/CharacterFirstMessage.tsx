@@ -5,11 +5,11 @@ import CharacterFirstMessageEdit from "../Reuse/CharacterFirstMessageEdit";
 import { useTranslations } from "next-intl";
 
 function CharacterFirstMessage() {
-  const t = useTranslations('Workspaces/Firstmessages')
+  const t = useTranslations("Workspaces/Firstmessages");
   return (
     <>
       {/* Title  */}
-      <Heading>{t('character-first-message')}</Heading>
+      <Heading>{t("character-first-message")}</Heading>
       <Divider className="my-10 mt-6" />
 
       {/* Content */}

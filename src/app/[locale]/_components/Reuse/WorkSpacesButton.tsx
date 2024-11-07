@@ -12,7 +12,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { useTranslations } from "next-intl";
 
 export function WorkSpacesImportCharacterButton() {
-  const t = useTranslations('Workspaces')
+  const t = useTranslations("Workspaces");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleImport = async () => {
@@ -86,14 +86,14 @@ export function WorkSpacesImportCharacterButton() {
         outline
         onClick={() => fileInputRef.current?.click()}
       >
-        {t('import')}
+        {t("import")}
       </Button>
     </>
   );
 }
 
 export function WorkSpacesAddCharacterButton() {
-  const t = useTranslations('Workspaces')
+  const t = useTranslations("Workspaces");
   const defaultCharacterJson = getDefaultCharacterJson();
 
   async function handleAddCharacter() {
@@ -113,14 +113,14 @@ export function WorkSpacesAddCharacterButton() {
   return (
     <>
       <Button type="button" onClick={handleAddCharacter}>
-        {t('new')}
+        {t("new")}
       </Button>
     </>
   );
 }
 
 export function WorkSpacesExportCharacterButton() {
-  const t = useTranslations('Workspaces')
+  const t = useTranslations("Workspaces");
   const { drawerCharacter } = useStore();
   const cid = drawerCharacter?.cid;
 
@@ -170,7 +170,7 @@ export function WorkSpacesExportCharacterButton() {
     const charBase64Data = `data:image/png;base64,${pngbase64}`;
     const link = document.createElement("a");
     link.href = charBase64Data;
-    link.download = name + " " + version + ".png";
+    link.download = name + " " + version + "[V3].png";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -182,7 +182,88 @@ export function WorkSpacesExportCharacterButton() {
       className="inline-flex w-full flex-1 items-center justify-center rounded-md bg-white dark:bg-zinc-800 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-600 dark:hover:bg-zinc-700"
       onClick={handleExport}
     >
-      {t('export-character')}
+      {t("export-character")}
     </button>
+  );
+}
+
+export function WorkSpacesExportCharacterSpecV2Button() {
+  const t = useTranslations("Workspaces");
+  const { drawerCharacter } = useStore();
+  const cid = drawerCharacter?.cid;
+
+  const data = useLiveQuery(() => {
+    if (cid) {
+      return db.characters.where("cid").equals(cid).toArray();
+    }
+    return [];
+  }, [cid]);
+
+  if (data === undefined) {
+    return <div>Loading...</div>;
+  }
+
+  if (data.length === 0) {
+    return <div>No character found.</div>;
+  }
+
+  const character = data[0];
+  const name = character.json.data.name;
+  const version = character.json.data.character_version;
+  const json = {
+    ...character.json,
+    spec: "chara_card_v2",
+    spec_version: "2.0",
+    data: {
+      ...character.json.data,
+      extensions: {
+        ...character.json.data.extensions,
+        regex_scripts: undefined,
+      },
+    },
+  };
+  const cover = character.cover;
+
+  const handleExportSpecV2 = async () => {
+    const extract = require("png-chunks-extract");
+    const encode = require("png-chunks-encode");
+    const text = require("png-chunk-text");
+
+    const base64Data = cover.replace(/^data:image\/\w+;base64,/, "");
+    const imageBuffer = Buffer.from(base64Data, "base64");
+    const chunks = extract(imageBuffer);
+
+    const tEXtChunks = chunks.filter((chunk: any) => chunk.name === "tEXt");
+    for (let tEXtChunk of tEXtChunks) {
+      chunks.splice(chunks.indexOf(tEXtChunk), 1);
+    }
+
+    const charString = JSON.stringify(json);
+    const base64EncodedData = Buffer.from(charString, "utf8").toString(
+      "base64"
+    );
+    chunks.splice(-1, 0, text.encode("chara", base64EncodedData));
+
+    const BufferChunk = Buffer.from(encode(chunks));
+    const pngbase64 = BufferChunk.toString("base64");
+    const charBase64Data = `data:image/png;base64,${pngbase64}`;
+    const link = document.createElement("a");
+    link.href = charBase64Data;
+    link.download = name + " " + version + "[V2].png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <>
+      <button
+        onClick={handleExportSpecV2}
+        className="w-full text-left block px-4 py-2 text-sm text-black dark:text-white text-nowrap"
+      >
+        {t("export-v2-noregex")}
+        <span className="text-yellow-600">Beta</span>
+      </button>
+    </>
   );
 }

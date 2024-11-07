@@ -1,10 +1,10 @@
 import React from "react";
-import CharacterRegex from "../../_components/UI/CharacterRegex";
+import Inset from "../../_components/UI/Inset";
 
 function page() {
   return (
     <>
-      <CharacterRegex />
+      <Inset />
     </>
   );
 }

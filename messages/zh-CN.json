@@ -29,7 +29,8 @@
     "character-description": "角色描述",
     "firstmessage": "首屏信息",
     "preview-version": "预览版",
-    "advanced": "高级定义"
+    "advanced": "高级定义",
+    "inset": "角色插图"
   },
   "Workspaces/Settings": {
     "settings": "设置",
@@ -93,7 +94,8 @@
     "delete": "删除",
     "add": "新建",
     "second-key-word-logic": "第二关键词逻辑",
-    "please-select-a-valid-world-book": "请选择一个世界书条目"
+    "please-select-a-valid-world-book": "请选择一个世界书条目",
+    "import":"导入世界书[Beta]"
   },
   "Workspaces/Greetings": {
     "character-greetings": "角色问候",
@@ -116,7 +118,8 @@
     "character-gallery": "角色画廊",
     "import": "导入",
     "new": "新建",
-    "export-character": "导出角色"
+    "export-character": "导出角色[V3版]",
+    "export-v2-noregex": "导出角色[V2版无正则]"
   },
   "Workspaces/AdvancedDefinitions": {
     "advanced-definitions": "高级定义",
@@ -133,5 +136,20 @@
     "characters-note": "角色笔记",
     "examples-of-dialogue": "对话示例",
     "post-history-instructions": "后续对话指令"
+  },
+  "Inset":{
+    "edit-keyword": "修改关键词",
+    "key-word": "关键词",
+    "close": "关闭",
+    "delete": "删除",
+    "submit": "提交",
+    "cancel": "取消",
+    "upload-image": "上传图片",
+    "key-word-0": "关键词",
+    "inset": "角色插图",
+    "the-picture-will-be-compressed": "图片会进行压缩",
+    "add-inset": "添加插图",
+    "new": "新增",
+    "uploading": "等待上传"
   }
 }

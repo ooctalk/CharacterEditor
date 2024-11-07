@@ -29,7 +29,8 @@
     "character-description": "Description",
     "firstmessage": "FirstMessage",
     "preview-version": "Preview Version",
-    "advanced": "Advanced"
+    "advanced": "Advanced",
+    "inset": "Inset"
   },
   "Workspaces/Settings": {
     "settings": "Settings",
@@ -93,7 +94,8 @@
     "delete": "Delete",
     "add": "Add",
     "second-key-word-logic": "Second Key Word Logic",
-    "please-select-a-valid-world-book": "Please select a valid World Book."
+    "please-select-a-valid-world-book": "Please select a valid World Book.",
+    "import": "Import[Beta]"
   },
   "Workspaces/Greetings": {
     "character-greetings": "Character Greetings",
@@ -116,8 +118,9 @@
     "character-gallery": "Character Gallery",
     "import": "Import",
     "new": "New",
-    "export-character": "Export Character",
-    "preview-version": "Preview Version"
+    "export-character": "Export Character[V3]",
+    "preview-version": "Preview Version",
+    "export-v2-noregex": "Export to V2 [NoRegex]"
   },
   "Workspaces/AdvancedDefinitions": {
     "advanced-definitions": "Advanced Definitions",
@@ -134,5 +137,20 @@
     "characters-note": "Character's Note",
     "examples-of-dialogue": "Examples of dialogue",
     "post-history-instructions": "Post-History Instructions"
+  },
+  "Inset": {
+    "edit-keyword": "Edit KeyWord",
+    "key-word": "Key Word",
+    "close": "Close",
+    "delete": "Delete",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "upload-image": "Upload Image",
+    "key-word-0": "Key Word",
+    "inset": "Inset",
+    "the-picture-will-be-compressed": "The picture will be compressed",
+    "add-inset": "Add Inset",
+    "new": "New",
+    "uploading": "UpLoading..."
   }
 }

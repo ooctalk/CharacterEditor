@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 import { enqueueSnackbar } from "notistack";
 
 export default function CharacterRegexSelect() {
-  const t = useTranslations('Workspaces/Regex')
+  const t = useTranslations("Workspaces/Regex");
   const { selectedCid, setSelectedRegexIndex } = useStore();
   const selectedCharacter = useLiveQuery(() =>
     selectedCid ? db.characters.where("cid").equals(selectedCid).toArray() : []
@@ -19,36 +19,35 @@ export default function CharacterRegexSelect() {
 
   return (
     <>
-      {selectedCharacter && selectedCharacter.length > 0 ? (
-        selectedCharacter.map((character: Character) => {
-          const regexsList = character.json.data.extensions.regex_scripts || [];
+      {selectedCharacter && selectedCharacter.length > 0
+        ? selectedCharacter.map((character: Character) => {
+            const regexsList =
+              character.json.data.extensions.regex_scripts || [];
 
-          return (
-            <Select
-              key={character.cid}
-              aria-label="Select Regex"
-              name="Regex"
-              onChange={(e) => setSelectedRegexIndex(Number(e.target.value))}
-            >
-              <option>{t('select-a-regex')}</option>
-              {regexsList.map((regex, index) => (
-                <option key={index} value={index}>
-                  # {regex.scriptName}
-                </option>
-              ))}
-            </Select>
-          );
-        })
-      ) : (
-        null
-      )}
+            return (
+              <Select
+                key={character.cid}
+                aria-label="Select Regex"
+                name="Regex"
+                onChange={(e) => setSelectedRegexIndex(Number(e.target.value))}
+              >
+                <option>{t("select-a-regex")}</option>
+                {regexsList.map((regex, index) => (
+                  <option key={index} value={index}>
+                    # {regex.scriptName}
+                  </option>
+                ))}
+              </Select>
+            );
+          })
+        : null}
     </>
   );
 }
 
 export function CharacterRegexAddButton() {
   const { selectedCid } = useStore();
-  const t = useTranslations('Workspaces/Regex')
+  const t = useTranslations("Workspaces/Regex");
   const selectedCharacter = useLiveQuery(() =>
     selectedCid ? db.characters.where("cid").equals(selectedCid).toArray() : []
   );
@@ -56,7 +55,6 @@ export function CharacterRegexAddButton() {
   if (!selectedCharacter || selectedCharacter.length === 0) {
     return null;
   }
-
 
   const handleAddRegex = async () => {
     if (
@@ -100,17 +98,17 @@ export function CharacterRegexAddButton() {
           },
         },
       });
-      enqueueSnackbar('Add It',{variant:"info"})
+      enqueueSnackbar("Add It", { variant: "info" });
     } else {
       console.error("Character cid is undefined");
     }
   };
 
-  return <Button onClick={handleAddRegex}>{t('add')}</Button>;
+  return <Button onClick={handleAddRegex}>{t("add")}</Button>;
 }
 
 export function CharacterRegexDeleteButton() {
-  const t = useTranslations('Workspaces/Regex')
+  const t = useTranslations("Workspaces/Regex");
   const { selectedCid, selectedRegexIndex } = useStore();
 
   const selectedCharacter = useLiveQuery(() =>
@@ -148,7 +146,7 @@ export function CharacterRegexDeleteButton() {
             },
           },
         });
-        enqueueSnackbar('Delete It',{variant:"error"})
+        enqueueSnackbar("Delete It", { variant: "error" });
       } else {
         console.error("Character cid is undefined");
       }
@@ -159,7 +157,7 @@ export function CharacterRegexDeleteButton() {
 
   return (
     <Button color="red" onClick={handleDeleteRegex}>
-      {t('delete')}
+      {t("delete")}
     </Button>
   );
 }

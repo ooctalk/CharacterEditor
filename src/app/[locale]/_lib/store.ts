@@ -21,6 +21,7 @@ interface Store {
   selectedGreetingsIndex: number | null;
   selectedWorldBooks: number | null;
   selectedRegexIndex: number | null;
+  proceedingList: { name: string; url: string }[] | null;
   openDrawer: (character: DrawerCharacter) => void;
   closeDrawer: () => void;
   openDialog: () => void;
@@ -29,6 +30,7 @@ interface Store {
   setSelectGreetingsIndex: (index: number | null) => void;
   setSelectedWorldBooks: (id: number | null) => void;
   setSelectedRegexIndex: (id: number | null) => void;
+  setProceedingList: (list: { name: string; url: string }[] | null) => void;
 }
 
 const useStore = create<Store>((set) => ({
@@ -39,6 +41,7 @@ const useStore = create<Store>((set) => ({
   selectedGreetingsIndex: null,
   selectedWorldBooks: null,
   selectedRegexIndex: null,
+  proceedingList: null,
   openDrawer: (drawerCharacter: DrawerCharacter) =>
     set({ isOpen: true, drawerCharacter }),
   closeDrawer: () => set({ isOpen: false }),
@@ -49,6 +52,8 @@ const useStore = create<Store>((set) => ({
     set({ selectedGreetingsIndex: index }),
   setSelectedWorldBooks: (id: number | null) => set({ selectedWorldBooks: id }),
   setSelectedRegexIndex: (id: number | null) => set({ selectedRegexIndex: id }),
+  setProceedingList: (list: { name: string; url: string }[] | null) =>
+    set({ proceedingList: list }),
 }));
 
 export default useStore;

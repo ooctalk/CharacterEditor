@@ -14,7 +14,7 @@ import { useTranslations } from "next-intl";
 
 function CharacterAdvancedDefinitionsEdit() {
   const { selectedCid } = useStore();
-  const t = useTranslations('Workspaces/AdvancedDefinitions')
+  const t = useTranslations("Workspaces/AdvancedDefinitions");
   const selectedCharacter = useLiveQuery(() =>
     selectedCid ? db.characters.where("cid").equals(selectedCid).toArray() : []
   );
@@ -33,11 +33,11 @@ function CharacterAdvancedDefinitionsEdit() {
             <div key={cid}>
               <section className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div className="space-y-1">
-                  <Subheading>{t('prompt-overrides')}</Subheading>
+                  <Subheading>{t("prompt-overrides")}</Subheading>
                 </div>
                 <div className="space-y-4">
                   <Field>
-                    <Label>{t('main-prompt-0')}</Label>
+                    <Label>{t("main-prompt-0")}</Label>
                     <Textarea
                       defaultValue={character.json.data.system_prompt}
                       onChange={(e) => {
@@ -52,7 +52,7 @@ function CharacterAdvancedDefinitionsEdit() {
                     />
                   </Field>
                   <Field>
-                    <Label>{t('post-history-instructions')}</Label>
+                    <Label>{t("post-history-instructions")}</Label>
                     <Textarea
                       defaultValue={
                         character.json.data.post_history_instructions
@@ -75,11 +75,11 @@ function CharacterAdvancedDefinitionsEdit() {
 
               <section className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div className="space-y-1">
-                  <Subheading>{t('creators-metadata')}</Subheading>
+                  <Subheading>{t("creators-metadata")}</Subheading>
                 </div>
                 <div className="space-y-4">
                   <Field>
-                    <Label>{t('created-by')}</Label>
+                    <Label>{t("created-by")}</Label>
                     <Input
                       defaultValue={character.json.data.creator}
                       onChange={(e) => {
@@ -94,11 +94,9 @@ function CharacterAdvancedDefinitionsEdit() {
                     />
                   </Field>
                   <Field>
-                    <Label>{t('character-version')}</Label>
+                    <Label>{t("character-version")}</Label>
                     <Input
-                      defaultValue={
-                        character.json.data.character_version
-                      }
+                      defaultValue={character.json.data.character_version}
                       onChange={(e) => {
                         if (character.cid !== undefined) {
                           handleUpdate(
@@ -111,11 +109,9 @@ function CharacterAdvancedDefinitionsEdit() {
                     />
                   </Field>
                   <Field>
-                    <Label>{t('creators-notes')}</Label>
+                    <Label>{t("creators-notes")}</Label>
                     <Textarea
-                      defaultValue={
-                        character.json.data.creator_notes
-                      }
+                      defaultValue={character.json.data.creator_notes}
                       onChange={(e) => {
                         if (character.cid !== undefined) {
                           handleUpdate(
@@ -128,11 +124,9 @@ function CharacterAdvancedDefinitionsEdit() {
                     />
                   </Field>
                   <Field>
-                    <Label>{t('tags-to-embed')}</Label>
+                    <Label>{t("tags-to-embed")}</Label>
                     <Input
-                      defaultValue={
-                        character.json.data.tags
-                      }
+                      defaultValue={character.json.data.tags}
                       onChange={(e) => {
                         if (character.cid !== undefined) {
                           handleUpdate(
@@ -146,11 +140,9 @@ function CharacterAdvancedDefinitionsEdit() {
                   </Field>
 
                   <Field>
-                    <Label>{t('personality-summary')}</Label>
+                    <Label>{t("personality-summary")}</Label>
                     <Textarea
-                      defaultValue={
-                        character.json.data.personality
-                      }
+                      defaultValue={character.json.data.personality}
                       onChange={(e) => {
                         if (character.cid !== undefined) {
                           handleUpdate(
@@ -164,11 +156,9 @@ function CharacterAdvancedDefinitionsEdit() {
                   </Field>
 
                   <Field>
-                    <Label>{t('scenario')}</Label>
+                    <Label>{t("scenario")}</Label>
                     <Textarea
-                      defaultValue={
-                        character.json.data.scenario
-                      }
+                      defaultValue={character.json.data.scenario}
                       onChange={(e) => {
                         if (character.cid !== undefined) {
                           handleUpdate(
@@ -182,7 +172,7 @@ function CharacterAdvancedDefinitionsEdit() {
                   </Field>
 
                   <Field>
-                    <Label>{t('characters-note')}</Label>
+                    <Label>{t("characters-note")}</Label>
                     <Textarea
                       defaultValue={
                         character.json.data.extensions.depth_prompt.prompt
@@ -200,11 +190,9 @@ function CharacterAdvancedDefinitionsEdit() {
                   </Field>
 
                   <Field>
-                    <Label>{t('examples-of-dialogue')}</Label>
+                    <Label>{t("examples-of-dialogue")}</Label>
                     <Textarea
-                      defaultValue={
-                        character.json.data.mes_example
-                      }
+                      defaultValue={character.json.data.mes_example}
                       onChange={(e) => {
                         if (character.cid !== undefined) {
                           handleUpdate(

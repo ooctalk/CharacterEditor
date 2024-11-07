@@ -10,7 +10,7 @@ import { useTranslations } from "next-intl";
 import { enqueueSnackbar } from "notistack";
 
 export default function CharacterGreetingsSelect() {
-  const t = useTranslations('Workspaces/Greetings');
+  const t = useTranslations("Workspaces/Greetings");
   const { selectedCid, setSelectGreetingsIndex } = useStore();
   const selectedCharacter = useLiveQuery(() =>
     selectedCid ? db.characters.where("cid").equals(selectedCid).toArray() : []
@@ -45,8 +45,7 @@ export default function CharacterGreetingsSelect() {
 }
 
 export function CharacterGreetingsDeleteButton() {
-  
-  const t = useTranslations('Workspaces/Greetings');
+  const t = useTranslations("Workspaces/Greetings");
   const { selectedCid, selectedGreetingsIndex } = useStore();
 
   const selectedCharacter = useLiveQuery(() =>
@@ -56,7 +55,6 @@ export function CharacterGreetingsDeleteButton() {
   if (!selectedCharacter || selectedCharacter.length === 0) {
     return null;
   }
-
 
   const handleDelete = async () => {
     if (selectedCharacter && selectedCharacter.length > 0) {
@@ -76,7 +74,7 @@ export function CharacterGreetingsDeleteButton() {
           await db.characters.update(character.cid, {
             "json.data.alternate_greetings": updatedGreetings,
           });
-          enqueueSnackbar('Delete It',{variant:"error"})
+          enqueueSnackbar("Delete It", { variant: "error" });
         } else {
           console.error("Character ID is undefined");
         }
@@ -86,13 +84,13 @@ export function CharacterGreetingsDeleteButton() {
 
   return (
     <Button onClick={handleDelete} color="red">
-      {t('delete')}
+      {t("delete")}
     </Button>
   );
 }
 
 export function CharacterGreetingsNewButton() {
-  const t = useTranslations('Workspaces/Greetings');
+  const t = useTranslations("Workspaces/Greetings");
   const { selectedCid } = useStore();
 
   const selectedCharacter = useLiveQuery(() =>
@@ -112,11 +110,11 @@ export function CharacterGreetingsNewButton() {
       await db.characters.update(character.cid, {
         "json.data.alternate_greetings": updatedGreetings,
       });
-      enqueueSnackbar('Add It',{variant:"info"})
+      enqueueSnackbar("Add It", { variant: "info" });
     } else {
       console.error("Character ID is undefined");
     }
   };
 
-  return <Button onClick={handleAddGreeting}>{t('add')}</Button>;
+  return <Button onClick={handleAddGreeting}>{t("add")}</Button>;
 }

@@ -25,7 +25,9 @@ import {
   FileJson2,
   MessageSquareQuoteIcon,
   MessagesSquareIcon,
-  PencilRulerIcon
+  PencilRulerIcon,
+  BookImageIcon,
+  TentTree,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SnackbarProvider } from "notistack";
@@ -60,9 +62,9 @@ export default function WorkSpacesLayout({
             {/* Header */}
             <SidebarHeader>
               <SidebarSection>
-              <span className="inline-flex items-center rounded-md bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-800">
-              {t('preview-version')}
-              </span>
+                <span className="inline-flex items-center rounded-md bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-800">
+                  {t("preview-version")}
+                </span>
                 <SidebarItem
                   href="/workspaces"
                   current={isCurrent("/workspaces")}
@@ -89,7 +91,7 @@ export default function WorkSpacesLayout({
                   current={isCurrent("/workspaces/firstmessage")}
                 >
                   <MessageSquareQuoteIcon />
-                  <SidebarLabel>{t('firstmessage')}</SidebarLabel>
+                  <SidebarLabel>{t("firstmessage")}</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem
                   href="/workspaces/greetings"
@@ -104,7 +106,7 @@ export default function WorkSpacesLayout({
                   current={isCurrent("/workspaces/advancedDefinitions")}
                 >
                   <PencilRulerIcon />
-                  <SidebarLabel>{t('advanced')}</SidebarLabel>
+                  <SidebarLabel>{t("advanced")}</SidebarLabel>
                 </SidebarItem>
 
                 <SidebarItem
@@ -128,11 +130,28 @@ export default function WorkSpacesLayout({
               <SidebarSection>
                 <SidebarHeading>{t("tools")}</SidebarHeading>
                 <SidebarItem
+                  href="/workspaces/inset"
+                  current={isCurrent("/workspaces/inset")}
+                >
+                  <BookImageIcon />
+                  <SidebarLabel>
+                    {t("inset")}{" "}
+                    <span className="inline-flex items-center rounded-full bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-800">
+                      Beta
+                    </span>
+                  </SidebarLabel>
+                </SidebarItem>
+                <SidebarItem
                   href="/workspaces/convertor"
                   current={isCurrent("/workspaces/convertor")}
                 >
                   <FileJson2 />
-                  <SidebarLabel>{t("convertor")}</SidebarLabel>
+                  <SidebarLabel>
+                    {t("convertor")}{" "}
+                    <span className="inline-flex items-center rounded-full bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-800">
+                      Beta
+                    </span>
+                  </SidebarLabel>
                 </SidebarItem>
               </SidebarSection>
 
@@ -145,10 +164,10 @@ export default function WorkSpacesLayout({
                   <StarIcon />
                   <SidebarLabel>{t("project-address")}</SidebarLabel>
                 </SidebarItem>
-                {/* <SidebarItem href="https://ooctalk.com" target="_blank">
+                <SidebarItem href="https://ooctalk.com" target="_blank">
                   <TentTree />
                   <SidebarLabel>{t("community")}</SidebarLabel>
-                </SidebarItem> */}
+                </SidebarItem>
               </SidebarSection>
             </SidebarBody>
 

@@ -5,7 +5,7 @@ export default function NoSelectCharacterCTA() {
   const t = useTranslations("");
   return (
     <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-      <h2 className="max-w-2xl text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+      <h2 className="max-w-2xl text-balance text-4xl font-semibold tracking-tight text-black dark:text-white sm:text-5xl">
         {t("please-select-character")}
       </h2>
       <div className="mt-10 flex items-center gap-x-6">

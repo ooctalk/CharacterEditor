@@ -9,13 +9,13 @@ import CharacterGreetingsButton, {
 import { useTranslations } from "next-intl";
 
 function CharacterGreetings() {
-  const t = useTranslations('Workspaces/Greetings')
+  const t = useTranslations("Workspaces/Greetings");
   return (
     <>
       {/* Title  */}
 
       <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-        <Heading>{t('character-greetings')}</Heading>
+        <Heading>{t("character-greetings")}</Heading>
         <div className="flex gap-4 sm:justify-self-end text-nowrap">
           <CharacterGreetingsDeleteButton />
           <CharacterGreetingsNewButton />

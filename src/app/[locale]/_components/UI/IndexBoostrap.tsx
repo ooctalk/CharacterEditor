@@ -2,13 +2,15 @@
 import { Link } from "../../../../i18n/routing";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
-import { Code, PenIcon, ActivityIcon} from "lucide-react";
-import { ExclamationTriangleIcon } from '@heroicons/react/20/solid'
+import { Code, PenIcon, ActivityIcon } from "lucide-react";
+import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 
 function IndexBoostrap() {
   const t = useTranslations("IndexBoostrap");
 
-  const [greeting, setGreeting] = useState("CharacterEditorByOoCTalk,If you see this message for a long time, change your browser");
+  const [greeting, setGreeting] = useState(
+    "CharacterEditorByOoCTalk,If you see this message for a long time, change your browser"
+  );
 
   useEffect(() => {
     const currentHour = new Date().getHours();
@@ -26,28 +28,32 @@ function IndexBoostrap() {
 
   return (
     <>
-    <div className="flex justify-center sm:pt-4">
-  <div className="animate-fade-down animate-delay-1000 rounded-md bg-yellow-50 p-4 w-full max-w-screen-sm">
-    <div className="flex">
-      <div className="flex-shrink-0">
-        <ExclamationTriangleIcon aria-hidden="true" className="h-5 w-5 text-yellow-400" />
-      </div>
-      <div className="ml-3">
-        <h3 className="text-sm font-medium text-yellow-800">{t('release-under-development')}</h3>
-        <div className="mt-2 text-sm text-yellow-700">
-          <p>
-            {t('while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution')}
-          </p>
+      <div className="flex justify-center sm:pt-4">
+        <div className="animate-fade-down animate-delay-1000 rounded-md bg-yellow-50 p-4 w-full max-w-screen-sm">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <ExclamationTriangleIcon
+                aria-hidden="true"
+                className="h-5 w-5 text-yellow-400"
+              />
+            </div>
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-yellow-800">
+                {t("release-under-development")}
+              </h3>
+              <div className="mt-2 text-sm text-yellow-700">
+                <p>
+                  {t(
+                    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution"
+                  )}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
 
       <div className="animate-fade animate-delay-500 px-6 py-24 sm:py-32 lg:px-8 ">
-        
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             {greeting}
@@ -82,9 +88,7 @@ function IndexBoostrap() {
                 <h3 className="block font-bold text-gray-800 dark:text-white">
                   {t("edit-character")}
                 </h3>
-                <p className="text-gray-600 dark:text-neutral-400">
-
-                </p>
+                <p className="text-gray-600 dark:text-neutral-400"></p>
               </div>
               <p className="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800 dark:text-neutral-200">
                 Workbenches
@@ -179,8 +183,7 @@ function IndexBoostrap() {
                 <h3 className="block font-bold text-gray-800 dark:text-white">
                   {t("code")}
                 </h3>
-                <p className="text-gray-600 dark:text-neutral-400">
-                </p>
+                <p className="text-gray-600 dark:text-neutral-400"></p>
               </div>
 
               <p className="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800 dark:text-neutral-200">
@@ -226,10 +229,9 @@ function IndexBoostrap() {
             <div>
               <div>
                 <h3 className="block font-bold text-gray-800 dark:text-white">
-                  {t('uptime')}
+                  {t("uptime")}
                 </h3>
-                <p className="text-gray-600 dark:text-neutral-400">
-                </p>
+                <p className="text-gray-600 dark:text-neutral-400"></p>
               </div>
 
               <p className="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800 dark:text-neutral-200">

@@ -16,7 +16,10 @@ import {
 import useStore from "../../_lib/store";
 import { CircleAlertIcon, EllipsisVerticalIcon, XIcon } from "lucide-react";
 import { enqueueSnackbar } from "notistack";
-import { WorkSpacesExportCharacterButton } from "../Reuse/WorkSpacesButton";
+import {
+  WorkSpacesExportCharacterButton,
+  WorkSpacesExportCharacterSpecV2Button,
+} from "../Reuse/WorkSpacesButton";
 import { useTranslations } from "next-intl";
 import { ChangeEvent } from "react";
 
@@ -100,8 +103,8 @@ function WorkSpacesCharactersDrawers() {
 
       try {
         await db.characters.update(cid, { cover: base64String });
-        closeDrawer()
-        enqueueSnackbar('Change Cover Done' ,{variant: "success",})
+        closeDrawer();
+        enqueueSnackbar("Change Cover Done", { variant: "success" });
       } catch (error) {
         console.error("Failed to update cover:", error);
       }
@@ -235,6 +238,9 @@ function WorkSpacesCharactersDrawers() {
                                     >
                                       {t("delete")}
                                     </Button>
+                                  </MenuItem>
+                                  <MenuItem>
+                                    <WorkSpacesExportCharacterSpecV2Button />
                                   </MenuItem>
                                 </div>
                               </MenuItems>

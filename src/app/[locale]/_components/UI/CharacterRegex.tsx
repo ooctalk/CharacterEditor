@@ -9,12 +9,12 @@ import CharacterRegexEdit from "../Reuse/CharacterRegexEdit";
 import { useTranslations } from "next-intl";
 
 function CharacterWorldBooks() {
-  const t = useTranslations('Workspaces/Regex')
+  const t = useTranslations("Workspaces/Regex");
   return (
     <>
       {/* Title  */}
       <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-        <Heading>{t('character-regex')}</Heading>
+        <Heading>{t("character-regex")}</Heading>
         <div className="flex gap-4 sm:justify-self-end text-nowrap">
           <CharacterRegexDeleteButton />
           <CharacterRegexAddButton />

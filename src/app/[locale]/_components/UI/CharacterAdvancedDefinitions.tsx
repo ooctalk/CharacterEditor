@@ -6,11 +6,11 @@ import { useTranslations } from "next-intl";
 import CharacterAdvancedDefinitionsEdit from "../Reuse/CharacterAdvancedDefinitionsEdit";
 
 function CharacterDescriptionDefinitions() {
-  const t = useTranslations('Workspaces/AdvancedDefinitions')
+  const t = useTranslations("Workspaces/AdvancedDefinitions");
   return (
     <>
       {/* Title  */}
-      <Heading>{t('advanced-definitions')}</Heading>
+      <Heading>{t("advanced-definitions")}</Heading>
       <Divider className="my-10 mt-6" />
 
       {/* Content */}
