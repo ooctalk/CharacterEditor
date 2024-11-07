@@ -79,6 +79,21 @@ function CharacterAdvancedDefinitionsEdit() {
                 </div>
                 <div className="space-y-4">
                   <Field>
+                    <Label>{t('charactername')}</Label>
+                    <Input
+                      defaultValue={character.json.data.name}
+                      onChange={(e) => {
+                        if (character.cid !== undefined) {
+                          handleUpdate(
+                            character.cid,
+                            `json.data.name`,
+                            e.target.value
+                          );
+                        }
+                      }}
+                    />
+                  </Field>
+                  <Field>
                     <Label>{t("created-by")}</Label>
                     <Input
                       defaultValue={character.json.data.creator}

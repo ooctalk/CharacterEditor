@@ -135,7 +135,8 @@
     "scenario": "场景",
     "characters-note": "角色笔记",
     "examples-of-dialogue": "对话示例",
-    "post-history-instructions": "后续对话指令"
+    "post-history-instructions": "后续对话指令",
+    "charactername": "角色卡名字"
   },
   "Inset":{
     "edit-keyword": "修改关键词",

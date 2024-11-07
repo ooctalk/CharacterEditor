@@ -136,7 +136,8 @@
     "scenario": "Scenario",
     "characters-note": "Character's Note",
     "examples-of-dialogue": "Examples of dialogue",
-    "post-history-instructions": "Post-History Instructions"
+    "post-history-instructions": "Post-History Instructions",
+    "charactername": "Character Name"
   },
   "Inset": {
     "edit-keyword": "Edit KeyWord",

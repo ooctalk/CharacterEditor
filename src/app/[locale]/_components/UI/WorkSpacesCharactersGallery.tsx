@@ -68,7 +68,7 @@ export default function WorkSpacesCharactersGallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <h2 className="text-white font-bold drop-shadow-md text-left">
-                  {character.json.name}
+                  {character.json.data.name}
                 </h2>
                 <p className="text-zinc-300 drop-shadow-sm text-left">
                   {character.json.data.character_version}
