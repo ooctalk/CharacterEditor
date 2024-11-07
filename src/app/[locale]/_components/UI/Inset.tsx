@@ -4,7 +4,6 @@ import useStore from "../../_lib/store";
 import { useLiveQuery } from "dexie-react-hooks";
 import db from "../../_lib/db";
 import { Character } from "../../_lib/db";
-import NoSelectCharacterCTA from "../Reuse/NoSelectCharacterCTA";
 import { Heading } from "../Catalyst/heading";
 import { Divider } from "../Catalyst/divider";
 import Image from "next/image";
@@ -273,7 +272,7 @@ export default function Inset() {
                     height={1000}
                     width={1000}
                     alt={item.name}
-                    src={"https://files.catbox.moe/" + item.url}
+                    src={"https://files.catbox.moe/" + item.url +".webp"}
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
