@@ -17,7 +17,7 @@ import {
 } from "../Catalyst/dialog";
 import { Field, Label } from "../Catalyst/fieldset";
 import { Input } from "../Catalyst/input";
-import imageCompression from "browser-image-compression";
+import Compressor from "compressorjs";
 import { useTranslations } from "next-intl";
 import { enqueueSnackbar } from "notistack";
 export default function Inset() {
@@ -272,7 +272,7 @@ export default function Inset() {
                     height={1000}
                     width={1000}
                     alt={item.name}
-                    src={"https://files.catbox.moe/" + item.url +".webp"}
+                    src={"https://files.catbox.moe/" + item.url}
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
@@ -354,22 +354,40 @@ function InsetNewButton() {
     const file = event.target.files[0];
     if (!file) return;
 
-    const options = {
-      maxSizeMB: 1,
-      maxWidthOrHeight: 1000,
-      useWebp: true,
-    };
-
-    try {
-      const compressedFile = await imageCompression(file, options);
-      setTempFile(compressedFile);
-    } catch (error) {
-      console.error("error:", error);
-    }
+    new Compressor(file, {
+      quality: 0.8,
+      maxWidth: 1000,
+      mimeType: "image/webp",
+      success(result) {
+        if (result.size > 1 * 1024 * 1024) {
+          console.error("File size exceeds 1MB after compression");
+          setTempFile(null);
+          return;
+        }
+        const webpFile = new File([result], `${file.name.split(".")[0]}.webp`, {
+          type: "image/webp",
+        });
+        setTempFile(webpFile);
+      },
+      error(err) {
+        console.error("Compression error:", err);
+      },
+    });
   };
 
   const handleSubmit = async () => {
     if (tempFile && selectedCharacter && selectedCharacter.length > 0) {
+      const character = selectedCharacter[0];
+      const entries = character.json.data.character_book?.entries || [];
+      const isKeywordDuplicate = entries.some((entry) =>
+        entry.content.includes(keyword)
+      );
+
+      if (isKeywordDuplicate) {
+        enqueueSnackbar("{t('keyword-already-exists')}", { variant: "error" });
+        return;
+      }
+
       setIsLoading(true);
       try {
         const formData = new FormData();
@@ -382,15 +400,13 @@ function InsetNewButton() {
         });
 
         if (!response.ok) {
-          throw new Error("Network err");
+          throw new Error("Network error");
         }
 
-        const result = await response.json();
+        const result = await response.text();
         const fileName = result.replace("https://files.catbox.moe/", "");
         if (keyword && fileName) {
           const newInsetStr = `${keyword}_${fileName}`;
-          const character = selectedCharacter[0];
-          const entries = character.json.data.character_book?.entries || [];
           const insetEntry = entries.find(
             (entry) =>
               entry.comment ===
@@ -415,7 +431,7 @@ function InsetNewButton() {
                 },
               });
               closeDialog();
-              enqueueSnackbar("Add it", { variant: "success" });
+              enqueueSnackbar("Added successfully", { variant: "success" });
             } else {
               console.error("character.cid is undefined");
             }

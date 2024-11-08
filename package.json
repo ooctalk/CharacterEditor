@@ -11,8 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^2.1.10",
     "@heroicons/react": "^2.1.5",
-    "browser-image-compression": "^2.0.2",
     "clsx": "^2.1.1",
+    "compressorjs": "^1.2.1",
     "dexie": "^4.0.9",
     "dexie-react-hooks": "^1.1.7",
     "framer-motion": "^11.11.9",

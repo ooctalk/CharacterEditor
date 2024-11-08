@@ -129,7 +129,7 @@ export default function WorkSpacesLayout({
 
               <SidebarSection>
                 <SidebarHeading>{t("tools")}</SidebarHeading>
-                {/* <SidebarItem
+                <SidebarItem
                   href="/workspaces/inset"
                   current={isCurrent("/workspaces/inset")}
                 >
@@ -140,7 +140,7 @@ export default function WorkSpacesLayout({
                       Beta
                     </span>
                   </SidebarLabel>
-                </SidebarItem> */}
+                </SidebarItem>
                 <SidebarItem
                   href="/workspaces/convertor"
                   current={isCurrent("/workspaces/convertor")}

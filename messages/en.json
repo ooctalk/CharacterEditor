@@ -152,6 +152,7 @@
     "the-picture-will-be-compressed": "The picture will be compressed",
     "add-inset": "Add Inset",
     "new": "New",
-    "uploading": "UpLoading..."
+    "uploading": "UpLoading...",
+    "keyword-already-exists": "Keyword already exists"
   }
 }

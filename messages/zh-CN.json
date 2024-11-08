@@ -151,6 +151,7 @@
     "the-picture-will-be-compressed": "图片会进行压缩",
     "add-inset": "添加插图",
     "new": "新增",
-    "uploading": "等待上传"
+    "uploading": "等待上传",
+    "keyword-already-exists": "关键词已经存在"
   }
 }
