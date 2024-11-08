@@ -293,10 +293,20 @@ export default function Inset() {
               <Label>{t("key-word")}</Label>
               <Input
                 defaultValue={
-                  selectedIndex !== null && list ? list[selectedIndex].name : ""
+                  selectedIndex !== null &&
+                  list &&
+                  selectedIndex >= 0 &&
+                  selectedIndex < list.length
+                    ? list[selectedIndex].name
+                    : ""
                 }
                 onChange={(e) => {
-                  if (selectedIndex !== null && list) {
+                  if (
+                    selectedIndex !== null &&
+                    list &&
+                    selectedIndex >= 0 &&
+                    selectedIndex < list.length
+                  ) {
                     const updatedList = [...list];
                     updatedList[selectedIndex].name = e.target.value;
                     setProceedingList(updatedList);
@@ -309,8 +319,13 @@ export default function Inset() {
               <Input
                 disabled
                 defaultValue={
-                  selectedIndex !== null && list ? list[selectedIndex].url : ""
+                  selectedIndex !== null &&
+                  list &&
+                  selectedIndex < list.length 
+                    ? list[selectedIndex].url 
+                    : ""
                 }
+                
               />
             </Field>
           </DialogBody>
@@ -320,13 +335,54 @@ export default function Inset() {
             </Button>
             <Button
               color="red"
-              onClick={() => {
-                if (selectedIndex !== null && list) {
-                  const updatedList = list.filter(
-                    (_, i) => i !== selectedIndex
+              onClick={async () => {
+                if (
+                  selectedIndex !== null &&
+                  list &&
+                  selectedCharacter &&
+                  selectedCharacter.length > 0
+                ) {
+                  const character = selectedCharacter[0];
+                  const entries =
+                    character.json.data.character_book?.entries || [];
+                  const insetEntry = entries.find(
+                    (entry) =>
+                      entry.comment ===
+                      "[CautionEdit]CharacterInsetGallery[ooctalk.com]"
                   );
-                  setProceedingList(updatedList);
-                  setIsOpen(false);
+
+                  if (insetEntry) {
+                    const itemToDelete = list[selectedIndex];
+                    const insetString = `${itemToDelete.name}_${itemToDelete.url}`;
+
+                    insetEntry.content = insetEntry.content.replace(
+                      `${insetString}\n`,
+                      ""
+                    );
+
+                    if (character.cid !== undefined) {
+                      await db.characters.update(character.cid, {
+                        json: {
+                          ...character.json,
+                          data: {
+                            ...character.json.data,
+                            character_book: {
+                              ...character.json.data.character_book,
+                              entries,
+                            },
+                          },
+                        },
+                      });
+                    } else {
+                      console.error("character.cid is undefined");
+                    }
+                    const updatedList = list.filter(
+                      (_, i) => i !== selectedIndex
+                    );
+                    setProceedingList(updatedList);
+                    setSelectedIndex(null);
+                    setIsOpen(false);
+                  }
                 }
               }}
             >
