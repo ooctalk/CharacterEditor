@@ -35,7 +35,14 @@
   "Workspaces/Settings": {
     "settings": "Settings",
     "theme": "Theme",
-    "language": "Language"
+    "language": "Language",
+    "backup-data": "Backup Data",
+    "import-data": "Import Data",
+    "irretrievability": "Irretrievability",
+    "are-you-sure-you-want-to-empty-the-database-this-action-cannot-be-undone": "Are you sure you want to empty the database? This action cannot be undone.",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "delete-data": "Delete Data"
   },
   "Workspaces/Convertor": {
     "import": "Import",

@@ -35,7 +35,14 @@
   "Workspaces/Settings": {
     "settings": "设置",
     "theme": "主题",
-    "language": "语言"
+    "language": "语言",
+    "backup-data": "备份数据",
+    "import-data": "导入数据",
+    "irretrievability": "无法反悔",
+    "are-you-sure-you-want-to-empty-the-database-this-action-cannot-be-undone": "你真的真的确定要删除所有数据吗",
+    "delete": "删除",
+    "cancel": "算了",
+    "delete-data": "删除数据"
   },
   "Workspaces/Convertor": {
     "import": "导入",
