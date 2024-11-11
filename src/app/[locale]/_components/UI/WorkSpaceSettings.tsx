@@ -4,7 +4,11 @@ import { Divider } from "../Catalyst/divider";
 import ThemeSwitcher from "../Reuse/ThemeSwitcher";
 import LanguageSwitcher from "../Reuse/LanguageSwitcher";
 import { useTranslations } from "next-intl";
-import { CharacterBackUp, CharacterClear, CharacterImport } from "../Reuse/CharacterSettingsButton";
+import {
+  CharacterBackUp,
+  CharacterClear,
+  CharacterImport,
+} from "../Reuse/CharacterSettingsButton";
 
 function WorkSpaceSettings() {
   const t = useTranslations("Workspaces/Settings");
@@ -60,10 +64,10 @@ function WorkSpaceSettings() {
       </section>
 
       <Divider className="my-10 mt-6" />
-      
+
       <section className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
         <div className="space-y-1">
-          <Subheading>{t('delete-data')}</Subheading>
+          <Subheading>{t("delete-data")}</Subheading>
         </div>
         <div className="justify-self-end">
           <CharacterClear />

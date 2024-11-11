@@ -25,7 +25,7 @@ export function ImportCharacterConvertorButton() {
         const imageBuffer = new Uint8Array(arrayBuffer);
         const chunks = extract(imageBuffer);
         const tEXtChunks = chunks.filter(
-          (chunk: { name: string }) => chunk.name === "tEXt"
+          (chunk: { name: string }) => chunk.name === "tEXt",
         );
         const charaChunks = tEXtChunks.map((tEXtChunk: any) => ({
           chara: text.decode(tEXtChunk),
@@ -41,7 +41,7 @@ export function ImportCharacterConvertorButton() {
           const characterConvertorJson = decoder.decode(byteArray);
           localStorage.setItem(
             "characterConvertorJson",
-            characterConvertorJson
+            characterConvertorJson,
           );
         }
       } catch (error) {

@@ -2,14 +2,14 @@
 import { Link } from "../../../../i18n/routing";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
-import { Code, PenIcon, ActivityIcon } from "lucide-react";
+import { ActivityIcon, Code, PenIcon } from "lucide-react";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 
 function IndexBoostrap() {
   const t = useTranslations("IndexBoostrap");
 
   const [greeting, setGreeting] = useState(
-    "CharacterEditorByOoCTalk,If you see this message for a long time, change your browser"
+    "CharacterEditorByOoCTalk,If you see this message for a long time, change your browser",
   );
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function IndexBoostrap() {
               <div className="mt-2 text-sm text-yellow-700">
                 <p>
                   {t(
-                    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution"
+                    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution",
                   )}
                 </p>
               </div>
@@ -109,7 +109,8 @@ function IndexBoostrap() {
               </p>
             </div>
           </Link>
-          {/* <Link
+          {
+            /* <Link
             className="group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
             href="https://ooctalk.com"
             target="_blank"
@@ -157,7 +158,8 @@ function IndexBoostrap() {
                 </svg>
               </p>
             </div>
-          </Link> */}
+          </Link> */
+          }
           <Link
             className="animate-fade-up animate-delay-200 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
             href="https://github.com/ooctalk/CharacterEditor"

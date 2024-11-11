@@ -20,23 +20,23 @@ function CharacterWorldBooksSelect() {
     <>
       {selectedCharacter && selectedCharacter.length > 0
         ? selectedCharacter.map((character: Character) => {
-            const characterBookList =
-              character.json.data.character_book?.entries || [];
+          const characterBookList =
+            character.json.data.character_book?.entries || [];
 
-            return (
-              <Select
-                key={character.cid}
-                onChange={(e) => setSelectedWorldBooks(Number(e.target.value))}
-              >
-                <option>{t("select-a-world-book")}</option>
-                {characterBookList.map((book, index) => (
-                  <option key={index} value={index}>
-                    {book.comment}
-                  </option>
-                ))}
-              </Select>
-            );
-          })
+          return (
+            <Select
+              key={character.cid}
+              onChange={(e) => setSelectedWorldBooks(Number(e.target.value))}
+            >
+              <option>{t("select-a-world-book")}</option>
+              {characterBookList.map((book, index) => (
+                <option key={index} value={index}>
+                  {book.comment}
+                </option>
+              ))}
+            </Select>
+          );
+        })
         : null}
     </>
   );
@@ -60,8 +60,9 @@ export function CharacterBookAddButton() {
       !selectedCharacter ||
       selectedCharacter.length === 0 ||
       selectedCid === null
-    )
+    ) {
       return;
+    }
 
     const character = selectedCharacter[0];
     const entries = character.json.data.character_book?.entries || [];
@@ -111,9 +112,9 @@ export function CharacterBookAddButton() {
           data: {
             ...character.json.data,
             character_book: {
-              name:
-                character.json.data.character_book?.name || "Default Book Name",
               entries: [...entries, newEntry],
+              name: character.json.data.character_book?.name ||
+                character.json.data.name + "World Book",
             },
           },
         },
@@ -142,8 +143,9 @@ export function CharacterBookDeleteButton() {
       selectedCharacter.length === 0 ||
       selectedCid === null ||
       selectedWorldBooks === null
-    )
+    ) {
       return;
+    }
 
     const character = selectedCharacter[0];
     const entries = character.json.data.character_book?.entries || [];
@@ -151,7 +153,10 @@ export function CharacterBookDeleteButton() {
     if (selectedWorldBooks >= 0 && selectedWorldBooks < entries.length) {
       entries.splice(selectedWorldBooks, 1);
 
-      if (character.cid !== undefined) {
+      if (
+        character.cid !== undefined &&
+        character.json.data.character_book?.entries
+      ) {
         await db.characters.update(character.cid, {
           json: {
             ...character.json,
@@ -194,7 +199,7 @@ export function CharacterBookImportButton() {
     return null;
   }
   const handleFileChange = async (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -206,15 +211,14 @@ export function CharacterBookImportButton() {
       const parsedData = JSON.parse(fileContent);
       if (!parsedData.entries || typeof parsedData.entries !== "object") {
         throw new Error(
-          "The entries in the uploaded file are not in the correct format."
+          "The entries in the uploaded file are not in the correct format.",
         );
       }
       const character = selectedCharacter[0];
       const currentEntries = character.json.data.character_book?.entries || [];
-      const newEntriesStartId =
-        currentEntries.length > 0
-          ? Math.max(...currentEntries.map((entry) => entry.id)) + 1
-          : 1;
+      const newEntriesStartId = currentEntries.length > 0
+        ? Math.max(...currentEntries.map((entry) => entry.id)) + 1
+        : 1;
       const newEntries = Object.values(parsedData.entries).map(
         (entry: any, index: number) => ({
           id: newEntriesStartId + index,
@@ -252,10 +256,13 @@ export function CharacterBookImportButton() {
             cooldown: entry.cooldown || 0,
             delay: entry.delay || 0,
           },
-        })
+        }),
       );
       const updatedEntries = [...currentEntries, ...newEntries];
-      if (character.cid !== undefined) {
+      if (
+        character.cid !== undefined &&
+        character.json.data.character_book?.entries
+      ) {
         await db.characters.update(character.cid, {
           json: {
             ...character.json,

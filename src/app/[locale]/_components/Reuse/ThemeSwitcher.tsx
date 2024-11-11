@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { SunIcon, MoonIcon } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 
 export default function ThemeSwitcher() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -8,7 +8,7 @@ export default function ThemeSwitcher() {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
 
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {

@@ -92,7 +92,7 @@ function WorkSpacesCharactersDrawers() {
 
   const handleCoverChange = async (
     event: ChangeEvent<HTMLInputElement>,
-    cid: number | null
+    cid: number | null,
   ) => {
     const file = event.target.files?.[0];
     if (!file || cid === null) return;
@@ -149,38 +149,38 @@ function WorkSpacesCharactersDrawers() {
                       <div>
                         <div className="-m-1 flex">
                           <div className="inline-flex overflow-hidden rounded-lg border-4 border-white">
-                            {drawerCharacter?.cover ? (
-                              <button
-                                onClick={() =>
-                                  document
-                                    .getElementById(
-                                      `fileInput-${drawerCharacter.cid}`
-                                    )
-                                    ?.click()
-                                }
-                              >
-                                <Image
-                                  alt=""
-                                  src={drawerCharacter.cover}
-                                  width={300}
-                                  height={500}
-                                  className="h-36 w-24 flex-shrink-0 sm:h-60 sm:w-40 lg:h-72 lg:w-48"
-                                />
-                                <input
-                                  id={`fileInput-${drawerCharacter.cid}`}
-                                  type="file"
-                                  accept="image/png"
-                                  className="hidden"
-                                  onChange={(e) =>
-                                    handleCoverChange(e, drawerCharacter.cid)
-                                  }
-                                />
-                              </button>
-                            ) : (
-                              <div className="h-36 w-24 flex-shrink-0 sm:h-60 sm:w-40 lg:h-72 lg:w-48 bg-gray-200 dark:bg-zinc-600 flex items-center justify-center">
-                                No Cover Available
-                              </div>
-                            )}
+                            {drawerCharacter?.cover
+                              ? (
+                                <button
+                                  onClick={() =>
+                                    document
+                                      .getElementById(
+                                        `fileInput-${drawerCharacter.cid}`,
+                                      )
+                                      ?.click()}
+                                >
+                                  <Image
+                                    alt=""
+                                    src={drawerCharacter.cover}
+                                    width={300}
+                                    height={500}
+                                    className="h-36 w-24 flex-shrink-0 sm:h-60 sm:w-40 lg:h-72 lg:w-48"
+                                  />
+                                  <input
+                                    id={`fileInput-${drawerCharacter.cid}`}
+                                    type="file"
+                                    accept="image/png"
+                                    className="hidden"
+                                    onChange={(e) =>
+                                      handleCoverChange(e, drawerCharacter.cid)}
+                                  />
+                                </button>
+                              )
+                              : (
+                                <div className="h-36 w-24 flex-shrink-0 sm:h-60 sm:w-40 lg:h-72 lg:w-48 bg-gray-200 dark:bg-zinc-600 flex items-center justify-center">
+                                  No Cover Available
+                                </div>
+                              )}
                           </div>
                         </div>
                       </div>
@@ -201,7 +201,7 @@ function WorkSpacesCharactersDrawers() {
                               if (drawerCharacter && drawerCharacter.cid) {
                                 setSelectedCid(drawerCharacter.cid);
                                 enqueueSnackbar(
-                                  "Select " + drawerCharacter.cid
+                                  "Select " + drawerCharacter.cid,
                                 );
                               }
                             }}

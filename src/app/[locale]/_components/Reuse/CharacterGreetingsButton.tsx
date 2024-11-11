@@ -20,25 +20,23 @@ export default function CharacterGreetingsSelect() {
     <>
       {selectedCharacter && selectedCharacter.length > 0
         ? selectedCharacter.map((character: Character) => {
-            const greetingsList = character.json.data.alternate_greetings;
-            return (
-              <Select
-                key={character.cid}
-                aria-label="Select Greeting"
-                name="greeting"
-                onChange={(e) =>
-                  setSelectGreetingsIndex(Number(e.target.value))
-                }
-              >
-                <option>Select a Greeting</option>
-                {greetingsList.map((greeting, index) => (
-                  <option key={index} value={index}>
-                    # {index + 1}
-                  </option>
-                ))}
-              </Select>
-            );
-          })
+          const greetingsList = character.json.data.alternate_greetings;
+          return (
+            <Select
+              key={character.cid}
+              aria-label="Select Greeting"
+              name="greeting"
+              onChange={(e) => setSelectGreetingsIndex(Number(e.target.value))}
+            >
+              <option>Select a Greeting</option>
+              {greetingsList.map((greeting, index) => (
+                <option key={index} value={index}>
+                  # {index + 1}
+                </option>
+              ))}
+            </Select>
+          );
+        })
         : ""}
     </>
   );
@@ -67,7 +65,7 @@ export function CharacterGreetingsDeleteButton() {
         selectedGreetingsIndex < greetingsList.length
       ) {
         const updatedGreetings = greetingsList.filter(
-          (_, index) => index !== selectedGreetingsIndex
+          (_, index) => index !== selectedGreetingsIndex,
         );
 
         if (character.cid !== undefined) {

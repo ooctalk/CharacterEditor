@@ -21,25 +21,24 @@ export default function CharacterRegexSelect() {
     <>
       {selectedCharacter && selectedCharacter.length > 0
         ? selectedCharacter.map((character: Character) => {
-            const regexsList =
-              character.json.data.extensions.regex_scripts || [];
+          const regexsList = character.json.data.extensions.regex_scripts || [];
 
-            return (
-              <Select
-                key={character.cid}
-                aria-label="Select Regex"
-                name="Regex"
-                onChange={(e) => setSelectedRegexIndex(Number(e.target.value))}
-              >
-                <option>{t("select-a-regex")}</option>
-                {regexsList.map((regex, index) => (
-                  <option key={index} value={index}>
-                    # {regex.scriptName}
-                  </option>
-                ))}
-              </Select>
-            );
-          })
+          return (
+            <Select
+              key={character.cid}
+              aria-label="Select Regex"
+              name="Regex"
+              onChange={(e) => setSelectedRegexIndex(Number(e.target.value))}
+            >
+              <option>{t("select-a-regex")}</option>
+              {regexsList.map((regex, index) => (
+                <option key={index} value={index}>
+                  # {regex.scriptName}
+                </option>
+              ))}
+            </Select>
+          );
+        })
         : null}
     </>
   );
@@ -61,8 +60,9 @@ export function CharacterRegexAddButton() {
       !selectedCharacter ||
       selectedCharacter.length === 0 ||
       selectedCid === null
-    )
+    ) {
       return;
+    }
 
     const character = selectedCharacter[0];
     const regexsList = character.json.data.extensions.regex_scripts || [];
@@ -124,8 +124,9 @@ export function CharacterRegexDeleteButton() {
       selectedCharacter.length === 0 ||
       selectedCid === null ||
       selectedRegexIndex === null
-    )
+    ) {
       return;
+    }
 
     const character = selectedCharacter[0];
     const regexsList = character.json.data.extensions.regex_scripts || [];

@@ -16,17 +16,17 @@ import {
 } from "../_components/Catalyst/sidebar";
 import { SidebarLayout } from "../_components/Catalyst/sidebar-layout";
 import {
+  BookImageIcon,
   CogIcon,
-  LayoutGridIcon,
-  IdCardIcon,
-  RegexIcon,
   EarthIcon,
-  StarIcon,
   FileJson2,
+  IdCardIcon,
+  LayoutGridIcon,
   MessageSquareQuoteIcon,
   MessagesSquareIcon,
   PencilRulerIcon,
-  BookImageIcon,
+  RegexIcon,
+  StarIcon,
   TentTree,
 } from "lucide-react";
 import { useTranslations } from "next-intl";

@@ -62,8 +62,8 @@ export interface Character {
       character_book?: {
         entries: Array<{
           id: number;
-          keys: string[];
-          secondary_keys: string[];
+          keys: Array<[]>;
+          secondary_keys: Array<[]>;
           comment: string;
           content: string;
           constant: boolean;
@@ -97,7 +97,7 @@ export interface Character {
             delay: number;
           };
         }>;
-        name?: string;
+        name: string;
       };
     };
     create_date: string;

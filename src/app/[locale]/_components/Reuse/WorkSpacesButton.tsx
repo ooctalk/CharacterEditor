@@ -32,7 +32,7 @@ export function WorkSpacesImportCharacterButton() {
         const imageBuffer = new Uint8Array(arrayBuffer);
         const chunks = extract(imageBuffer);
         const tEXtChunks = chunks.filter(
-          (chunk: { name: string }) => chunk.name === "tEXt"
+          (chunk: { name: string }) => chunk.name === "tEXt",
         );
         const charaChunks = tEXtChunks.map((tEXtChunk: any) => ({
           chara: text.decode(tEXtChunk),
@@ -142,7 +142,35 @@ export function WorkSpacesExportCharacterButton() {
   const character = data[0];
   const name = character.json.data.name;
   const version = character.json.data.character_version;
-  const json = character.json;
+
+  //  ********** Fix Err Start **********
+
+  function normalizeKeys(json: any) {
+    if (json.data?.character_book?.entries) {
+      json.data.character_book.entries = json.data.character_book.entries.map(
+        (entry: any) => {
+          if (typeof entry.keys === "string") {
+            entry.keys = entry.keys.split(",").map((key: string) => key.trim());
+          } else if (!Array.isArray(entry.keys)) {
+            entry.keys = [];
+          }
+          if (typeof entry.secondary_keys === "string") {
+            entry.secondary_keys = entry.secondary_keys
+              .split(",")
+              .map((key: string) => key.trim());
+          } else if (!Array.isArray(entry.secondary_keys)) {
+            entry.secondary_keys = [];
+          }
+
+          return entry;
+        },
+      );
+    }
+    return json;
+  }
+  const OutJson = normalizeKeys(character.json);
+
+  // ********** Fix Err End **********
   const cover = character.cover;
 
   const handleExport = async () => {
@@ -159,9 +187,9 @@ export function WorkSpacesExportCharacterButton() {
       chunks.splice(chunks.indexOf(tEXtChunk), 1);
     }
 
-    const charString = JSON.stringify(json);
+    const charString = JSON.stringify(OutJson);
     const base64EncodedData = Buffer.from(charString, "utf8").toString(
-      "base64"
+      "base64",
     );
     chunks.splice(-1, 0, text.encode("chara", base64EncodedData));
 
@@ -210,7 +238,10 @@ export function WorkSpacesExportCharacterSpecV2Button() {
   const character = data[0];
   const name = character.json.data.name;
   const version = character.json.data.character_version;
-  const json = {
+
+  //  ********** Fix Err Start **********
+
+  let json = {
     ...character.json,
     spec: "chara_card_v2",
     spec_version: "2.0",
@@ -222,6 +253,36 @@ export function WorkSpacesExportCharacterSpecV2Button() {
       },
     },
   };
+
+  function normalizeKeys(json: any) {
+    if (json.data?.character_book?.entries) {
+      json.data.character_book.entries = json.data.character_book.entries.map(
+        (entry: any) => {
+          if (typeof entry.keys === "string") {
+            entry.keys = entry.keys.split(",").map((key: string) => key.trim());
+          } else if (!Array.isArray(entry.keys)) {
+            entry.keys = [];
+          }
+
+          if (typeof entry.secondary_keys === "string") {
+            entry.secondary_keys = entry.secondary_keys
+              .split(",")
+              .map((key: string) => key.trim());
+          } else if (!Array.isArray(entry.secondary_keys)) {
+            entry.secondary_keys = [];
+          }
+
+          return entry;
+        },
+      );
+    }
+    return json;
+  }
+
+  const OutJson = normalizeKeys(json);
+
+  // ********** Fix Err End **********
+
   const cover = character.cover;
 
   const handleExportSpecV2 = async () => {
@@ -238,9 +299,9 @@ export function WorkSpacesExportCharacterSpecV2Button() {
       chunks.splice(chunks.indexOf(tEXtChunk), 1);
     }
 
-    const charString = JSON.stringify(json);
+    const charString = JSON.stringify(OutJson);
     const base64EncodedData = Buffer.from(charString, "utf8").toString(
-      "base64"
+      "base64",
     );
     chunks.splice(-1, 0, text.encode("chara", base64EncodedData));
 
@@ -267,4 +328,3 @@ export function WorkSpacesExportCharacterSpecV2Button() {
     </>
   );
 }
-

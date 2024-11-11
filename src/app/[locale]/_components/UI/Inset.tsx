@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useStore from "../../_lib/store";
 import { useLiveQuery } from "dexie-react-hooks";
 import db from "../../_lib/db";
@@ -38,7 +38,7 @@ export default function Inset() {
             const entry = character.json.data.character_book?.entries.find(
               (entry) =>
                 entry.comment ===
-                "[CautionEdit]CharacterInsetGallery[ooctalk.com]"
+                  "[CautionEdit]CharacterInsetGallery[ooctalk.com]",
             );
             return entry;
           })
@@ -91,10 +91,9 @@ export default function Inset() {
                 data: {
                   ...character.json.data,
                   character_book: {
-                    name:
-                      character.json.data.character_book?.name ||
-                      "Default Book Name",
                     entries: [...entries, newEntry],
+                    name: character.json.data.character_book?.name ||
+                      character.json.data.name + "World Book",
                   },
                 },
               },
@@ -107,7 +106,7 @@ export default function Inset() {
             const entry = character.json.data.character_book?.entries.find(
               (entry) =>
                 entry.comment ===
-                "[CautionEdit]CharacterInsetGalleryRule[ooctalk.com]"
+                  "[CautionEdit]CharacterInsetGalleryRule[ooctalk.com]",
             );
             return entry;
           })
@@ -161,10 +160,9 @@ export default function Inset() {
                 data: {
                   ...character.json.data,
                   character_book: {
-                    name:
-                      character.json.data.character_book?.name ||
-                      "Default Book Name",
                     entries: [...entries, newEntry],
+                    name: character.json.data.character_book?.name ||
+                      character.json.data.name + "World Book",
                   },
                 },
               },
@@ -177,7 +175,7 @@ export default function Inset() {
             const entry = character.json.data.extensions.regex_scripts?.find(
               (entry) =>
                 entry.scriptName ===
-                "[CautionEdit]CharacterInsetGalleryRegex[ooctalk.com]"
+                  "[CautionEdit]CharacterInsetGalleryRegex[ooctalk.com]",
             );
             return entry;
           })
@@ -224,7 +222,7 @@ export default function Inset() {
           const proceedingContent = proceedingList[0]?.content;
           if (proceedingContent) {
             const matches = proceedingContent.matchAll(
-              /(?<=\n)([^_]+)_(\w+)\.(png|jpg|webp|jpeg)/g
+              /(?<=\n)([^_]+)_(\w+)\.(png|jpg|webp|jpeg)/g,
             );
             const items = Array.from(matches).map((match) => ({
               name: match[1].trim(),
@@ -292,14 +290,12 @@ export default function Inset() {
             <Field>
               <Label>{t("key-word")}</Label>
               <Input
-                defaultValue={
-                  selectedIndex !== null &&
-                  list &&
-                  selectedIndex >= 0 &&
-                  selectedIndex < list.length
-                    ? list[selectedIndex].name
-                    : ""
-                }
+                defaultValue={selectedIndex !== null &&
+                    list &&
+                    selectedIndex >= 0 &&
+                    selectedIndex < list.length
+                  ? list[selectedIndex].name
+                  : ""}
                 onChange={(e) => {
                   if (
                     selectedIndex !== null &&
@@ -318,14 +314,10 @@ export default function Inset() {
               <Label>URL</Label>
               <Input
                 disabled
-                defaultValue={
-                  selectedIndex !== null &&
-                  list &&
-                  selectedIndex < list.length 
-                    ? list[selectedIndex].url 
-                    : ""
-                }
-                
+                defaultValue={selectedIndex !== null && list &&
+                    selectedIndex < list.length
+                  ? list[selectedIndex].url
+                  : ""}
               />
             </Field>
           </DialogBody>
@@ -343,24 +335,28 @@ export default function Inset() {
                   selectedCharacter.length > 0
                 ) {
                   const character = selectedCharacter[0];
-                  const entries =
-                    character.json.data.character_book?.entries || [];
+                  const entries = character.json.data.character_book?.entries ||
+                    [];
                   const insetEntry = entries.find(
                     (entry) =>
                       entry.comment ===
-                      "[CautionEdit]CharacterInsetGallery[ooctalk.com]"
+                        "[CautionEdit]CharacterInsetGallery[ooctalk.com]",
                   );
 
                   if (insetEntry) {
                     const itemToDelete = list[selectedIndex];
-                    const insetString = `${itemToDelete.name}_${itemToDelete.url}`;
+                    const insetString =
+                      `${itemToDelete.name}_${itemToDelete.url}`;
 
                     insetEntry.content = insetEntry.content.replace(
                       `${insetString}\n`,
-                      ""
+                      "",
                     );
 
-                    if (character.cid !== undefined) {
+                    if (
+                      character.cid !== undefined &&
+                      character.json.data.character_book?.entries
+                    ) {
                       await db.characters.update(character.cid, {
                         json: {
                           ...character.json,
@@ -377,7 +373,7 @@ export default function Inset() {
                       console.error("character.cid is undefined");
                     }
                     const updatedList = list.filter(
-                      (_, i) => i !== selectedIndex
+                      (_, i) => i !== selectedIndex,
                     );
                     setProceedingList(updatedList);
                     setSelectedIndex(null);
@@ -466,14 +462,17 @@ function InsetNewButton() {
           const insetEntry = entries.find(
             (entry) =>
               entry.comment ===
-              "[CautionEdit]CharacterInsetGallery[ooctalk.com]"
+                "[CautionEdit]CharacterInsetGallery[ooctalk.com]",
           );
           if (insetEntry) {
             insetEntry.content = insetEntry.content.replace(
               "</proceeding_list>",
-              `${newInsetStr}\n</proceeding_list>`
+              `${newInsetStr}\n</proceeding_list>`,
             );
-            if (character.cid !== undefined) {
+            if (
+              character.cid !== undefined &&
+              character.json.data.character_book?.entries
+            ) {
               await db.characters.update(character.cid, {
                 json: {
                   ...character.json,
@@ -535,42 +534,44 @@ function InsetNewButton() {
           </Field>
         </DialogBody>
         <DialogActions>
-          {!isLoading ? (
-            <>
-              <Button plain onClick={closeDialog}>
-                {t("cancel")}
-              </Button>
-              <Button onClick={handleSubmit} disabled={isSubmitDisabled}>
-                {t("submit")}
-              </Button>
-            </>
-          ) : (
-            <button
-              type="button"
-              className="text-black dark:text-white rounded px-4 py-2 flex items-center"
-              disabled
-            >
-              <svg
-                className="animate-spin h-5 w-5 mr-3 text-black dark:text-white "
-                viewBox="0 0 24 24"
+          {!isLoading
+            ? (
+              <>
+                <Button plain onClick={closeDialog}>
+                  {t("cancel")}
+                </Button>
+                <Button onClick={handleSubmit} disabled={isSubmitDisabled}>
+                  {t("submit")}
+                </Button>
+              </>
+            )
+            : (
+              <button
+                type="button"
+                className="text-black dark:text-white rounded px-4 py-2 flex items-center"
+                disabled
               >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                />
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8v8H4z"
-                />
-              </svg>
-              {t("uploading")}
-            </button>
-          )}
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 text-black dark:text-white "
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  />
+                </svg>
+                {t("uploading")}
+              </button>
+            )}
         </DialogActions>
       </Dialog>
     </>

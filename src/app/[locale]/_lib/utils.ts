@@ -7,7 +7,8 @@ export function getDefaultCharacterJson() {
   const minutes = String(now.getMinutes()).padStart(2, "0");
   const seconds = String(now.getSeconds()).padStart(2, "0");
   const milliseconds = String(now.getMilliseconds()).padStart(3, "0");
-  const timestamp = `${year}-${month}-${day} @${hours}h ${minutes}m ${seconds}s ${milliseconds}ms`;
+  const timestamp =
+    `${year}-${month}-${day} @${hours}h ${minutes}m ${seconds}s ${milliseconds}ms`;
 
   return {
     name: "OoCTalk",

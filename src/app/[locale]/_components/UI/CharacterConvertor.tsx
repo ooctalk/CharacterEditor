@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 function CharacterConvertor() {
   const t = useTranslations("Workspaces/Convertor");
   const [characterConvertorJson] = useState(
-    localStorage.getItem("characterConvertorJson") || null
+    localStorage.getItem("characterConvertorJson") || null,
   );
   return (
     <>
