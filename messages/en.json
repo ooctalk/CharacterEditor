@@ -70,7 +70,9 @@
     "delete": "Delete",
     "add": "Add",
     "select-the-regular-expression-you-want-to-edit": "Select the regular expression you want to edit.",
-    "select-a-regex": "Select a Regex"
+    "select-a-regex": "Select a Regex",
+    "cancel": "Cancel",
+    "are-you-sure": "Are you sure?"
   },
   "Workspaces/Worldbook": {
     "character-worldbooks": "Character WorldBooks",
@@ -102,7 +104,9 @@
     "add": "Add",
     "second-key-word-logic": "Second Key Word Logic",
     "please-select-a-valid-world-book": "Please select a valid World Book.",
-    "import": "Import[Beta]"
+    "import": "Import[Beta]",
+    "cancel": "Cancel",
+    "are-you-sure": "Are you sure?"
   },
   "Workspaces/Greetings": {
     "character-greetings": "Character Greetings",
@@ -144,7 +148,8 @@
     "characters-note": "Character's Note",
     "examples-of-dialogue": "Examples of dialogue",
     "post-history-instructions": "Post-History Instructions",
-    "charactername": "Character Name"
+    "charactername": "Character Name",
+    "characterworldbookname": "World Book Name"
   },
   "Inset": {
     "edit-keyword": "Edit KeyWord",

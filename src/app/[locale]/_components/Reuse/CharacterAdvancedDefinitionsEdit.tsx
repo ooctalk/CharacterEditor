@@ -98,7 +98,10 @@ function CharacterAdvancedDefinitionsEdit() {
                       <Input
                         defaultValue={character.json.data.creator}
                         onChange={(e) => {
-                          if (character.cid !== undefined) {
+                          if (
+                            character.cid !== undefined &&
+                            character.json.data.character_book
+                          ) {
                             handleUpdate(
                               character.cid,
                               `json.data.creator`,
@@ -117,6 +120,21 @@ function CharacterAdvancedDefinitionsEdit() {
                             handleUpdate(
                               character.cid,
                               `json.data.character_version`,
+                              e.target.value,
+                            );
+                          }
+                        }}
+                      />
+                    </Field>
+                    <Field>
+                      <Label>{t("characterworldbookname")}</Label>
+                      <Input
+                        defaultValue={character.json.data.character_book?.name}
+                        onChange={(e) => {
+                          if (character.cid !== undefined) {
+                            handleUpdate(
+                              character.cid,
+                              `json.data.character_book.name`,
                               e.target.value,
                             );
                           }

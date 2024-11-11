@@ -70,7 +70,9 @@
     "delete": "删除",
     "add": "新建",
     "select-the-regular-expression-you-want-to-edit": "选择要编辑的正则表达式.",
-    "select-a-regex": "选择一个正则表达式"
+    "select-a-regex": "选择一个正则表达式",
+    "cancel": "取消",
+    "are-you-sure": "你确定吗?"
   },
   "Workspaces/Worldbook": {
     "character-worldbooks": "角色世界书",
@@ -102,7 +104,9 @@
     "add": "新建",
     "second-key-word-logic": "第二关键词逻辑",
     "please-select-a-valid-world-book": "请选择一个世界书条目",
-    "import":"导入世界书[Beta]"
+    "import":"导入世界书[Beta]",
+    "cancel": "取消",
+    "are-you-sure": "你确定吗?"
   },
   "Workspaces/Greetings": {
     "character-greetings": "角色问候",
@@ -143,7 +147,8 @@
     "characters-note": "角色笔记",
     "examples-of-dialogue": "对话示例",
     "post-history-instructions": "后续对话指令",
-    "charactername": "角色卡名字"
+    "charactername": "角色卡名字",
+    "characterworldbookname": "世界书名字"
   },
   "Inset":{
     "edit-keyword": "修改关键词",

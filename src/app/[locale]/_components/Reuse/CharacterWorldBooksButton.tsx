@@ -8,6 +8,12 @@ import { Character } from "../../_lib/db";
 import { Button } from "../Catalyst/button";
 import { useTranslations } from "next-intl";
 import { enqueueSnackbar } from "notistack";
+import {
+  Dialog,
+  DialogActions,
+  DialogBody,
+  DialogTitle,
+} from "../Catalyst/dialog";
 
 function CharacterWorldBooksSelect() {
   const t = useTranslations("Workspaces/Worldbook");
@@ -127,6 +133,7 @@ export function CharacterBookAddButton() {
 }
 
 export function CharacterBookDeleteButton() {
+  const [worldBookDeleteDialog, setWorldBookDeleteDialog] = useState(false);
   const t = useTranslations("Workspaces/Worldbook");
   const { selectedCid, selectedWorldBooks } = useStore();
   const selectedCharacter = useLiveQuery(() =>
@@ -169,7 +176,7 @@ export function CharacterBookDeleteButton() {
             },
           },
         });
-
+        setWorldBookDeleteDialog(false)
         enqueueSnackbar("Delete It", { variant: "error" });
       } else {
         console.error("Character cid is undefined");
@@ -180,9 +187,25 @@ export function CharacterBookDeleteButton() {
   };
 
   return (
-    <Button color="red" onClick={handleDeleteBook}>
-      {t("delete")}
-    </Button>
+    <>
+      <Button color="red" onClick={() => setWorldBookDeleteDialog(true)}>
+        {t("delete")}
+      </Button>
+      <Dialog
+        open={worldBookDeleteDialog}
+        onClose={() => setWorldBookDeleteDialog(false)}
+      >
+        <DialogTitle>{t("are-you-sure")}</DialogTitle>
+        <DialogBody>
+        </DialogBody>
+        <DialogActions>
+          <Button plain onClick={() => setWorldBookDeleteDialog(false)}>
+            {t("cancel")}
+          </Button>
+          <Button color="red" onClick={handleDeleteBook}>{t("delete")}</Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Select } from "../Catalyst/select";
 import useStore from "../../_lib/store";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -9,6 +9,15 @@ import { v4 as uuidv4 } from "uuid";
 import { Button } from "../Catalyst/button";
 import { useTranslations } from "next-intl";
 import { enqueueSnackbar } from "notistack";
+import {
+  Dialog,
+  DialogActions,
+  DialogBody,
+  DialogDescription,
+  DialogTitle,
+} from "../Catalyst/dialog";
+import { Field, Label } from "../Catalyst/fieldset";
+import { Input } from "../Catalyst/input";
 
 export default function CharacterRegexSelect() {
   const t = useTranslations("Workspaces/Regex");
@@ -108,6 +117,7 @@ export function CharacterRegexAddButton() {
 }
 
 export function CharacterRegexDeleteButton() {
+  const [regexDeleteDialog, setRexDeleteDialog] = useState(false);
   const t = useTranslations("Workspaces/Regex");
   const { selectedCid, selectedRegexIndex } = useStore();
 
@@ -147,6 +157,7 @@ export function CharacterRegexDeleteButton() {
             },
           },
         });
+        setRexDeleteDialog(false);
         enqueueSnackbar("Delete It", { variant: "error" });
       } else {
         console.error("Character cid is undefined");
@@ -157,8 +168,24 @@ export function CharacterRegexDeleteButton() {
   };
 
   return (
-    <Button color="red" onClick={handleDeleteRegex}>
-      {t("delete")}
-    </Button>
+    <>
+      <Button color="red" onClick={() => setRexDeleteDialog(true)}>
+        {t("delete")}
+      </Button>
+      <Dialog
+        open={regexDeleteDialog}
+        onClose={() => setRexDeleteDialog(false)}
+      >
+        <DialogTitle>{t("are-you-sure")}</DialogTitle>
+        <DialogBody>
+        </DialogBody>
+        <DialogActions>
+          <Button plain onClick={() => setRexDeleteDialog(false)}>
+            {t("cancel")}
+          </Button>
+          <Button color="red" onClick={handleDeleteRegex}>{t("delete")}</Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 }

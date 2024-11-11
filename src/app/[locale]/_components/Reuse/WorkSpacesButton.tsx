@@ -202,6 +202,7 @@ export function WorkSpacesExportCharacterButton() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    enqueueSnackbar("Downloading..", { variant: "success" });
   };
 
   return (
@@ -314,6 +315,7 @@ export function WorkSpacesExportCharacterSpecV2Button() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    enqueueSnackbar("Downloading..", { variant: "success" });
   };
 
   return (
