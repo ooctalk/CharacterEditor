@@ -7,12 +7,11 @@ import {
   ImportCharacterConvertorButton,
 } from "../Reuse/CharacterConvertorButton";
 import { useTranslations } from "next-intl";
+import useStore from "../../_lib/store";
 
 function CharacterConvertor() {
   const t = useTranslations("Workspaces/Convertor");
-  const [characterConvertorJson] = useState(
-    localStorage.getItem("characterConvertorJson") || null,
-  );
+  const convertorContent = useStore((state) => state.convertorContent);
   return (
     <>
       {/* Title  */}
@@ -29,8 +28,8 @@ function CharacterConvertor() {
       {/* Content */}
       <div>
         <pre className="md:m-8 sm:m-4 whitespace-pre-wrap text-black dark:text-white">
-          {characterConvertorJson
-            ? JSON.stringify(JSON.parse(characterConvertorJson), null, 2)
+          {convertorContent
+            ? JSON.stringify(JSON.parse(convertorContent), null, 2)
             : ""}
         </pre>
       </div>

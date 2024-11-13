@@ -90,27 +90,40 @@ function WorkSpacesCharactersDrawers() {
   const { isOpen, closeDrawer, drawerCharacter, openDialog, setSelectedCid } =
     useStore();
 
-  const handleCoverChange = async (
-    event: ChangeEvent<HTMLInputElement>,
-    cid: number | null,
-  ) => {
-    const file = event.target.files?.[0];
-    if (!file || cid === null) return;
-
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      const base64String = e.target?.result as string;
-
-      try {
-        await db.characters.update(cid, { cover: base64String });
-        closeDrawer();
-        enqueueSnackbar("Change Cover Done", { variant: "success" });
-      } catch (error) {
-        console.error("Failed to update cover:", error);
-      }
+    const handleCoverChange = async (
+      event: ChangeEvent<HTMLInputElement>,
+      cid: number | null,
+    ) => {
+      const file = event.target.files?.[0];
+      if (!file || cid === null) return;
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const result = e.target?.result;
+        if (typeof result === 'string') {
+          const img = new window.Image();
+          img.src = result;
+          img.onload = async () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+              canvas.width = img.width;
+              canvas.height = img.height;
+              ctx.drawImage(img, 0, 0);
+              const base64String = canvas.toDataURL('image/png');
+    
+              try {
+                await db.characters.update(cid, { cover: base64String });
+                closeDrawer();
+                enqueueSnackbar("Change Cover Done", { variant: "success" });
+              } catch (error) {
+                console.error("Failed to update cover:", error);
+              }
+            }
+          };
+        }
+      };
+      reader.readAsDataURL(file);
     };
-    reader.readAsDataURL(file);
-  };
 
   return (
     <Dialog open={isOpen} onClose={closeDrawer} className="relative z-10">
@@ -169,7 +182,7 @@ function WorkSpacesCharactersDrawers() {
                                   <input
                                     id={`fileInput-${drawerCharacter.cid}`}
                                     type="file"
-                                    accept="image/png"
+                                    accept="image/jpeg, image/jpg, image/png, image/webp"
                                     className="hidden"
                                     onChange={(e) =>
                                       handleCoverChange(e, drawerCharacter.cid)}

@@ -1,12 +1,14 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState,} from "react";
 import { Button } from "../Catalyst/button";
 import { enqueueSnackbar } from "notistack";
 import extract from "png-chunks-extract";
 import text from "png-chunk-text";
 import { useTranslations } from "next-intl";
+import useStore from "../../_lib/store";
 
-export function ImportCharacterConvertorButton() {
+export function ImportCharacterConvertorButton() { 
+  const setConvertorContent = useStore((state) => state.setConvertorContent);
   const t = useTranslations("Workspaces/Convertor");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const handleImport = async () => {
@@ -39,10 +41,9 @@ export function ImportCharacterConvertorButton() {
             byteArray[i] = base64Text.charCodeAt(i);
           }
           const characterConvertorJson = decoder.decode(byteArray);
-          localStorage.setItem(
-            "characterConvertorJson",
-            characterConvertorJson,
-          );
+          if(characterConvertorJson){
+            setConvertorContent(characterConvertorJson)
+          }
         }
       } catch (error) {
         console.error(error);

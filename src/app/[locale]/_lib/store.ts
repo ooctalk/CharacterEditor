@@ -22,6 +22,7 @@ interface Store {
   selectedWorldBooks: number | null;
   selectedRegexIndex: number | null;
   proceedingList: { name: string; url: string }[] | null;
+  convertorContent: string | null;  // New state for convertor content
   openDrawer: (character: DrawerCharacter) => void;
   closeDrawer: () => void;
   openDialog: () => void;
@@ -31,6 +32,7 @@ interface Store {
   setSelectedWorldBooks: (id: number | null) => void;
   setSelectedRegexIndex: (id: number | null) => void;
   setProceedingList: (list: { name: string; url: string }[] | null) => void;
+  setConvertorContent: (content: string) => void;
 }
 
 const useStore = create<Store>((set) => ({
@@ -42,6 +44,7 @@ const useStore = create<Store>((set) => ({
   selectedWorldBooks: null,
   selectedRegexIndex: null,
   proceedingList: null,
+  convertorContent: null,
   openDrawer: (drawerCharacter: DrawerCharacter) =>
     set({ isOpen: true, drawerCharacter }),
   closeDrawer: () => set({ isOpen: false }),
@@ -54,6 +57,7 @@ const useStore = create<Store>((set) => ({
   setSelectedRegexIndex: (id: number | null) => set({ selectedRegexIndex: id }),
   setProceedingList: (list: { name: string; url: string }[] | null) =>
     set({ proceedingList: list }),
+  setConvertorContent: (content: string) => set({ convertorContent: content }),
 }));
 
 export default useStore;

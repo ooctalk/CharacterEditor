@@ -32,7 +32,7 @@ function CharacterAdvancedDefinitionsEdit() {
             if (cid === undefined) return null;
             return (
               <div key={cid}>
-                <section className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                <section className="grid gap-x-8 gap-y-6">
                   <div className="space-y-1">
                     <Subheading>{t("prompt-overrides")}</Subheading>
                   </div>
@@ -73,7 +73,7 @@ function CharacterAdvancedDefinitionsEdit() {
 
                 <Divider className="my-10 mt-6" />
 
-                <section className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                <section className="grid gap-x-8 gap-y-6">
                   <div className="space-y-1">
                     <Subheading>{t("creators-metadata")}</Subheading>
                   </div>
@@ -225,6 +225,7 @@ function CharacterAdvancedDefinitionsEdit() {
                       <Label>{t("examples-of-dialogue")}</Label>
                       <Textarea
                         defaultValue={character.json.data.mes_example}
+                        rows={4}
                         onChange={(e) => {
                           if (character.cid !== undefined) {
                             handleUpdate(
