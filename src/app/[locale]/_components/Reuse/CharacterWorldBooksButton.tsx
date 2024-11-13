@@ -77,13 +77,13 @@ export function CharacterBookAddButton() {
       id: entries.length + 1,
       keys: [],
       secondary_keys: [],
-      comment: "ooctalk.com",
+      comment: "New Book",
       content: "",
       constant: false,
       selective: true,
       insertion_order: 100,
       enabled: true,
-      position: "before_char",
+      position: "after_char",
       use_regex: true,
       extensions: {
         position: 0,
@@ -176,7 +176,7 @@ export function CharacterBookDeleteButton() {
             },
           },
         });
-        setWorldBookDeleteDialog(false)
+        setWorldBookDeleteDialog(false);
         enqueueSnackbar("Delete It", { variant: "error" });
       } else {
         console.error("Character cid is undefined");

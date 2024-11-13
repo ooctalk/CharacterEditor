@@ -22,7 +22,7 @@ interface Store {
   selectedWorldBooks: number | null;
   selectedRegexIndex: number | null;
   proceedingList: { name: string; url: string }[] | null;
-  convertorContent: string | null;  // New state for convertor content
+  convertorContent: string | null; // New state for convertor content
   openDrawer: (character: DrawerCharacter) => void;
   closeDrawer: () => void;
   openDialog: () => void;

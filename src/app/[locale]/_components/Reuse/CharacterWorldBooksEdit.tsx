@@ -45,7 +45,7 @@ function CharacterWorldBooksEdit() {
             return selectedEntry
               ? (
                 <div key={selectedEntry.id}>
-                  <section className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                  <section className="grid gap-x-8 gap-y-6">
                     <div className="space-y-1">
                       <Subheading>{t("basic-setup")}</Subheading>
                     </div>
@@ -65,6 +65,24 @@ function CharacterWorldBooksEdit() {
                         />
                         <Label>{t("switch")}</Label>
                       </CheckboxField>
+
+                      <Field>
+                        <Label>{t("content")}</Label>
+                        <Textarea
+                          rows={8}
+                          defaultValue={selectedEntry.content}
+                          onChange={(e) => {
+                            if (character.cid !== undefined) {
+                              handleUpdate(
+                                character.cid,
+                                `json.data.character_book.entries.${selectedWorldBooks}.content`,
+                                e.target.value,
+                              );
+                            }
+                          }}
+                        />
+                      </Field>
+
                       <Field>
                         <Label>{t("tittle")}</Label>
                         <Input
@@ -85,12 +103,12 @@ function CharacterWorldBooksEdit() {
                         <Label>{t("key-word")}</Label>
                         <Input
                           type="text"
-                          defaultValue={selectedEntry.keys.join(", ")} // 将数组转换为字符串
+                          defaultValue={selectedEntry.keys.join(", ")}
                           onChange={(e) => {
                             if (character.cid !== undefined) {
                               const updatedKeys = e.target.value
                                 .split(",")
-                                .map((key) => key.trim()); // 转换回数组
+                                .map((key) => key.trim());
                               handleUpdate(
                                 character.cid,
                                 `json.data.character_book.entries.${selectedWorldBooks}.keys`,
@@ -127,46 +145,135 @@ function CharacterWorldBooksEdit() {
                       </Field>
 
                       <Field>
-                        <Label>{t("content")}</Label>
-                        <Textarea
-                          rows={5}
-                          defaultValue={selectedEntry.content}
-                          onChange={(e) => {
-                            if (character.cid !== undefined) {
-                              handleUpdate(
-                                character.cid,
-                                `json.data.character_book.entries.${selectedWorldBooks}.content`,
-                                e.target.value,
-                              );
-                            }
-                          }}
-                        />
-                      </Field>
-
-                      <Field>
                         <Label>{t("position")}</Label>
                         <Select
-                          typeof="number"
                           defaultValue={character.json.data.character_book
                             ?.entries[
                               selectedWorldBooks
                             ]?.extensions?.position}
                           onChange={(e) => {
                             if (character.cid !== undefined) {
-                              handleUpdate(
-                                character.cid,
-                                `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
-                                e.target.value,
-                              );
+                              const selectedPosition = Number(e.target.value);
+                              if (selectedPosition === 0) {
+                                // ↑Char
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  0,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  0,
+                                );
+                              } else if (selectedPosition === 1) {
+                                // ↓Char
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  1,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  0,
+                                );
+                              } else if (selectedPosition === 2) {
+                                // ↑AN
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  2,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  0,
+                                );
+                              } else if (selectedPosition === 3) {
+                                // ↓AN
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  3,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  0,
+                                );
+                              } else if (selectedPosition === 4) {
+                                // @D
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  4,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  0,
+                                );
+                              } else if (selectedPosition === 7) {
+                                // @D User
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  4,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  1,
+                                );
+                              } else if (selectedPosition === 8) {
+                                // @D AI
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  4,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  2,
+                                );
+                              } else if (selectedPosition === 5) {
+                                // ↑EM
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  5,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  0,
+                                );
+                              } else if (selectedPosition === 6) {
+                                // ↓EM
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.position`,
+                                  6,
+                                );
+                                handleUpdate(
+                                  character.cid,
+                                  `json.data.character_book.entries.${selectedWorldBooks}.extensions.role`,
+                                  0,
+                                );
+                              }
                             }
                           }}
                           name="position"
                         >
-                          <option value={0}>{t("aftercharcter")}</option>
-                          <option value={1}>{t("beforecharacter")}</option>
-                          <option value={2}>{t("beforeauthor")}</option>
-                          <option value={3}>{t("afterauthor")}</option>
+                          <option value={0}>↑Char</option>
+                          <option value={1}>↓Char</option>
+                          <option value={2}>↑AN</option>
+                          <option value={3}>↓AN</option>
                           <option value={4}>@D</option>
+                          <option value={7}>@D User</option>
+                          <option value={8}>@D AI</option>
                           <option value={5}>↑EM</option>
                           <option value={6}>↓EM</option>
                         </Select>
@@ -209,7 +316,7 @@ function CharacterWorldBooksEdit() {
                         <Label>{t("second-key-word-0")}</Label>
                         <Input
                           type="text"
-                          defaultValue={selectedEntry.secondary_keys.join(", ")} // 将数组转换为字符串
+                          defaultValue={selectedEntry.secondary_keys.join(", ")}
                           onChange={(e) => {
                             if (character.cid !== undefined) {
                               const updatedSecondaryKeys = e.target.value

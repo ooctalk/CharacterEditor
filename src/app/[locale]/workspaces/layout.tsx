@@ -147,7 +147,8 @@ export default function WorkSpacesLayout({
                 >
                   <FileJson2 />
                   <SidebarLabel>
-                    {t("convertor")}{" "}
+                    {t("convertor")}
+                    {" "}
                   </SidebarLabel>
                 </SidebarItem>
               </SidebarSection>
@@ -158,7 +159,7 @@ export default function WorkSpacesLayout({
                   href="https://github.com/ooctalk/CharacterEditor"
                   target="_blank"
                 >
-                  <StarIcon /> 
+                  <StarIcon />
                   <SidebarLabel>{t("project-address")}</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="https://ooctalk.com" target="_blank">
