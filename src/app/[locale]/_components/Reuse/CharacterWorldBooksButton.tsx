@@ -14,6 +14,10 @@ import {
   DialogBody,
   DialogTitle,
 } from "../Catalyst/dialog";
+import { Field, Fieldset, Label } from "../Catalyst/fieldset";
+import { Input } from "../Catalyst/input";
+import { Checkbox, CheckboxField, CheckboxGroup } from "../Catalyst/checkbox";
+import { saveAs } from "file-saver";
 
 function CharacterWorldBooksSelect() {
   const t = useTranslations("Workspaces/Worldbook");
@@ -125,7 +129,7 @@ export function CharacterBookAddButton() {
           },
         },
       });
-      enqueueSnackbar("Add It", { variant: "info" });
+      enqueueSnackbar("Add It", { variant: "success" });
     }
   };
 
@@ -158,6 +162,8 @@ export function CharacterBookDeleteButton() {
     const entries = character.json.data.character_book?.entries || [];
 
     if (selectedWorldBooks >= 0 && selectedWorldBooks < entries.length) {
+      const deletedBookComment = entries[selectedWorldBooks].comment;
+
       entries.splice(selectedWorldBooks, 1);
 
       if (
@@ -176,13 +182,16 @@ export function CharacterBookDeleteButton() {
             },
           },
         });
+
         setWorldBookDeleteDialog(false);
-        enqueueSnackbar("Delete It", { variant: "error" });
+        enqueueSnackbar(t("delete") + `: ${deletedBookComment}`, {
+          variant: "error",
+        });
       } else {
         console.error("Character cid is undefined");
       }
     } else {
-      console.error("");
+      console.error("Invalid world book selection");
     }
   };
 
@@ -196,13 +205,14 @@ export function CharacterBookDeleteButton() {
         onClose={() => setWorldBookDeleteDialog(false)}
       >
         <DialogTitle>{t("are-you-sure")}</DialogTitle>
-        <DialogBody>
-        </DialogBody>
+        <DialogBody></DialogBody>
         <DialogActions>
           <Button plain onClick={() => setWorldBookDeleteDialog(false)}>
             {t("cancel")}
           </Button>
-          <Button color="red" onClick={handleDeleteBook}>{t("delete")}</Button>
+          <Button color="red" onClick={handleDeleteBook}>
+            {t("delete")}
+          </Button>
         </DialogActions>
       </Dialog>
     </>
@@ -298,7 +308,7 @@ export function CharacterBookImportButton() {
             },
           },
         });
-        enqueueSnackbar("Add it!", { variant: "success" });
+        enqueueSnackbar(t("add-it"), { variant: "success" });
         console.log("Character book updated successfully!");
       } else {
         console.error("Character not found or CID is undefined.");
@@ -325,6 +335,158 @@ export function CharacterBookImportButton() {
         accept=".json"
         onChange={handleFileChange}
       />
+    </>
+  );
+}
+
+export function CharacterBookExportButton() {
+  const t = useTranslations("Workspaces/Worldbook");
+  const [exportWordBookDialogisOpen, setExportWordBookDialogisOpen] = useState(
+    false,
+  );
+  const [selectedExportBooks, setSelectedExportBooks] = useState<number[]>([]);
+  const [exportWorldBookName, setExportWorldBookName] = useState("");
+  const { selectedCid } = useStore();
+
+  const selectedCharacter = useLiveQuery(() =>
+    selectedCid ? db.characters.where("cid").equals(selectedCid).toArray() : []
+  );
+
+  if (!selectedCharacter || selectedCharacter.length === 0) {
+    return null;
+  }
+
+  const handleCheckboxChange = (index: number) => {
+    setSelectedExportBooks((prevSelected) => {
+      if (prevSelected.includes(index)) {
+        return prevSelected.filter((i) => i !== index);
+      } else {
+        return [...prevSelected, index];
+      }
+    });
+  };
+
+  const handleExport = () => {
+    if (
+      !selectedCharacter || selectedCharacter.length === 0 ||
+      !exportWorldBookName
+    ) return;
+
+    const character = selectedCharacter[0];
+    const characterBookList = character.json.data.character_book?.entries || [];
+
+    const selectedBooks = characterBookList.filter((_, index) =>
+      selectedExportBooks.includes(index)
+    );
+
+    const formattedEntries: { entries: Record<string, any> } = { entries: {} };
+
+    selectedBooks.forEach((book, index) => {
+      formattedEntries.entries[index.toString()] = {
+        uid: index,
+        key: book.keys,
+        keysecondary: book.secondary_keys,
+        comment: book.comment,
+        content: book.content,
+        constant: book.constant,
+        vectorized: book.extensions.vectorized,
+        selective: book.selective,
+        selectiveLogic: book.extensions.selectiveLogic,
+        addMemo: book.use_regex,
+        order: book.insertion_order,
+        position: book.extensions.position,
+        disable: book.enabled,
+        excludeRecursion: book.extensions.exclude_recursion,
+        preventRecursion: book.extensions.prevent_recursion,
+        delayUntilRecursion: book.extensions.delay_until_recursion,
+        probability: 100,
+        useProbability: book.extensions.useProbability,
+        depth: book.extensions.depth,
+        group: book.extensions.group,
+        groupOverride: book.extensions.group_override,
+        groupWeight: book.extensions.group_weight,
+        scanDepth: book.extensions.scan_depth,
+        caseSensitive: book.extensions.case_sensitive,
+        matchWholeWords: book.extensions.match_whole_words,
+        useGroupScoring: book.extensions.use_group_scoring,
+        automationId: book.extensions.automation_id,
+        role: book.extensions.role,
+        sticky: book.extensions.sticky,
+        cooldown: book.extensions.cooldown,
+        delay: book.extensions.delay,
+        displayIndex: book.extensions.display_index,
+      };
+    });
+
+    const jsonBlob = new Blob([JSON.stringify(formattedEntries, null, 2)], {
+      type: "application/json",
+    });
+    saveAs(jsonBlob, `${exportWorldBookName}.json`);
+    setExportWordBookDialogisOpen(false);
+    enqueueSnackbar(t("export") + exportWorldBookName, { variant: "success" });
+  };
+
+  return (
+    <>
+      <Button
+        onClick={() => setExportWordBookDialogisOpen(true)}
+        color="yellow"
+      >
+        {t("export")}
+      </Button>
+      {selectedCharacter && selectedCharacter.length > 0
+        ? selectedCharacter.map((character) => {
+          const characterBookList =
+            character.json.data.character_book?.entries || [];
+
+          return (
+            <Dialog
+              open={exportWordBookDialogisOpen}
+              onClose={() => setExportWordBookDialogisOpen(false)}
+              key={character.cid}
+            >
+              <DialogTitle>{t("export-worldbook")}</DialogTitle>
+              <DialogBody>
+                <Field>
+                  <Label>
+                    WordBook Name <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    className="mb-2"
+                    value={exportWorldBookName}
+                    onChange={(e) => setExportWorldBookName(e.target.value)}
+                  />
+                </Field>
+                <Fieldset>
+                  <CheckboxGroup>
+                    {characterBookList.map((book, index) => (
+                      <CheckboxField key={index}>
+                        <Checkbox
+                          checked={selectedExportBooks.includes(index)}
+                          onChange={() =>
+                            handleCheckboxChange(index)}
+                        />
+                        <Label>{book.comment}</Label>
+                      </CheckboxField>
+                    ))}
+                  </CheckboxGroup>
+                </Fieldset>
+              </DialogBody>
+              <DialogActions>
+                <Button
+                  plain
+                  onClick={() => setExportWordBookDialogisOpen(false)}
+                >
+                  {t("cancel")}
+                </Button>
+                <Button onClick={handleExport} disabled={!exportWorldBookName}>
+                  {t("export")}
+                </Button>
+              </DialogActions>
+            </Dialog>
+          );
+        })
+        : null}
     </>
   );
 }

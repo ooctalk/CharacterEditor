@@ -32,12 +32,25 @@ import {
 import { useTranslations } from "next-intl";
 import { SnackbarProvider } from "notistack";
 import ScrollToTopButton from "../_components/Reuse/ScrollToTopButton";
+import { useEffect } from "react";
 
 export default function WorkSpacesLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark =
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   const pathname = usePathname();
   const isCurrent = (href: string) => pathname === href;
 

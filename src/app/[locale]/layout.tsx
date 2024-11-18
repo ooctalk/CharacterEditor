@@ -4,7 +4,7 @@ import "../globals.css";
 
 // next-intl
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 
@@ -14,10 +14,18 @@ const MiSans = localFont({
   variable: "--font-geist-sans",
 });
 
-export const metadata: Metadata = {
-  title: "Character Editor | OoCTalk",
-  description: "Create and edit AI character",
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({ locale });
+
+  return {
+    title: t("Metadata.title"),
+    description: t("Metadata.description"),
+  };
+}
 
 export default async function RootLayout({
   children,

@@ -25,11 +25,18 @@ import { ChangeEvent } from "react";
 
 export default function WorkSpacesCharactersGallery() {
   const characters = useLiveQuery(() => db.characters.toArray());
-  const { openDrawer } = useStore();
+  const { openDrawer, selectedCid } = useStore();
   if (!characters) {
     return (
-      <div>
-        <div className="loader">Loading...</div>
+      <div className="animate-pulse grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+        <div className="relative">
+          <div className="relative bg-gray-200 rounded-xl overflow-hidden shadow-md 
+                 transition-transform duration-300 hover:scale-105 w-full h-80">
+            <div className="object-cover z-0"></div>
+            <div />
+            <div className="absolute bottom-0 left-0 right-0 p-4"></div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -63,7 +70,9 @@ export default function WorkSpacesCharactersGallery() {
                 src={character.cover}
                 alt={character.json.name}
                 layout="fill"
-                className="object-cover z-0"
+                className={`object-cover z-0 ${
+                  character.cid === selectedCid ? "animate-pulse" : ""
+                }`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -114,7 +123,7 @@ function WorkSpacesCharactersDrawers() {
             try {
               await db.characters.update(cid, { cover: base64String });
               closeDrawer();
-              enqueueSnackbar("Change Cover Done", { variant: "success" });
+              enqueueSnackbar(t("change-cover-done"), { variant: "success" });
             } catch (error) {
               console.error("Failed to update cover:", error);
             }
@@ -214,8 +223,10 @@ function WorkSpacesCharactersDrawers() {
                               if (drawerCharacter && drawerCharacter.cid) {
                                 setSelectedCid(drawerCharacter.cid);
                                 enqueueSnackbar(
-                                  "Select " + drawerCharacter.cid,
+                                  t("select") + " " + drawerCharacter.json.name,
+                                  { variant: "success" },
                                 );
+                                closeDrawer();
                               }
                             }}
                             type="button"
@@ -294,7 +305,7 @@ function WorkSpacesCharactersModalDialogs() {
       await db.characters.delete(drawerCharacter.cid);
       closeDialog();
       closeDrawer();
-      enqueueSnackbar("Delete It # " + drawerCharacter.cid, {
+      enqueueSnackbar(t("delte-it") + drawerCharacter.cid, {
         variant: "success",
       });
     }

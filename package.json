@@ -15,6 +15,7 @@
     "compressorjs": "^1.2.1",
     "dexie": "^4.0.9",
     "dexie-react-hooks": "^1.1.7",
+    "file-saver": "^2.0.5",
     "framer-motion": "^11.11.9",
     "lucide-react": "^0.453.0",
     "next": "14.2.16",
@@ -31,6 +32,7 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^20",
     "@types/png-chunk-text": "^1.0.3",
     "@types/png-chunks-extract": "^1.0.2",

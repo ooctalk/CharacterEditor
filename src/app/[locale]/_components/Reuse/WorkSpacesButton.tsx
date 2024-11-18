@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button } from "../Catalyst/button";
 import db from "../../_lib/db";
 import { getDefaultCharacterJson } from "../../_lib/utils";
@@ -10,6 +10,14 @@ import text from "png-chunk-text";
 import useStore from "../../_lib/store";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useTranslations } from "next-intl";
+import {
+  Dialog,
+  DialogActions,
+  DialogBody,
+  DialogTitle,
+} from "../Catalyst/dialog";
+import { Input } from "../Catalyst/input";
+import { Field, Label } from "../Catalyst/fieldset";
 
 export function WorkSpacesImportCharacterButton() {
   const t = useTranslations("Workspaces");
@@ -95,16 +103,26 @@ export function WorkSpacesImportCharacterButton() {
 export function WorkSpacesAddCharacterButton() {
   const t = useTranslations("Workspaces");
   const defaultCharacterJson = getDefaultCharacterJson();
+  const [newDialogisOpen, setNewDialogisOpen] = useState(false);
+  const [tempNewName, setTempNewName] = useState("");
 
   async function handleAddCharacter() {
     try {
       const cid = await db.characters.add({
         cover: defaultCharacterCoverBase64Str,
-        json: defaultCharacterJson,
+        json: {
+          ...defaultCharacterJson,
+          data: {
+            ...defaultCharacterJson.data,
+            name: tempNewName || "OoCtalk Character",
+          },
+        },
       });
-      enqueueSnackbar("New Character Add it! #" + cid, {
+      enqueueSnackbar("New Character Added! #" + cid, {
         variant: "success",
       });
+      setNewDialogisOpen(false);
+      setTempNewName("");
     } catch (error) {
       console.log("Error adding character:", error);
     }
@@ -112,9 +130,28 @@ export function WorkSpacesAddCharacterButton() {
 
   return (
     <>
-      <Button type="button" onClick={handleAddCharacter}>
+      <Button type="button" onClick={() => setNewDialogisOpen(true)}>
         {t("new")}
       </Button>
+      <Dialog open={newDialogisOpen} onClose={() => setNewDialogisOpen(false)}>
+        <DialogTitle>Add New Character</DialogTitle>
+        <DialogBody>
+          <Field>
+            <Label>Name</Label>
+            <Input
+              onChange={(e) => setTempNewName(e.target.value)}
+              value={tempNewName}
+              placeholder="Enter character name"
+            />
+          </Field>
+        </DialogBody>
+        <DialogActions>
+          <Button plain onClick={() => setNewDialogisOpen(false)}>
+            Cancel
+          </Button>
+          <Button onClick={handleAddCharacter}>Add</Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }

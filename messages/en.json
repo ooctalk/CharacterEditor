@@ -100,9 +100,11 @@
     "add": "Add",
     "second-key-word-logic": "Second Key Word Logic",
     "please-select-a-valid-world-book": "Please select a valid World Book.",
-    "import": "Import[Beta]",
+    "import": "Import",
     "cancel": "Cancel",
-    "are-you-sure": "Are you sure?"
+    "are-you-sure": "Are you sure?",
+    "export": "Export",
+    "add-it": "Add it!"
   },
   "Workspaces/Greetings": {
     "character-greetings": "Character Greetings",
@@ -127,7 +129,10 @@
     "new": "New",
     "export-character": "Export Character[V3]",
     "preview-version": "Preview Version",
-    "export-v2-noregex": "Export to V2 [NoRegex]"
+    "export-v2-noregex": "Export to V2 [NoRegex]",
+    "delte-it": "Delte it #",
+    "change-cover-done": "Change Cover Done",
+    "select": "Select"
   },
   "Workspaces/AdvancedDefinitions": {
     "advanced-definitions": "Advanced Definitions",
@@ -162,5 +167,9 @@
     "new": "New",
     "uploading": "UpLoading...",
     "keyword-already-exists": "Keyword already exists"
+  },
+  "Metadata": {
+    "title": "Character Editor | OoCTalk",
+    "description": "AI Character Card Editor"
   }
 }

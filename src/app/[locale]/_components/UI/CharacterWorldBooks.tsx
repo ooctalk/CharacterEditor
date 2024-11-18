@@ -4,6 +4,7 @@ import React from "react";
 import CharacterWorldBooksSelect, {
   CharacterBookAddButton,
   CharacterBookDeleteButton,
+  CharacterBookExportButton,
   CharacterBookImportButton,
 } from "../Reuse/CharacterWorldBooksButton";
 import CharacterWorldBooksEdit from "../Reuse/CharacterWorldBooksEdit";
@@ -18,6 +19,7 @@ function CharacterWorldBooks() {
         <Heading>{t("character-worldbooks")}</Heading>
         <div className="flex gap-4 sm:justify-self-end text-nowrap flex-wrap sm:flex-nowrap">
           <CharacterBookDeleteButton />
+          <CharacterBookExportButton />
           <CharacterBookImportButton />
           <CharacterBookAddButton />
           <CharacterWorldBooksSelect />

@@ -100,9 +100,11 @@
     "add": "新建",
     "second-key-word-logic": "第二关键词逻辑",
     "please-select-a-valid-world-book": "请选择一个世界书条目",
-    "import":"导入世界书[Beta]",
+    "import": "导入",
     "cancel": "取消",
-    "are-you-sure": "你确定吗?"
+    "are-you-sure": "你确定吗?",
+    "export": "导出",
+    "add-it": "添加完成"
   },
   "Workspaces/Greetings": {
     "character-greetings": "角色问候",
@@ -126,7 +128,10 @@
     "import": "导入",
     "new": "新建",
     "export-character": "导出角色[V3版]",
-    "export-v2-noregex": "导出角色[V2版无正则]"
+    "export-v2-noregex": "导出角色[V2版无正则]",
+    "delte-it": "已删除 #",
+    "change-cover-done": "更换封面完成",
+    "select": "已选择"
   },
   "Workspaces/AdvancedDefinitions": {
     "advanced-definitions": "高级定义",
@@ -146,7 +151,7 @@
     "charactername": "角色卡名字",
     "characterworldbookname": "世界书名字"
   },
-  "Inset":{
+  "Inset": {
     "edit-keyword": "修改关键词",
     "key-word": "关键词",
     "close": "关闭",
@@ -161,5 +166,9 @@
     "new": "新增",
     "uploading": "等待上传",
     "keyword-already-exists": "关键词已经存在"
+  },
+  "Metadata": {
+    "title": "角色卡编辑器 | OoCTalk",
+    "description": "AI 角色卡编辑器"
   }
 }
