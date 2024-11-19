@@ -95,7 +95,8 @@ function CharacterAdvancedDefinitionsEdit() {
                     </Field>
                     <Field>
                       <Label>{t("created-by")}</Label>
-                      <Input
+                      <Textarea
+                        rows={2}
                         defaultValue={character.json.data.creator}
                         onChange={(e) => {
                           if (
@@ -113,7 +114,8 @@ function CharacterAdvancedDefinitionsEdit() {
                     </Field>
                     <Field>
                       <Label>{t("character-version")}</Label>
-                      <Input
+                      <Textarea
+                        rows={2}
                         defaultValue={character.json.data.character_version}
                         onChange={(e) => {
                           if (character.cid !== undefined) {
@@ -144,6 +146,7 @@ function CharacterAdvancedDefinitionsEdit() {
                     <Field>
                       <Label>{t("creators-notes")}</Label>
                       <Textarea
+                        rows={2}
                         defaultValue={character.json.data.creator_notes}
                         onChange={(e) => {
                           if (character.cid !== undefined) {

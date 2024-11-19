@@ -104,7 +104,9 @@
     "cancel": "取消",
     "are-you-sure": "你确定吗?",
     "export": "导出",
-    "add-it": "添加完成"
+    "add-it": "添加完成",
+    "export-worldbook": "导出世界书",
+    "worldbook-name": "世界书名字"
   },
   "Workspaces/Greetings": {
     "character-greetings": "角色问候",
@@ -131,7 +133,10 @@
     "export-v2-noregex": "导出角色[V2版无正则]",
     "delte-it": "已删除 #",
     "change-cover-done": "更换封面完成",
-    "select": "已选择"
+    "select": "已选择",
+    "add-new-character": "取一个名字",
+    "name": "名字",
+    "add": "添加"
   },
   "Workspaces/AdvancedDefinitions": {
     "advanced-definitions": "高级定义",

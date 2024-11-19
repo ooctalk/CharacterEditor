@@ -104,7 +104,9 @@
     "cancel": "Cancel",
     "are-you-sure": "Are you sure?",
     "export": "Export",
-    "add-it": "Add it!"
+    "add-it": "Add it!",
+    "export-worldbook": "Export WorldBook",
+    "worldbook-name": "WorldBook Name"
   },
   "Workspaces/Greetings": {
     "character-greetings": "Character Greetings",
@@ -132,7 +134,10 @@
     "export-v2-noregex": "Export to V2 [NoRegex]",
     "delte-it": "Delte it #",
     "change-cover-done": "Change Cover Done",
-    "select": "Select"
+    "select": "Select",
+    "add-new-character": "Add New Character",
+    "name": "Name",
+    "add": "Add"
   },
   "Workspaces/AdvancedDefinitions": {
     "advanced-definitions": "Advanced Definitions",

@@ -449,7 +449,7 @@ export function CharacterBookExportButton() {
               <DialogBody>
                 <Field>
                   <Label>
-                    WordBook Name <span className="text-red-500">*</span>
+                    {t('worldbook-name')} <span className="text-red-500">*</span>
                   </Label>
                   <Input
                     className="mb-2"
