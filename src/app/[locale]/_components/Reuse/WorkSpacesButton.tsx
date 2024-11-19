@@ -134,10 +134,10 @@ export function WorkSpacesAddCharacterButton() {
         {t("new")}
       </Button>
       <Dialog open={newDialogisOpen} onClose={() => setNewDialogisOpen(false)}>
-        <DialogTitle>Add New Character</DialogTitle>
+        <DialogTitle>{t('add-new-character')}</DialogTitle>
         <DialogBody>
           <Field>
-            <Label>Name</Label>
+            <Label>{t('name')}</Label>
             <Input
               onChange={(e) => setTempNewName(e.target.value)}
               value={tempNewName}
@@ -147,9 +147,9 @@ export function WorkSpacesAddCharacterButton() {
         </DialogBody>
         <DialogActions>
           <Button plain onClick={() => setNewDialogisOpen(false)}>
-            Cancel
+            {t('cancel')}
           </Button>
-          <Button onClick={handleAddCharacter}>Add</Button>
+          <Button onClick={handleAddCharacter}>{t('add')}</Button>
         </DialogActions>
       </Dialog>
     </>
