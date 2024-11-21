@@ -8,6 +8,7 @@ import UmamiProvider from 'next-umami'
 
 const ANALYTICS_SRC = process.env.NEXT_PUBLIC_ANALYTICS_SRC ?? "";
 const ANALYTICS_WEBSITE_ID = process.env.NEXT_PUBLIC_ANALYTICS_WEBSITE_ID ?? "";
+const ANALYTICS_HOST_URL = process.env.NEXT_PUBLIC_ANALYTICS_HOST_URL ?? "";
 
 export async function generateMetadata({
   params: { locale },
@@ -40,7 +41,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <UmamiProvider src={ANALYTICS_SRC} websiteId={ANALYTICS_WEBSITE_ID} />
+        <UmamiProvider src={ANALYTICS_SRC} websiteId={ANALYTICS_WEBSITE_ID} hostUrl={ANALYTICS_HOST_URL }/>
       </head>
       <body
         className={`antialiased bg-zinc-100 dark:bg-zinc-900 lg:dark:bg-zinc-950 text-black dark:text-white`}
