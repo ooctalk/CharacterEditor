@@ -1,11 +1,14 @@
 import "../globals.css";
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 // next-intl
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
+
+const ANALYTICS_SRC = process.env.NEXT_PUBLIC_ANALYTICS_SRC;
+const ANALYTICS_WEBSITE_ID = process.env.NEXT_PUBLIC_ANALYTICS_WEBSITE_ID;
 
 export async function generateMetadata({
   params: { locale },
@@ -37,6 +40,15 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
+      <head>
+        {ANALYTICS_SRC && ANALYTICS_WEBSITE_ID && (
+          <script
+            defer
+            src={ANALYTICS_SRC}
+            data-website-id={ANALYTICS_WEBSITE_ID}
+          ></script>
+        )}
+      </head>
       <body
         className={`antialiased bg-zinc-100 dark:bg-zinc-900 lg:dark:bg-zinc-950 text-black dark:text-white`}
       >
