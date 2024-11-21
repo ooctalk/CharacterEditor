@@ -20,7 +20,6 @@
     "lucide-react": "^0.453.0",
     "next": "14.2.16",
     "next-intl": "^3.23.5",
-    "next-umami": "^0.0.4",
     "node-catbox": "^3.3.0",
     "notistack": "^3.0.1",
     "png-chunk-text": "^1.0.0",
