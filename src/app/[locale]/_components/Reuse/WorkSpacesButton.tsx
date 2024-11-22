@@ -141,7 +141,6 @@ export function WorkSpacesAddCharacterButton() {
             <Input
               onChange={(e) => setTempNewName(e.target.value)}
               value={tempNewName}
-              placeholder="Enter character name"
             />
           </Field>
         </DialogBody>
@@ -362,7 +361,6 @@ export function WorkSpacesExportCharacterSpecV2Button() {
         className="w-full text-left block px-4 py-2 text-sm text-black dark:text-white text-nowrap"
       >
         {t("export-v2-noregex")}
-        <span className="text-yellow-600">Beta</span>
       </button>
     </>
   );

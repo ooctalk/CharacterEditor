@@ -33,6 +33,7 @@ import { useTranslations } from "next-intl";
 import { SnackbarProvider } from "notistack";
 import ScrollToTopButton from "../_components/Reuse/ScrollToTopButton";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function WorkSpacesLayout({
   children,
@@ -75,9 +76,6 @@ export default function WorkSpacesLayout({
             {/* Header */}
             <SidebarHeader>
               <SidebarSection>
-                <span className="inline-flex items-center rounded-md bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-800">
-                  {t("preview-version")}
-                </span>
                 <SidebarItem
                   href="/workspaces"
                   current={isCurrent("/workspaces")}
@@ -150,7 +148,7 @@ export default function WorkSpacesLayout({
                   <SidebarLabel>
                     {t("inset")}{" "}
                     <span className="inline-flex items-center rounded-full bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-800">
-                      Beta
+                      PC Beta
                     </span>
                   </SidebarLabel>
                 </SidebarItem>
@@ -177,7 +175,13 @@ export default function WorkSpacesLayout({
                 </SidebarItem>
                 <SidebarItem href="https://ooctalk.com" target="_blank">
                   <TentTree />
-                  <SidebarLabel>{t("community")}</SidebarLabel>
+                  <Image
+                  className="w-24"
+                  src='/logo.webp'
+                  alt='ooctalk'
+                  width={384}
+                  height={384}
+                  />
                 </SidebarItem>
               </SidebarSection>
             </SidebarBody>

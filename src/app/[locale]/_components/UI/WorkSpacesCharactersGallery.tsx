@@ -64,7 +64,7 @@ export default function WorkSpacesCharactersGallery() {
                 }
               }}
               className="relative bg-gray-200 rounded-xl overflow-hidden shadow-md 
-                 transition-transform duration-300 hover:scale-105 w-full h-80"
+                 transition-transform duration-300 hover:scale-105 w-full md:h-80 h-56 "
             >
               <Image
                 src={character.cover}

@@ -35,7 +35,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   const ANALYTICS_SRC = process.env.NEXT_PUBLIC_ANALYTICS_SRC ?? "";
-  const ANALYTICS_WEBSITE_ID = process.env.NEXT_PUBLIC_ANALYTICS_WEBSITE_ID ?? "";
+  const ANALYTICS_WEBSITE_ID = process.env.NEXT_PUBLIC_ANALYTICS_WEBSITE_ID ?? "";    
   return (
     <html lang={locale}>
       <head>

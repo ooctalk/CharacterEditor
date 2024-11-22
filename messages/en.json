@@ -12,7 +12,8 @@
     "code": "Code",
     "uptime": "Uptime",
     "release-under-development": "Release under development",
-    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution": "While the function content is being improved, the website may contain unknown errors, please use caution"
+    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution": "While the function content is being improved, the website may contain unknown errors, please use caution",
+    "workbenches": "Workbenches"
   },
   "SideBarLayout": {
     "character": "Character",
@@ -174,7 +175,7 @@
     "keyword-already-exists": "Keyword already exists"
   },
   "Metadata": {
-    "title": "Character Editor | OoCTalk",
+    "title": "AI Character Editor | OoCTalk",
     "description": "AI Character Card Editor"
   }
 }

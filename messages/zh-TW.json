@@ -1,7 +1,7 @@
 {
   "product by ooctalk": {},
   "please-select-character": "請選擇角色",
-  "workspaces": "工作台",
+  "workspaces": "工作臺",
   "IndexBoostrap": {
     "its-late-at-night": "夜深了",
     "good-evening": "晚上好",
@@ -12,7 +12,8 @@
     "code": "代碼",
     "uptime": "狀態",
     "release-under-development": "正在開發中的版本",
-    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution": "在功能內容改進期間，網站可能包含未知錯誤，請酌情使用"
+    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution": "在功能內容改進期間，網站可能包含未知錯誤，請酌情使用",
+    "workbenches": "工作臺"
   },
   "SideBarLayout": {
     "character": "角色卡",
@@ -20,7 +21,7 @@
     "regex": "正則表達式",
     "settings": "設置",
     "greeting": "開場白",
-    "workbenches": "工作台",
+    "workbenches": "工作臺",
     "convertor": "角色卡轉換器",
     "project-address": "項目地址",
     "community": "社區",
@@ -39,14 +40,14 @@
     "backup-data": "備份數據",
     "import-data": "導入數據",
     "irretrievability": "無法反悔",
-    "are-you-sure-you-want-to-empty-the-database-this-action-cannot-be-undone": "你真的確定要刪除所有數據嗎",
+    "are-you-sure-you-want-to-empty-the-database-this-action-cannot-be-undone": "你真的真的確定要刪除所有數據嗎",
     "delete": "刪除",
     "cancel": "算了",
     "delete-data": "刪除數據"
   },
   "Workspaces/Convertor": {
     "import": "導入",
-    "copy": "複製",
+    "copy": "復製",
     "character-convertor": "角色卡轉換"
   },
   "Workspaces/Regex": {
@@ -69,7 +70,7 @@
     "regex-setting": "正則設置",
     "delete": "刪除",
     "add": "新建",
-    "select-the-regular-expression-you-want-to-edit": "選擇要編輯的正則表達式。",
+    "select-the-regular-expression-you-want-to-edit": "選擇要編輯的正則表達式.",
     "select-a-regex": "選擇一個正則表達式",
     "cancel": "取消",
     "are-you-sure": "你確定嗎?"
@@ -98,13 +99,15 @@
     "select-a-world-book": "選擇一本世界書",
     "delete": "刪除",
     "add": "新建",
-    "second-key-word-logic": "第二關鍵字邏輯",
-    "please-select-a-valid-world-book": "請選擇一個有效的世界書條目",
+    "second-key-word-logic": "第二關鍵詞邏輯",
+    "please-select-a-valid-world-book": "請選擇一個世界書條目",
     "import": "導入",
     "cancel": "取消",
     "are-you-sure": "你確定嗎?",
     "export": "導出",
-    "add-it": "添加完成"
+    "add-it": "添加完成",
+    "export-worldbook": "導出世界書",
+    "worldbook-name": "世界書名字"
   },
   "Workspaces/Greetings": {
     "character-greetings": "角色問候",
@@ -131,7 +134,10 @@
     "export-v2-noregex": "導出角色[V2版無正則]",
     "delte-it": "已刪除 #",
     "change-cover-done": "更換封面完成",
-    "select": "已選擇"
+    "select": "已選擇",
+    "add-new-character": "取一個名字",
+    "name": "名字",
+    "add": "添加"
   },
   "Workspaces/AdvancedDefinitions": {
     "advanced-definitions": "高級定義",
@@ -142,7 +148,7 @@
     "created-by": "創建者",
     "character-version": "角色版本",
     "creators-notes": "創作者筆記",
-    "tags-to-embed": "要嵌入的標籤",
+    "tags-to-embed": "要嵌入的標簽",
     "personality-summary": "個性總結",
     "scenario": "場景",
     "characters-note": "角色筆記",
@@ -152,20 +158,20 @@
     "characterworldbookname": "世界書名字"
   },
   "Inset": {
-    "edit-keyword": "修改關鍵字",
-    "key-word": "關鍵字",
+    "edit-keyword": "修改關鍵詞",
+    "key-word": "關鍵詞",
     "close": "關閉",
     "delete": "刪除",
     "submit": "提交",
     "cancel": "取消",
     "upload-image": "上傳圖片",
-    "key-word-0": "關鍵字",
+    "key-word-0": "關鍵詞",
     "inset": "角色插圖",
     "the-picture-will-be-compressed": "圖片會進行壓縮",
     "add-inset": "添加插圖",
     "new": "新增",
     "uploading": "等待上傳",
-    "keyword-already-exists": "關鍵字已經存在"
+    "keyword-already-exists": "關鍵詞已經存在"
   },
   "Metadata": {
     "title": "角色卡編輯器 | OoCTalk",

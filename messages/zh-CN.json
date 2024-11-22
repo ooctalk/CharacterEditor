@@ -12,7 +12,8 @@
     "code": "代码",
     "uptime": "状态",
     "release-under-development": "正在开发中的版本",
-    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution": "在功能内容改进期间，网站可能包含未知错误，请酌情使用"
+    "while-the-function-content-is-being-improved-the-website-may-contain-unknown-errors-please-use-caution": "在功能内容改进期间，网站可能包含未知错误，请酌情使用",
+    "workbenches": "工作台"
   },
   "SideBarLayout": {
     "character": "角色卡",
