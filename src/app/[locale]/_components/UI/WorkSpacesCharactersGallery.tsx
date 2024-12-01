@@ -158,9 +158,14 @@ function SelectCharacterDialog() {
           open={selectCharacterDialogOpen}
           onClose={() => setSelectCharacterDialogOpen(false)}
         >
-          <DialogTitle>
-            {selectedCharacter?.json?.data?.name ||
-              t("characterpppp") + selectedCharacter.cid}
+          <DialogTitle className="flex justify-between items-center">
+            <span>
+              {selectedCharacter?.json?.data?.name ||
+                t("characterpppp") + selectedCharacter.cid}
+            </span>
+            <button onClick={() => setSelectCharacterDialogOpen(false)}>
+              <XIcon />
+            </button>
           </DialogTitle>
           <DialogDescription>
             {selectedCharacter?.json?.data?.creator || null}
