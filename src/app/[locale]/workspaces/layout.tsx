@@ -61,7 +61,7 @@ export default function WorkSpacesLayout({
     <SnackbarProvider
       autoHideDuration={5000}
       anchorOrigin={{
-        vertical: "bottom",
+        vertical: "top",
         horizontal: "right",
       }}
     >

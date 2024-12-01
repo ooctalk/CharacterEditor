@@ -157,8 +157,8 @@ export function WorkSpacesAddCharacterButton() {
 
 export function WorkSpacesExportCharacterButton() {
   const t = useTranslations("Workspaces");
-  const { drawerCharacter } = useStore();
-  const cid = drawerCharacter?.cid;
+  const { selectCharacterDialogID } = useStore();
+  const cid = selectCharacterDialogID
 
   const data = useLiveQuery(() => {
     if (cid) {
@@ -242,20 +242,19 @@ export function WorkSpacesExportCharacterButton() {
   };
 
   return (
-    <button
-      type="button"
-      className="inline-flex w-full flex-1 items-center justify-center rounded-md bg-white dark:bg-zinc-800 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-600 dark:hover:bg-zinc-700"
+    <Button
+      outline
       onClick={handleExport}
     >
       {t("export-character")}
-    </button>
+    </Button>
   );
 }
 
 export function WorkSpacesExportCharacterSpecV2Button() {
   const t = useTranslations("Workspaces");
-  const { drawerCharacter } = useStore();
-  const cid = drawerCharacter?.cid;
+  const { selectCharacterDialogID } = useStore();
+  const cid = selectCharacterDialogID
 
   const data = useLiveQuery(() => {
     if (cid) {
@@ -356,12 +355,14 @@ export function WorkSpacesExportCharacterSpecV2Button() {
 
   return (
     <>
-      <button
+      <Button
+        outline
         onClick={handleExportSpecV2}
-        className="w-full text-left block px-4 py-2 text-sm text-black dark:text-white text-nowrap"
       >
         {t("export-v2-noregex")}
-      </button>
+      </Button>
     </>
   );
 }
+
+

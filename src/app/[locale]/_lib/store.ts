@@ -1,29 +1,16 @@
-// store.ts
 import { create } from "zustand";
-
-interface DrawerCharacter {
-  cid: number | null;
-  cover: string;
-  json: {
-    name: string;
-    data: {
-      creator: string;
-      character_version: string;
-    };
-  };
-}
 
 interface Store {
   isOpen: boolean;
   isDialogOpen: boolean;
-  drawerCharacter: DrawerCharacter | null;
   selectedCid: number | null;
   selectedGreetingsIndex: number | null;
   selectedWorldBooks: number | null;
   selectedRegexIndex: number | null;
   proceedingList: { name: string; url: string }[] | null;
-  convertorContent: string | null; // New state for convertor content
-  openDrawer: (character: DrawerCharacter) => void;
+  convertorContent: string | null;
+  selectCharacterDialogID: number | null;
+  selectCharacterDialogOpen: boolean;
   closeDrawer: () => void;
   openDialog: () => void;
   closeDialog: () => void;
@@ -33,20 +20,21 @@ interface Store {
   setSelectedRegexIndex: (id: number | null) => void;
   setProceedingList: (list: { name: string; url: string }[] | null) => void;
   setConvertorContent: (content: string) => void;
+  setSelectCharacterDialogID: (id: number | null) => void;
+  setSelectCharacterDialogOpen: (open: boolean) => void;
 }
 
 const useStore = create<Store>((set) => ({
   isOpen: false,
   isDialogOpen: false,
-  drawerCharacter: null,
   selectedCid: null,
   selectedGreetingsIndex: null,
   selectedWorldBooks: null,
   selectedRegexIndex: null,
   proceedingList: null,
   convertorContent: null,
-  openDrawer: (drawerCharacter: DrawerCharacter) =>
-    set({ isOpen: true, drawerCharacter }),
+  selectCharacterDialogID: null,
+  selectCharacterDialogOpen: false,
   closeDrawer: () => set({ isOpen: false }),
   openDialog: () => set({ isDialogOpen: true }),
   closeDialog: () => set({ isDialogOpen: false }),
@@ -58,6 +46,8 @@ const useStore = create<Store>((set) => ({
   setProceedingList: (list: { name: string; url: string }[] | null) =>
     set({ proceedingList: list }),
   setConvertorContent: (content: string) => set({ convertorContent: content }),
+  setSelectCharacterDialogID: (id: number | null) => set({ selectCharacterDialogID: id }),
+  setSelectCharacterDialogOpen: (open: boolean) => set({ selectCharacterDialogOpen: open }),
 }));
 
 export default useStore;
