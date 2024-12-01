@@ -100,8 +100,7 @@ function CharacterAdvancedDefinitionsEdit() {
                         defaultValue={character.json.data.creator}
                         onChange={(e) => {
                           if (
-                            character.cid !== undefined &&
-                            character.json.data.creator
+                            character.cid !== undefined
                           ) {
                             handleUpdate(
                               character.cid,
