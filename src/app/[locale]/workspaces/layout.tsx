@@ -28,9 +28,10 @@ import {
   RegexIcon,
   StarIcon,
   TentTree,
+  XIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { SnackbarProvider } from "notistack";
+import { SnackbarProvider,closeSnackbar } from "notistack";
 import ScrollToTopButton from "../_components/Reuse/ScrollToTopButton";
 import { useEffect } from "react";
 import Image from "next/image";
@@ -64,6 +65,11 @@ export default function WorkSpacesLayout({
         vertical: "top",
         horizontal: "right",
       }}
+      action={(snackbarId) => (
+        <button onClick={() => closeSnackbar(snackbarId)}>
+          <XIcon />
+        </button>
+      )}
     >
       <SidebarLayout
         sidebar={
