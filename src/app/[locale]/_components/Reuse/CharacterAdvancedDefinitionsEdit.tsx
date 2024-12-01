@@ -101,7 +101,7 @@ function CharacterAdvancedDefinitionsEdit() {
                         onChange={(e) => {
                           if (
                             character.cid !== undefined &&
-                            character.json.data.character_book
+                            character.json.data.creator
                           ) {
                             handleUpdate(
                               character.cid,
